@@ -6,6 +6,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -29,4 +30,12 @@ public class Award {
 
     @Column(nullable = false, unique = true)
     private String awardName;
+
+    @Builder
+    public Award(int year, int month, String title, String awardName) {
+        this.year = year;
+        this.month = month;
+        this.title = title;
+        this.awardName = awardName;
+    }
 }

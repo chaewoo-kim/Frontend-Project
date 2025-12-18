@@ -6,6 +6,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -29,4 +30,12 @@ public class ESG {
 
     @Column(unique = true, nullable = false, columnDefinition = "TEXT")
     private String description;
+
+    @Builder
+    public ESG(String title, String subTitle, String imageId, String description) {
+        this.title = title;
+        this.subTitle = subTitle;
+        this.imageId = imageId;
+        this.description = description;
+    }
 }

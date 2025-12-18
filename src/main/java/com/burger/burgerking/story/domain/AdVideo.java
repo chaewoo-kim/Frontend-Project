@@ -7,6 +7,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -27,4 +28,11 @@ public class AdVideo extends BaseEntity {
 
     @Column(unique = true, nullable = false)
     private Long thumbnailId;
+
+    @Builder
+    public AdVideo(String title, Long videoId, Long thumbnailId) {
+        this.title = title;
+        this.videoId = videoId;
+        this.thumbnailId = thumbnailId;
+    }
 }
