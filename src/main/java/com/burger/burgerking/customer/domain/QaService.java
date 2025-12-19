@@ -1,15 +1,14 @@
-package com.burger.burgerking.customer.dto;
+package com.burger.burgerking.customer.domain;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
 @Entity
-@Table(name="tbl_customer")
+@Table(name="tbl_qa")
 @Getter
 @RequiredArgsConstructor
-public class Customer {
+public class QaService {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

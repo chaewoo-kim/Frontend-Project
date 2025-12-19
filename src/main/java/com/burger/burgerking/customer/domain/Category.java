@@ -1,4 +1,4 @@
-package com.burger.burgerking.customer.dto;
+package com.burger.burgerking.customer.domain;
 
 import jakarta.persistence.*;
 import lombok.Getter;
