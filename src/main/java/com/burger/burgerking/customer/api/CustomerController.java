@@ -1,6 +1,8 @@
 package com.burger.burgerking.customer.api;
 
 
+import com.burger.burgerking.customer.dto.request.FaqRequest;
+import com.burger.burgerking.customer.dto.request.QaCategoryRequest;
 import com.burger.burgerking.customer.dto.request.QaRequest;
 import com.burger.burgerking.global.common.ApiResponse;
 import io.swagger.v3.oas.annotations.Operation;
@@ -29,7 +31,7 @@ public class CustomerController {
 
     @Operation(summary = "문의사항 카테고리 리스트 조회 기능 제공", description = "카테고리 리스트를 통해 문의사항 리스트를 조회할 수 있도록 리스트를 제공")
     @GetMapping("/{categoryId}")
-    public ResponseEntity<ApiResponse<List<QaRequest>>> searchByCategoryId(
+    public ResponseEntity<ApiResponse<List<QaCategoryRequest>>> category(
             @PathVariable String categoryId
     ) {
         return ResponseEntity.ok(ApiResponse.success(null));
@@ -37,7 +39,7 @@ public class CustomerController {
 
     @Operation(summary = "대표 문의사항 조회 기능 제공", description = "문의가 많은 질문 5개를 조회하여 제목을 게시 및 Forward링크 설정")
     @GetMapping
-    public ResponseEntity<ApiResponse<List<QaRequest>>> search(){
+    public ResponseEntity<ApiResponse<List<FaqRequest>>> faq(){
 
         return ResponseEntity.ok(ApiResponse.success(null));
     }
