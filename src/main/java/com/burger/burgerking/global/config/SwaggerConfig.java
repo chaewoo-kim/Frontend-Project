@@ -27,6 +27,14 @@ public class SwaggerConfig {
                 .build();
     }
 
+    // mainpage 관련 API
+    @Bean
+    public GroupedOpenApi customerGroup() {
+        return GroupedOpenApi.builder()
+                .group("Customer API")
+                .pathsToMatch("/api/v1/customer/**")
+                .build();
+    }
     @Bean
     public GroupedOpenApi allGroup() {
         return GroupedOpenApi.builder()
