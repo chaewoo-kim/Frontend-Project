@@ -18,6 +18,15 @@ public class SwaggerConfig {
                 .build();
     }
 
+    // mainpage 관련 API
+    @Bean
+    public GroupedOpenApi mainpageGroup() {
+        return GroupedOpenApi.builder()
+                .group("Mainpage API")
+                .pathsToMatch("/api/v1/mainpage/**")
+                .build();
+    }
+
     @Bean
     public GroupedOpenApi allGroup() {
         return GroupedOpenApi.builder()
