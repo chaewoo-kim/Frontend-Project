@@ -26,4 +26,25 @@ public class MenuService {
         }
         return new MainMenuResponse(categoryMenuResponseList);
     }
+
+    // 키워드 검색
+    public MainMenuResponse getSearchMenu(List<Long> id) {
+        List<Menu> searchMenu = menuRepository.findBySearchMenu(id);
+        List<Category> categories = categoryRepository.findAllByOrderByDisplayOrdercAsc();
+        List<CategoryMenuResponse> categoryMenuResponseList = new ArrayList<>();
+        for(Category category : categories){
+            List<Menu> menus = new ArrayList<>();
+            for(Menu menu : searchMenu){
+                if(menu.getCategory().getId().equals(category.getId())){
+                    menus.add(menu);
+                }
+            }
+            if (menus.isEmpty()) {
+                continue;
+            }
+            categoryMenuResponseList.add(new CategoryMenuResponse(category.getId(), category.getName(), menus));
+        }
+        return new MainMenuResponse(categoryMenuResponseList);
+
+    }
 }

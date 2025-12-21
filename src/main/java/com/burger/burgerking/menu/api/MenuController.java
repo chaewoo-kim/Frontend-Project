@@ -10,7 +10,10 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 @Tag(name = "메뉴", description = "메뉴페이지")
 @RestController
@@ -22,5 +25,11 @@ public class MenuController {
     @Operation(summary = "메뉴 전체 조회", description = "메인 메뉴페이지 클릭시 전체메뉴")
     public ResponseEntity<ApiResponse<MainMenuResponse>> getMenu() {
         return ResponseEntity.ok(ApiResponse.success(menuService.getMenu()));
+    }
+
+    @GetMapping
+    @Operation(summary = "메뉴 검색",description = "키워드 ID로 선택하여 메뉴 검색")
+    public ResponseEntity<ApiResponse<MainMenuResponse>> getMenuById(@RequestParam List<Long> id) {
+        return ResponseEntity.ok(ApiResponse.success(menuService.getSearchMenu(id)));
     }
 }
