@@ -39,7 +39,7 @@ public class FileService {
         FileMetaData fileMetaData = FileMetaData.builder()
                 .originalFilename(originalFilename)
                 .storedFilename(savedName)
-                .fileUrl("http://dev.macacolabs.site:9001/bucket/burgerking/" + savedName)
+                .fileUrl("http://dev.macacolabs.site:9000/burgerking/" + savedName)
                 .build();
 
         PutObjectRequest request = PutObjectRequest.builder()

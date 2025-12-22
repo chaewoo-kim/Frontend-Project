@@ -1,6 +1,7 @@
 package com.burger.burgerking.story.domain;
 
 import com.burger.burgerking.global.entity.BaseEntity;
+import com.burger.burgerking.story.dto.response.FileMetaDataResponse;
 import com.burger.burgerking.story.enums.FileType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -44,5 +45,13 @@ public class FileMetaData extends BaseEntity {
         this.originalFilename = originalFilename;
         this.storedFilename = storedFilename;
         this.fileUrl = fileUrl;
+    }
+
+    public static FileMetaDataResponse from(FileMetaData fileMetaData) {
+        return new FileMetaDataResponse(
+                fileMetaData.getOriginalFilename(),
+                fileMetaData.getStoredFilename(),
+                fileMetaData.getFileUrl()
+        );
     }
 }
