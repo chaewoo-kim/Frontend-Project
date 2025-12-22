@@ -21,7 +21,10 @@ public enum ErrorCode {
     DUPLICATE_EMAIL(HttpStatus.CONFLICT, "이미 사용 중인 이메일입니다."),
 
     // 500 Internal Server Error
-    INTERNAL_SERVER_ERROR(HttpStatus.INTERNAL_SERVER_ERROR, "서버 에러입니다.");
+    INTERNAL_SERVER_ERROR(HttpStatus.INTERNAL_SERVER_ERROR, "서버 에러입니다."),
+
+    // image not found
+    IMAGE_NOT_FOUND(HttpStatus.NOT_FOUND, "이미지 찾지 못 함");
 
     private final HttpStatus status;
     private final String message;

@@ -6,7 +6,7 @@ spring:
     name: BurgerkingCloneCoding
 
   datasource:
-    url: jdbc:mariadb://localhost:3306/burgerking
+    url: jdbc:mariadb://dev.macacolabs.site:8008/burgerking
     username: burgerking
     password: burgerking
     driver-class-name: org.mariadb.jdbc.Driver
@@ -18,3 +18,10 @@ spring:
     properties:
       hibernate:
         format_sql: true
+
+s3:
+  endpoint: http://dev.macacolabs.site:9000
+  access-key: WU04kde1FqpJAVR9exaV
+  secret-key: 1ZNUJ3OzqfZsNWMhhMjgyZej0BH9fKVbQSwX1EiN
+  bucket: burgerking
+  region: ap-northeast-2
