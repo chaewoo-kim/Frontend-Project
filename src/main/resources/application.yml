@@ -6,7 +6,7 @@ spring:
     name: BurgerkingCloneCoding
 
   datasource:
-    url: jdbc:mariadb://localhost:3306/burgerking
+    url: jdbc:mariadb://dev.macacolabs.site:8008/burgerking
     username: burgerking
     password: burgerking
     driver-class-name: org.mariadb.jdbc.Driver
