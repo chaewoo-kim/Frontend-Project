@@ -40,11 +40,16 @@ public class FileMetaData extends BaseEntity {
     @Column(nullable = false)
     private String fileUrl;
 
+    @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
+    private FileType fileType;
+
     @Builder
-    public FileMetaData(String originalFilename, String storedFilename, String fileUrl) {
+    public FileMetaData(String originalFilename, String storedFilename, String fileUrl, FileType fileType) {
         this.originalFilename = originalFilename;
         this.storedFilename = storedFilename;
         this.fileUrl = fileUrl;
+        this.fileType = fileType;
     }
 
     public static FileMetaDataResponse from(FileMetaData fileMetaData) {
