@@ -11,6 +11,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -26,7 +27,7 @@ public class WhyBurgerkingController {
     private final WhyBurgerKingService whyBurgerKingService;
 
     @Operation(summary = "Why Burgerking 정보 제공", description = "Why Burgerking에 대한 title, subtitle, description, imageUrl 제공")
-    @GetMapping
+    @PostMapping
     public ResponseEntity<ApiResponse<List<FileMetaDataResponse>>> why(@RequestBody WhyBurgerKingRequest request) {
 
         return ResponseEntity.ok(ApiResponse.success(whyBurgerKingService.getInfo(request)));

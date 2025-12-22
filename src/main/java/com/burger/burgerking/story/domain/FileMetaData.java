@@ -15,6 +15,8 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Entity
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
@@ -58,5 +60,11 @@ public class FileMetaData extends BaseEntity {
                 fileMetaData.getStoredFilename(),
                 fileMetaData.getFileUrl()
         );
+    }
+
+    public static List<FileMetaDataResponse> from(List<FileMetaData> fileMetaData) {
+        return fileMetaData.stream()
+                .map(FileMetaData::from)
+                .toList();
     }
 }

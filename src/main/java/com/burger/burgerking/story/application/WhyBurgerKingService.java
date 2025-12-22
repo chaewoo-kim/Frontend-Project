@@ -17,11 +17,6 @@ public class WhyBurgerKingService {
     private final FileMetaDataRepository fileMetaDataRepository;
 
     public List<FileMetaDataResponse> getInfo(WhyBurgerKingRequest request) {
-        List<FileMetaDataResponse> responses = new ArrayList<>();
-        for (int i = 0; i < request.imageNames().length; i++) {
-            responses.add(FileMetaData.from(fileMetaDataRepository.findByOriginalFilename(request.imageNames()[i])));
-        }
-
-        return responses;
+        return FileMetaData.from(fileMetaDataRepository.findAllByFileType(request.type()));
     }
 }

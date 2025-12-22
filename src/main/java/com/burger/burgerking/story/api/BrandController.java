@@ -27,7 +27,7 @@ public class BrandController {
     private final BrandService brandService;
 
     @Operation(summary = "Brand 정보 제공", description = "Brand에 대한 title, description, imageUrl 제공")
-    @GetMapping
+    @PostMapping
     public ResponseEntity<ApiResponse<List<FileMetaDataResponse>>> brand() {
 
         return ResponseEntity.ok(ApiResponse.success(brandService.getInfo()));
