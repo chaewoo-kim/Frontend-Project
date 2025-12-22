@@ -18,3 +18,10 @@ spring:
     properties:
       hibernate:
         format_sql: true
+
+s3:
+  endpoint: http://dev.macacolabs.site:9000
+  access-key: WU04kde1FqpJAVR9exaV
+  secret-key: 1ZNUJ3OzqfZsNWMhhMjgyZej0BH9fKVbQSwX1EiN
+  bucket: burgerking
+  region: ap-northeast-2

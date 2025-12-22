@@ -1,4 +1,4 @@
-package com.burger.burgerking.story.domain;
+package com.burger.burgerking.story.enums;
 
 public enum FileType {
 
