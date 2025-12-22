@@ -1,6 +1,7 @@
 package com.burger.burgerking.story.domain;
 
 import com.burger.burgerking.global.entity.BaseEntity;
+import com.burger.burgerking.story.enums.FileType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
