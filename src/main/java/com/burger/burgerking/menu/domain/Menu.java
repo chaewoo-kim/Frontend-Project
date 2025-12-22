@@ -21,7 +21,7 @@ public class Menu {
 
     @Column(length = 100)
     private String description;
-
+    private int kcal;
     private int price;
 
     private String imageUrl;

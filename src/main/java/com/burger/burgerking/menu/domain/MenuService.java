@@ -2,8 +2,12 @@ package com.burger.burgerking.menu.domain;
 
 
 import com.burger.burgerking.menu.dto.response.CategoryMenuResponse;
+import com.burger.burgerking.menu.dto.response.KeyWordResponse;
 import com.burger.burgerking.menu.dto.response.MainMenuResponse;
+import com.burger.burgerking.menu.dto.response.MenuDetailResponse;
 import com.burger.burgerking.menu.storage.CategoryRepository;
+import com.burger.burgerking.menu.storage.KeywordRepository;
+import com.burger.burgerking.menu.storage.MenuKeywordRepository;
 import com.burger.burgerking.menu.storage.MenuRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -16,6 +20,8 @@ import java.util.List;
 public class MenuService {
     private MenuRepository menuRepository;
     private CategoryRepository categoryRepository;
+    private KeywordRepository keywordRepository;
+    private MenuKeywordRepository menuKeywordRepository;
 
     public MainMenuResponse getMenu(){
         List<Category> categories = categoryRepository.findAllByOrderByDisplayOrdercAsc();
@@ -45,6 +51,23 @@ public class MenuService {
             categoryMenuResponseList.add(new CategoryMenuResponse(category.getId(), category.getName(), menus));
         }
         return new MainMenuResponse(categoryMenuResponseList);
+
+    }
+
+
+    public MenuDetailResponse getMenuDetail(Long id) {
+        Menu menu = menuRepository.findById(id).orElse(null);
+        List<KeyWordResponse> keywords= menuKeywordRepository.findByMenuId(id)
+                .stream()
+                .map(k-> new KeyWordResponse(k.getId(),k.getKeywordType(),k.getName()))
+                .toList();
+
+        return new MenuDetailResponse(
+                menu.getName(),
+                menu.getDescription(),
+                menu.getImageUrl(),
+                menu.getKcal(),
+                keywords);
 
     }
 }
