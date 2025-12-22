@@ -39,26 +39,10 @@ public class FileMetaData extends BaseEntity {
     @Column(nullable = false)
     private String fileUrl;
 
-    // 4. 파일 크기 (Byte 단위)
-    // 관리자가 용량 관리하거나, 다운로드 시 미리 크기를 알려줄 때 유용
-    private Long fileSize;
-
-    // 5. 파일 확장자/타입 (MIME Type)
-    // 예: "image/jpeg", "application/pdf"
-    private String contentType;
-
-    // 6. 연결된 도메인 (선택 사항 - 다형성 고려 시)
-    // 예: "REVIEW", "PROFILE", "MENU" - 어떤 용도의 파일인지 구분
-    @Enumerated(EnumType.STRING)
-    private FileType fileType;
-
     @Builder
-    public FileMetaData(String originalFilename, String storedFilename, String fileUrl, Long fileSize, String contentType, FileType fileType) {
+    public FileMetaData(String originalFilename, String storedFilename, String fileUrl) {
         this.originalFilename = originalFilename;
         this.storedFilename = storedFilename;
         this.fileUrl = fileUrl;
-        this.fileSize = fileSize;
-        this.contentType = contentType;
-        this.fileType = fileType;
     }
 }

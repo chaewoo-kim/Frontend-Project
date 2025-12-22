@@ -1,5 +1,7 @@
 package com.burger.burgerking.story.application;
 
+import com.burger.burgerking.story.domain.FileMetaData;
+import com.burger.burgerking.story.dto.FileMetaDataRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -16,6 +18,7 @@ import software.amazon.awssdk.services.s3.model.S3Object;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 @Slf4j
@@ -25,17 +28,30 @@ public class FileService {
     private final S3Client s3Client;
 
     private final String bucket = "burgerking";
+    private final FileMetaDataRepository fileMetaDataRepository;
 
     // ✅ 업로드
-    public String uploadFile(MultipartFile file) throws IOException {
+    public FileMetaData uploadFile(MultipartFile file) throws IOException {
+        String originalFilename = file.getOriginalFilename();
+        String extension = originalFilename.substring(originalFilename.lastIndexOf('.'));
+        String savedName = UUID.randomUUID() + extension;
+
+        FileMetaData fileMetaData = FileMetaData.builder()
+                .originalFilename(originalFilename)
+                .storedFilename(savedName)
+                .fileUrl("http://dev.macacolabs.site:9001/bucket/burgerking/" + savedName)
+                .build();
+
         PutObjectRequest request = PutObjectRequest.builder()
                 .bucket(bucket)
-                .key(file.getOriginalFilename())
+                .key(savedName)
                 .contentType(file.getContentType())
                 .build();
 
+        fileMetaDataRepository.save(fileMetaData);
+
         s3Client.putObject(request, software.amazon.awssdk.core.sync.RequestBody.fromBytes(file.getBytes()));
-        return file.getOriginalFilename();
+        return fileMetaData;
     }
 
     // ✅ 파일 목록 조회

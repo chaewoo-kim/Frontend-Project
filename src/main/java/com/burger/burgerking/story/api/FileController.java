@@ -1,6 +1,7 @@
 package com.burger.burgerking.story.api;
 
 import com.burger.burgerking.story.application.FileService;
+import com.burger.burgerking.story.domain.FileMetaData;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
@@ -29,9 +30,9 @@ public class FileController {
 
     @Operation(description = "파일 업로드")
     @PostMapping(value = "/upload",consumes =  MediaType.MULTIPART_FORM_DATA_VALUE)
-    public ResponseEntity<String> upload(@RequestParam MultipartFile file) throws IOException {
-        String fileName = fileService.uploadFile(file);
-        return ResponseEntity.ok("✅ Uploaded: " + fileName);
+    public ResponseEntity<FileMetaData> upload(@RequestParam MultipartFile file) throws IOException {
+        FileMetaData fileMetaData = fileService.uploadFile(file);
+        return ResponseEntity.ok(fileMetaData);
     }
 
     @Operation(description = "파일 리스트 조회")
