@@ -2,9 +2,11 @@ package com.burger.burgerking.story.application;
 
 import com.burger.burgerking.story.domain.FileMetaData;
 import com.burger.burgerking.story.dto.FileMetaDataRepository;
+import com.burger.burgerking.story.dto.request.FileMeta;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 import software.amazon.awssdk.core.ResponseInputStream;
 import software.amazon.awssdk.services.s3.S3Client;
@@ -31,7 +33,10 @@ public class FileService {
     private final FileMetaDataRepository fileMetaDataRepository;
 
     // ✅ 업로드
-    public FileMetaData uploadFile(MultipartFile file) throws IOException {
+    public FileMetaData uploadFile(
+            MultipartFile file,
+            FileMeta fileMeta
+    ) throws IOException {
         String originalFilename = file.getOriginalFilename();
         String extension = originalFilename.substring(originalFilename.lastIndexOf('.'));
         String savedName = UUID.randomUUID() + extension;
@@ -40,6 +45,7 @@ public class FileService {
                 .originalFilename(originalFilename)
                 .storedFilename(savedName)
                 .fileUrl("http://dev.macacolabs.site:9000/burgerking/" + savedName)
+                .fileType(fileMeta.type())
                 .build();
 
         PutObjectRequest request = PutObjectRequest.builder()
