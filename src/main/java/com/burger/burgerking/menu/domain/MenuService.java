@@ -1,10 +1,7 @@
 package com.burger.burgerking.menu.domain;
 
 
-import com.burger.burgerking.menu.dto.response.CategoryMenuResponse;
-import com.burger.burgerking.menu.dto.response.KeyWordResponse;
-import com.burger.burgerking.menu.dto.response.MainMenuResponse;
-import com.burger.burgerking.menu.dto.response.MenuDetailResponse;
+import com.burger.burgerking.menu.dto.response.*;
 import com.burger.burgerking.menu.storage.CategoryRepository;
 import com.burger.burgerking.menu.storage.KeywordRepository;
 import com.burger.burgerking.menu.storage.MenuKeywordRepository;
@@ -69,5 +66,27 @@ public class MenuService {
                 menu.getKcal(),
                 keywords);
 
+    }
+
+    public KeyWordListResponse getMenuByKeyword() {
+        List<Keyword> keywords = keywordRepository.findAll();
+
+        List<KeyWordResponse> categoryList = new ArrayList<>();
+        List<KeyWordResponse> tasteList = new ArrayList<>();
+
+        for(Keyword keyword : keywords){
+            KeyWordResponse result = new KeyWordResponse(
+                    keyword.getId()
+                    ,keyword.getKeywordType()
+                    ,keyword.getName()
+            );
+            if(result.getKeywordType() == KeywordType.CATEGORY){
+                categoryList.add(result);
+            }
+            else{
+                tasteList.add(result);
+            }
+        }
+        return new KeyWordListResponse(categoryList, tasteList);
     }
 }

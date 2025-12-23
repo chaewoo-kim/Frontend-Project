@@ -3,6 +3,8 @@ package com.burger.burgerking.menu.api;
 
 import com.burger.burgerking.global.common.ApiResponse;
 import com.burger.burgerking.menu.domain.MenuService;
+import com.burger.burgerking.menu.dto.response.KeyWordListResponse;
+import com.burger.burgerking.menu.dto.response.KeyWordResponse;
 import com.burger.burgerking.menu.dto.response.MainMenuResponse;
 import com.burger.burgerking.menu.dto.response.MenuDetailResponse;
 import io.swagger.v3.oas.annotations.Operation;
@@ -35,5 +37,11 @@ public class MenuController {
     @Operation(summary = "메뉴 상세", description = "메뉴 ID로 메뉴 상세 조회")
     public ResponseEntity<ApiResponse<MenuDetailResponse>> getMenuById(@PathVariable Long id) {
         return ResponseEntity.ok(ApiResponse.success(menuService.getMenuDetail(id)));
+    }
+
+    @GetMapping
+    @Operation(summary = "키워드 창", description = "키워드창 띄우기")
+    public ResponseEntity<ApiResponse<KeyWordListResponse>> getMenuByKeyword() {
+        return ResponseEntity.ok(ApiResponse.success(menuService.getMenuByKeyword()));
     }
 }
