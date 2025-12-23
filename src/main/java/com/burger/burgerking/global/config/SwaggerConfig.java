@@ -18,6 +18,15 @@ public class SwaggerConfig {
                 .build();
     }
 
+    // file 관련 API
+    @Bean
+    public GroupedOpenApi fileGroup() {
+        return GroupedOpenApi.builder()
+                .group("File API")
+                .pathsToMatch("/api/v1/files/**")
+                .build();
+    }
+
     // mainpage 관련 API
     @Bean
     public GroupedOpenApi mainpageGroup() {
