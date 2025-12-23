@@ -26,7 +26,7 @@ import java.util.List;
 @Slf4j
 @Tag(name = "파일 관리", description = "파일 업로드, 조회, 삭제, 다운로드 API")
 @RestController
-@RequestMapping("/api/files")
+@RequestMapping("/api/v1/files")
 @RequiredArgsConstructor
 public class FileController {
 
