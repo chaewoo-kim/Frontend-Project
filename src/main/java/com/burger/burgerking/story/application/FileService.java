@@ -1,12 +1,11 @@
 package com.burger.burgerking.story.application;
 
 import com.burger.burgerking.story.domain.FileMetaData;
-import com.burger.burgerking.story.dto.FileMetaDataRepository;
+import com.burger.burgerking.story.dao.FileMetaDataRepository;
 import com.burger.burgerking.story.dto.request.FileMeta;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 import software.amazon.awssdk.core.ResponseInputStream;
 import software.amazon.awssdk.services.s3.S3Client;
