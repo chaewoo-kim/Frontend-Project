@@ -6,6 +6,7 @@ import com.burger.burgerking.story.dto.request.FileMeta;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 import software.amazon.awssdk.core.ResponseInputStream;
 import software.amazon.awssdk.services.s3.S3Client;
@@ -18,6 +19,7 @@ import software.amazon.awssdk.services.s3.model.PutObjectRequest;
 import software.amazon.awssdk.services.s3.model.S3Object;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
@@ -57,6 +59,39 @@ public class FileService {
 
         s3Client.putObject(request, software.amazon.awssdk.core.sync.RequestBody.fromBytes(file.getBytes()));
         return fileMetaData;
+    }
+
+    @Transactional
+    public List<FileMetaData> uploadFiles(
+            List<MultipartFile> files, FileMeta fileMeta
+    ) throws IOException {
+        List<FileMetaData> fileMetaDataList = new ArrayList<>();
+
+        for (MultipartFile file : files) {
+            String originalFilename = file.getOriginalFilename();
+            String extension = originalFilename.substring(originalFilename.lastIndexOf('.'));
+            String savedName = UUID.randomUUID() + extension;
+
+            FileMetaData fileMetaData = FileMetaData.builder()
+                    .originalFilename(originalFilename)
+                    .storedFilename(savedName)
+                    .fileUrl("http://dev.macacolabs.site:9000/burgerking/" + savedName)
+                    .fileType(fileMeta.type())
+                    .build();
+
+            PutObjectRequest request = PutObjectRequest.builder()
+                    .bucket(bucket)
+                    .key(savedName)
+                    .contentType(file.getContentType())
+                    .build();
+
+            fileMetaDataRepository.save(fileMetaData);
+
+            s3Client.putObject(request, software.amazon.awssdk.core.sync.RequestBody.fromBytes(file.getBytes()));
+            fileMetaDataList.add(fileMetaData);
+        }
+
+        return fileMetaDataList;
     }
 
     // ✅ 파일 목록 조회

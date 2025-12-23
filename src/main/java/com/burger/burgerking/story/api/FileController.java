@@ -43,6 +43,16 @@ public class FileController {
         return ResponseEntity.ok(fileMetaData);
     }
 
+    @Operation(description = "여러 파일 한 번에 업로드")
+    @PostMapping(value = "/upload-images", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    public ResponseEntity<List<FileMetaData>>  uploadImages(
+            @RequestPart("file") List<MultipartFile> files,
+            @RequestPart("fileMeta") FileMeta fileMeta
+    ) throws IOException {
+        List<FileMetaData> fileMetaDataList = fileService.uploadFiles(files, fileMeta);
+        return ResponseEntity.ok(fileMetaDataList);
+    }
+
     @Operation(description = "파일 리스트 조회")
     @GetMapping("/list")
     public ResponseEntity<List<String>> list() {
