@@ -12,6 +12,6 @@ import java.util.List;
 public class CategoryMenuResponse {
     private Long categoryId;
     private String categoryName;
-    private List<Menu> menuList;
+    private List<MenuListResponse> menuList;
 
 }

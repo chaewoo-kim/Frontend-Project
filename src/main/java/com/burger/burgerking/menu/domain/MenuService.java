@@ -25,50 +25,98 @@ public class MenuService {
         List<CategoryMenuResponse> categoryMenuResponseList = new ArrayList<>();
         for(Category category : categories){
             List<Menu> menus = menuRepository.findByCategory(category);
-            categoryMenuResponseList.add(new CategoryMenuResponse(category.getId(), category.getName(), menus));
+            List<MenuListResponse> menuListResponses = new ArrayList<>();
+            for(Menu menu : menus){
+                menuListResponses.add(toMenuList(menu));
+            }
+            categoryMenuResponseList.add(new CategoryMenuResponse(category.getId(), category.getName(), menuListResponses));
         }
         return new MainMenuResponse(categoryMenuResponseList);
     }
 
     // 키워드 검색
     public MainMenuResponse getSearchMenu(List<Long> id) {
+        // 키워드 id와 같은 메뉴(순서 상관없이)를 searchMenu로 받아옴.
         List<Menu> searchMenu = menuRepository.findBySearchMenu(id);
         List<Category> categories = categoryRepository.findAllByOrderByDisplayOrdercAsc();
         List<CategoryMenuResponse> categoryMenuResponseList = new ArrayList<>();
         for(Category category : categories){
-            List<Menu> menus = new ArrayList<>();
+            List<MenuListResponse> menuListResponses = new ArrayList<>();
             for(Menu menu : searchMenu){
+                // 카테고리 순서에 맞춰 같은 카테고리 메뉴를 가져옴
                 if(menu.getCategory().getId().equals(category.getId())){
-                    menus.add(menu);
+                    menuListResponses.add(toMenuList(menu));
                 }
             }
-            if (menus.isEmpty()) {
+            //menuListResponses가 비어있으면 해당 카테고리는 출력하지 않음.
+            if (menuListResponses.isEmpty()) {
                 continue;
             }
-            categoryMenuResponseList.add(new CategoryMenuResponse(category.getId(), category.getName(), menus));
+            categoryMenuResponseList.add(new CategoryMenuResponse(category.getId(), category.getName(), menuListResponses));
         }
         return new MainMenuResponse(categoryMenuResponseList);
-
     }
 
+    // 뱃지와 메뉴 정보 메소드
+    public MenuListResponse toMenuList(Menu menu){
+        List<String> badges = new ArrayList<>();
+        if (menu.isNewMenu()) badges.add("NEW");
+        if (menu.isLimited()) badges.add("LIMITED");
+        if (menu.isPopular()) badges.add("POPULAR");
+        if (menu.isSpicy()) badges.add("SPICY");
+        if (menu.isAllDaySnack()) badges.add("ALL_DAY_SNACK");
+        if (menu.isAllDayKing()) badges.add("ALL_DAY_KING");
+
+        return new MenuListResponse(
+                menu.getName(),
+                menu.getMenuComposition(),
+                menu.getImageUrl(),
+                badges
+        );
+    }
 
     public MenuDetailResponse getMenuDetail(Long id) {
         Menu menu = menuRepository.findById(id).orElse(null);
-        List<KeyWordResponse> keywords= menuKeywordRepository.findByMenuId(id)
-                .stream()
-                .map(k-> new KeyWordResponse(k.getId(),k.getKeywordType(),k.getName()))
-                .toList();
+        // 키워드 추출
+        // 방법 1. JPQL 사용
+//        List<KeyWordResponse> keywords= menuKeywordRepository.findByMenuId(id)
+//                .stream()
+//                .map(k-> new KeyWordResponse(k.getId(),k.getKeywordType(),k.getName()))
+//                .toList();
 
-        return new MenuDetailResponse(
-                menu.getName(),
-                menu.getDescription(),
-                menu.getImageUrl(),
-                menu.getKcal(),
-                keywords);
+        // 방법 2. menu엔티티 메소드 활용
+        List<KeyWordResponse> keywords = menu.getMenuKeywords()
+                .stream()
+                .map(k-> new KeyWordResponse(
+                        k.getKeyword().getId()
+                        ,k.getKeyword().getKeywordType()
+                        ,k.getKeyword().getName()))
+                .toList();
+        // 메뉴명과 메뉴 구성품이 같은 경우
+        if(menu.getName().equals(menu.getMenuComposition())){
+            return new MenuDetailResponse(
+                    menu.getName(),
+                    menu.getDescription(),
+                    menu.getImageUrl(),
+                    menu.getKcal(),
+                    keywords
+            );
+        }
+        else{
+            return new MenuDetailResponse(
+                    menu.getName(),
+                    menu.getMenuComposition(),
+                    menu.getDescription(),
+                    menu.getImageUrl(),
+                    menu.getKcal(),
+                    keywords
+            );
+        }
 
     }
 
     public KeyWordListResponse getMenuByKeyword() {
+        //모든 키워드를 찾아옴
         List<Keyword> keywords = keywordRepository.findAll();
 
         List<KeyWordResponse> categoryList = new ArrayList<>();

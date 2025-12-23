@@ -8,11 +8,28 @@ import lombok.Getter;
 import java.util.List;
 
 @Getter
-@AllArgsConstructor
 public class MenuDetailResponse {
     private String name;
+    private String menuComposition;
     private String description;
     private String imageUrl;
     private int kcal;
     List<KeyWordResponse> keywords;
+
+    public MenuDetailResponse(String name, String description, String imageUrl, int kcal, List<KeyWordResponse> keywords) {
+        this.name = name;
+        this.description = description;
+        this.imageUrl = imageUrl;
+        this.kcal = kcal;
+        this.keywords = keywords;
+    }
+
+    public MenuDetailResponse(String name, String menuComposition, String description, String imageUrl, int kcal, List<KeyWordResponse> keywords) {
+        this.name = name;
+        this.menuComposition = menuComposition;
+        this.description = description;
+        this.imageUrl = imageUrl;
+        this.kcal = kcal;
+        this.keywords = keywords;
+    }
 }

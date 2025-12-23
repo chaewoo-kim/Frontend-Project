@@ -19,6 +19,10 @@ public class Menu {
     @Column(nullable = false)
     private String name;
 
+    // 메뉴 구성품
+    @Column(nullable = false)
+    private String menuComposition;
+
     @Column(length = 100)
     private String description;
     private int kcal;
