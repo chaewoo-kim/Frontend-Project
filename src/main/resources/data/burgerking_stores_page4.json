@@ -1,0 +1,3276 @@
+{
+    "header": {
+        "error_text": "",
+        "info_text": "",
+        "login_session_id": "",
+        "message_version": "",
+        "result": true,
+        "trcode": "BKR0343",
+        "cdCallChnn": null,
+        "content_update_flag": false,
+        "emergency_flag": false,
+        "error_code": ""
+    },
+    "body": {
+        "searchTotalCount": "547",
+        "storInfo": [
+            {
+                "storeServiceCodeList": [
+                    {
+                        "storeServiceCode": "01",
+                        "storeServiceName": "킹오더"
+                    },
+                    {
+                        "storeServiceCode": "02",
+                        "storeServiceName": "딜리버리"
+                    }
+                ],
+                "distance": "239011",
+                "storTelNo": "010-9637-0233",
+                "storPromotionInfo": [
+                    {
+                        "prmMenuDeliveryYn": "N",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "7713704",
+                        "prmCd": "2512059",
+                        "prmCoverMenuCd": "6600644",
+                        "prmNm": "행사_12월_2FOR6K_7K"
+                    },
+                    {
+                        "prmMenuDeliveryYn": "Y",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "7713844",
+                        "prmCd": "2512042",
+                        "prmCoverMenuCd": null,
+                        "prmNm": "25년 12월_내부 DV 메뉴할인"
+                    },
+                    {
+                        "prmMenuDeliveryYn": "N",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "6600628",
+                        "prmCd": "2507028",
+                        "prmCoverMenuCd": null,
+                        "prmNm": "행사_올데이스넥"
+                    }
+                ],
+                "storAddr": "대구광역시 남구 대명로 89  ",
+                "salesHourNote": "연중무휴(10:00~22:00)",
+                "storCd": "00010104",
+                "storDetailNote": "",
+                "storCoordY": "35.8397496",
+                "crmKordPauseStartDt": null,
+                "todayBusinessTime": "10:00~22:00",
+                "crmKordPauseEndDt": null,
+                "storCloseDate": null,
+                "storCloseCause": null,
+                "crmKordPauseMessage": null,
+                "storImgThumPath": "https://mob-prd.burgerking.co.kr/images/store/thumbnail/2025/01/06/b85285d6-98cd-445a-afb4-ea8a56a92406.jpg",
+                "storTimeHoliday": "10:00~22:00",
+                "todayDelivery24Time": "10:00~21:45",
+                "storDetailNoteList": null,
+                "pickupTime": "10:00~21:45",
+                "storEventMessage": "",
+                "storTimeDays": "10:00~22:00",
+                "storNm": "대구대명FS점",
+                "todayDeliveryTime": "10:00~21:45",
+                "tmrDeliveryTime": "10:00~21:45",
+                "prmCd": "",
+                "storMembershipYn": "Y",
+                "storCoordX": "128.5675436",
+                "storImgMainList": [
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/01/06/a3a3dfcf-c9e3-4d0f-a06e-51c17ff21a73.jpg"
+                    },
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/01/06/ffb4c960-c067-42a5-9d9c-2541d2fe6bc7.jpg"
+                    }
+                ],
+                "crmKordPauseYn": null,
+                "todayKmomTime": null,
+                "storTimeWeekend": "10:00~22:00",
+                "storStatusOper": "12",
+                "todayKordTime": "10:00~21:45",
+                "storStatusOrder": "2"
+            },
+            {
+                "storeServiceCodeList": null,
+                "distance": "248838",
+                "storTelNo": "053-852-2254",
+                "storPromotionInfo": [
+                    {
+                        "prmMenuDeliveryYn": "N",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "6600628",
+                        "prmCd": "2507028",
+                        "prmCoverMenuCd": null,
+                        "prmNm": "행사_올데이스넥"
+                    }
+                ],
+                "storAddr": "경상북도 경산시 대구대로 201  ",
+                "salesHourNote": "학기중(10:00~19:00), 방학기간(11:00~15:00, 토,일요일 공휴일 휴점)",
+                "storCd": "00010078",
+                "storDetailNote": "",
+                "storCoordY": "35.904537694",
+                "crmKordPauseStartDt": null,
+                "todayBusinessTime": "11:00~15:00",
+                "crmKordPauseEndDt": null,
+                "storCloseDate": null,
+                "storCloseCause": null,
+                "crmKordPauseMessage": null,
+                "storImgThumPath": "https://mob-prd.burgerking.co.kr/images/store/thumbnail/2025/01/06/d3e57a3c-8b3e-41b3-b331-9806c860559b.jpg",
+                "storTimeHoliday": "  :  ~  :  ",
+                "todayDelivery24Time": null,
+                "storDetailNoteList": null,
+                "pickupTime": "00:00~00:00",
+                "storEventMessage": "",
+                "storTimeDays": "11:00~15:00",
+                "storNm": "대구대점",
+                "todayDeliveryTime": null,
+                "tmrDeliveryTime": null,
+                "prmCd": "",
+                "storMembershipYn": "Y",
+                "storCoordX": "128.842814453",
+                "storImgMainList": [
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/01/06/dd3a1955-1986-4581-8f9d-26fb4e70aee1.jpg"
+                    },
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/01/06/d534245c-80df-415c-aba6-db4bd9dda5dd.jpg"
+                    }
+                ],
+                "crmKordPauseYn": null,
+                "todayKmomTime": null,
+                "storTimeWeekend": "00:00~00:00",
+                "storStatusOper": "12",
+                "todayKordTime": null,
+                "storStatusOrder": "2"
+            },
+            {
+                "storeServiceCodeList": [
+                    {
+                        "storeServiceCode": "01",
+                        "storeServiceName": "킹오더"
+                    },
+                    {
+                        "storeServiceCode": "02",
+                        "storeServiceName": "딜리버리"
+                    }
+                ],
+                "distance": "237501",
+                "storTelNo": "053-958-5558",
+                "storPromotionInfo": [
+                    {
+                        "prmMenuDeliveryYn": "N",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "7713704",
+                        "prmCd": "2512059",
+                        "prmCoverMenuCd": "6600644",
+                        "prmNm": "행사_12월_2FOR6K_7K"
+                    },
+                    {
+                        "prmMenuDeliveryYn": "Y",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "7713844",
+                        "prmCd": "2512042",
+                        "prmCoverMenuCd": null,
+                        "prmNm": "25년 12월_내부 DV 메뉴할인"
+                    },
+                    {
+                        "prmMenuDeliveryYn": "N",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "6600628",
+                        "prmCd": "2507028",
+                        "prmCoverMenuCd": null,
+                        "prmNm": "행사_올데이스넥"
+                    }
+                ],
+                "storAddr": "대구광역시 북구 대현로 102  ",
+                "salesHourNote": "연중무휴(10:00~22:00)",
+                "storCd": "00010139",
+                "storDetailNote": "",
+                "storCoordY": "35.8821171",
+                "crmKordPauseStartDt": null,
+                "todayBusinessTime": "10:00~22:00",
+                "crmKordPauseEndDt": null,
+                "storCloseDate": null,
+                "storCloseCause": null,
+                "crmKordPauseMessage": null,
+                "storImgThumPath": "https://mob-prd.burgerking.co.kr/images/store/thumbnail/2025/01/06/ae5049bf-4cf8-4a05-ad26-7f5ecea79e3e.jpg",
+                "storTimeHoliday": "10:00~22:00",
+                "todayDelivery24Time": "10:00~21:50",
+                "storDetailNoteList": null,
+                "pickupTime": "10:00~21:50",
+                "storEventMessage": "",
+                "storTimeDays": "10:00~22:00",
+                "storNm": "대구대현점",
+                "todayDeliveryTime": "10:00~21:50",
+                "tmrDeliveryTime": "10:00~21:50",
+                "prmCd": "",
+                "storMembershipYn": "Y",
+                "storCoordX": "128.6100235",
+                "storImgMainList": [
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/01/06/cf8d728d-2e11-4316-802d-5c41e58ac7f1.jpg"
+                    },
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/01/06/a4238cd5-71d2-4518-8f54-1eae1a16754e.jpg"
+                    }
+                ],
+                "crmKordPauseYn": null,
+                "todayKmomTime": null,
+                "storTimeWeekend": "10:00~22:00",
+                "storStatusOper": "12",
+                "todayKordTime": "10:00~21:50",
+                "storStatusOrder": "2"
+            },
+            {
+                "storeServiceCodeList": [
+                    {
+                        "storeServiceCode": "01",
+                        "storeServiceName": "킹오더"
+                    },
+                    {
+                        "storeServiceCode": "02",
+                        "storeServiceName": "딜리버리"
+                    }
+                ],
+                "distance": "240173",
+                "storTelNo": "070-7459-6887",
+                "storPromotionInfo": [
+                    {
+                        "prmMenuDeliveryYn": "N",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "7713704",
+                        "prmCd": "2512059",
+                        "prmCoverMenuCd": "6600644",
+                        "prmNm": "행사_12월_2FOR6K_7K"
+                    },
+                    {
+                        "prmMenuDeliveryYn": "Y",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "7713844",
+                        "prmCd": "2512042",
+                        "prmCoverMenuCd": null,
+                        "prmNm": "25년 12월_내부 DV 메뉴할인"
+                    },
+                    {
+                        "prmMenuDeliveryYn": "N",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "6600628",
+                        "prmCd": "2507028",
+                        "prmCoverMenuCd": null,
+                        "prmNm": "행사_올데이스넥"
+                    }
+                ],
+                "storAddr": "대구광역시 달서구 도원로 12  ",
+                "salesHourNote": "연중 무휴 (10:00~22:00)",
+                "storCd": "00000652",
+                "storDetailNote": "",
+                "storCoordY": "35.80865950477959",
+                "crmKordPauseStartDt": null,
+                "todayBusinessTime": "10:00~22:00",
+                "crmKordPauseEndDt": null,
+                "storCloseDate": null,
+                "storCloseCause": null,
+                "crmKordPauseMessage": null,
+                "storImgThumPath": "https://mob-prd.burgerking.co.kr/images/store/thumbnail/2025/12/11/acbebeaa-b620-4355-a835-49543aff2580.jpg",
+                "storTimeHoliday": "10:00~22:00",
+                "todayDelivery24Time": "10:00~22:00",
+                "storDetailNoteList": null,
+                "pickupTime": "10:00~21:45",
+                "storEventMessage": "",
+                "storTimeDays": "10:00~22:00",
+                "storNm": "대구도원점",
+                "todayDeliveryTime": "10:00~22:00",
+                "tmrDeliveryTime": "10:00~22:00",
+                "prmCd": "",
+                "storMembershipYn": "Y",
+                "storCoordX": "128.53568702935434",
+                "storImgMainList": [
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/12/11/f2ace73c-aee7-4122-b510-586d44639d95.jpg"
+                    },
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/12/11/b0377b68-aeae-4d20-a3d1-3536086510ec.jpg"
+                    }
+                ],
+                "crmKordPauseYn": null,
+                "todayKmomTime": null,
+                "storTimeWeekend": "10:00~22:00",
+                "storStatusOper": "12",
+                "todayKordTime": "10:00~21:45",
+                "storStatusOrder": "2"
+            },
+            {
+                "storeServiceCodeList": [
+                    {
+                        "storeServiceCode": "01",
+                        "storeServiceName": "킹오더"
+                    },
+                    {
+                        "storeServiceCode": "02",
+                        "storeServiceName": "딜리버리"
+                    }
+                ],
+                "distance": "236686",
+                "storTelNo": "070-7459-6915",
+                "storPromotionInfo": [
+                    {
+                        "prmMenuDeliveryYn": "N",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "7713704",
+                        "prmCd": "2512059",
+                        "prmCoverMenuCd": "6600644",
+                        "prmNm": "행사_12월_2FOR6K_7K"
+                    },
+                    {
+                        "prmMenuDeliveryYn": "Y",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "7713844",
+                        "prmCd": "2512042",
+                        "prmCoverMenuCd": null,
+                        "prmNm": "25년 12월_내부 DV 메뉴할인"
+                    },
+                    {
+                        "prmMenuDeliveryYn": "N",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "6600628",
+                        "prmCd": "2507028",
+                        "prmCoverMenuCd": null,
+                        "prmNm": "행사_올데이스넥"
+                    }
+                ],
+                "storAddr": "대구광역시 서구 달구벌대로 1769-7  ",
+                "salesHourNote": "연중 무류 (10:00~22:00)",
+                "storCd": "00000651",
+                "storDetailNote": "",
+                "storCoordY": "35.86020416627433",
+                "crmKordPauseStartDt": null,
+                "todayBusinessTime": "10:00~22:00",
+                "crmKordPauseEndDt": null,
+                "storCloseDate": null,
+                "storCloseCause": null,
+                "crmKordPauseMessage": null,
+                "storImgThumPath": "https://mob-prd.burgerking.co.kr/images/store/thumbnail/2025/12/08/a30225c3-62d6-49aa-a4f0-406c430128eb.jpg",
+                "storTimeHoliday": "10:00~22:00",
+                "todayDelivery24Time": "10:00~22:00",
+                "storDetailNoteList": null,
+                "pickupTime": "10:00~21:45",
+                "storEventMessage": "",
+                "storTimeDays": "10:00~22:00",
+                "storNm": "대구두류점",
+                "todayDeliveryTime": "10:00~22:00",
+                "tmrDeliveryTime": "10:00~22:00",
+                "prmCd": "",
+                "storMembershipYn": "Y",
+                "storCoordX": "128.55841898318727",
+                "storImgMainList": [
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/12/08/b080e11c-f872-4223-9945-c0384c93625b.jpg"
+                    },
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/12/08/dd25bd44-f4eb-4579-b95e-66f3097fc8f3.jpg"
+                    }
+                ],
+                "crmKordPauseYn": null,
+                "todayKmomTime": null,
+                "storTimeWeekend": "10:00~22:00",
+                "storStatusOper": "12",
+                "todayKordTime": "10:00~21:45",
+                "storStatusOrder": "2"
+            },
+            {
+                "storeServiceCodeList": [
+                    {
+                        "storeServiceCode": "01",
+                        "storeServiceName": "킹오더"
+                    },
+                    {
+                        "storeServiceCode": "02",
+                        "storeServiceName": "딜리버리"
+                    },
+                    {
+                        "storeServiceCode": "05",
+                        "storeServiceName": "드라이브스루"
+                    },
+                    {
+                        "storeServiceCode": "06",
+                        "storeServiceName": "주차"
+                    }
+                ],
+                "distance": "241832",
+                "storTelNo": "053-741-0208",
+                "storPromotionInfo": [
+                    {
+                        "prmMenuDeliveryYn": "N",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "7713704",
+                        "prmCd": "2512059",
+                        "prmCoverMenuCd": "6600644",
+                        "prmNm": "행사_12월_2FOR6K_7K"
+                    },
+                    {
+                        "prmMenuDeliveryYn": "Y",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "7713844",
+                        "prmCd": "2512042",
+                        "prmCoverMenuCd": null,
+                        "prmNm": "25년 12월_내부 DV 메뉴할인"
+                    },
+                    {
+                        "prmMenuDeliveryYn": "N",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "6600628",
+                        "prmCd": "2507028",
+                        "prmCoverMenuCd": null,
+                        "prmNm": "행사_올데이스넥"
+                    }
+                ],
+                "storAddr": "대구광역시 수성구 달구벌대로 2622  ",
+                "salesHourNote": "연중무휴 (09:00~24:00)",
+                "storCd": "00000092",
+                "storDetailNote": "",
+                "storCoordY": "35.8570410155",
+                "crmKordPauseStartDt": null,
+                "todayBusinessTime": "09:00~23:59",
+                "crmKordPauseEndDt": null,
+                "storCloseDate": null,
+                "storCloseCause": null,
+                "crmKordPauseMessage": null,
+                "storImgThumPath": "https://mob-prd.burgerking.co.kr/images/store/thumbnail/2025/01/06/c5bd4e49-836d-44de-9e05-dbab3fce6560.jpg",
+                "storTimeHoliday": "09:00~23:59",
+                "todayDelivery24Time": "09:00~23:59",
+                "storDetailNoteList": null,
+                "pickupTime": "09:00~23:45",
+                "storEventMessage": "",
+                "storTimeDays": "09:00~23:59",
+                "storNm": "대구만촌점",
+                "todayDeliveryTime": "09:00~23:00",
+                "tmrDeliveryTime": "09:00~23:00",
+                "prmCd": "",
+                "storMembershipYn": "Y",
+                "storCoordX": "128.6487131859",
+                "storImgMainList": [
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/01/06/bda4170b-9ce8-4392-996e-092bf4184d31.jpg"
+                    },
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/01/06/c7051c0c-9970-4533-87c5-d62ec851a3a8.jpg"
+                    }
+                ],
+                "crmKordPauseYn": null,
+                "todayKmomTime": null,
+                "storTimeWeekend": "09:00~23:59",
+                "storStatusOper": "12",
+                "todayKordTime": "09:00~23:45",
+                "storStatusOrder": "2"
+            },
+            {
+                "storeServiceCodeList": [
+                    {
+                        "storeServiceCode": "01",
+                        "storeServiceName": "킹오더"
+                    },
+                    {
+                        "storeServiceCode": "02",
+                        "storeServiceName": "딜리버리"
+                    },
+                    {
+                        "storeServiceCode": "05",
+                        "storeServiceName": "드라이브스루"
+                    },
+                    {
+                        "storeServiceCode": "06",
+                        "storeServiceName": "주차"
+                    }
+                ],
+                "distance": "236159",
+                "storTelNo": "070-7462-6745",
+                "storPromotionInfo": [
+                    {
+                        "prmMenuDeliveryYn": "N",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "7713704",
+                        "prmCd": "2512059",
+                        "prmCoverMenuCd": "6600644",
+                        "prmNm": "행사_12월_2FOR6K_7K"
+                    },
+                    {
+                        "prmMenuDeliveryYn": "Y",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "7713844",
+                        "prmCd": "2512042",
+                        "prmCoverMenuCd": null,
+                        "prmNm": "25년 12월_내부 DV 메뉴할인"
+                    },
+                    {
+                        "prmMenuDeliveryYn": "N",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "6600628",
+                        "prmCd": "2507028",
+                        "prmCoverMenuCd": null,
+                        "prmNm": "행사_올데이스넥"
+                    }
+                ],
+                "storAddr": "대구광역시 북구 검단로 29  ",
+                "salesHourNote": "월~금 : 10:00~23:00 / 토~일 : 09:00~23:00",
+                "storCd": "00000372",
+                "storDetailNote": "",
+                "storCoordY": "35.90053429076513",
+                "crmKordPauseStartDt": null,
+                "todayBusinessTime": "10:00~23:00",
+                "crmKordPauseEndDt": null,
+                "storCloseDate": null,
+                "storCloseCause": null,
+                "crmKordPauseMessage": null,
+                "storImgThumPath": "https://mob-prd.burgerking.co.kr/images/store/thumbnail/2025/01/06/b2eb8352-d19e-4427-b7ee-4d5d803e24e0.jpg",
+                "storTimeHoliday": "10:00~23:00",
+                "todayDelivery24Time": "10:00~23:00",
+                "storDetailNoteList": null,
+                "pickupTime": "10:00~22:45",
+                "storEventMessage": "",
+                "storTimeDays": "10:00~23:00",
+                "storNm": "대구산격DT점",
+                "todayDeliveryTime": "10:00~23:00",
+                "tmrDeliveryTime": "10:00~23:00",
+                "prmCd": "",
+                "storMembershipYn": "Y",
+                "storCoordX": "128.61523176851188",
+                "storImgMainList": [
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/01/06/b6b30fea-f644-47c1-9e70-73913073f799.jpg"
+                    },
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/01/06/bc785ede-1c8a-4dac-93b6-00b64a606c1c.jpg"
+                    }
+                ],
+                "crmKordPauseYn": null,
+                "todayKmomTime": null,
+                "storTimeWeekend": "09:00~23:00",
+                "storStatusOper": "12",
+                "todayKordTime": "10:00~22:45",
+                "storStatusOrder": "2"
+            },
+            {
+                "storeServiceCodeList": [
+                    {
+                        "storeServiceCode": "01",
+                        "storeServiceName": "킹오더"
+                    },
+                    {
+                        "storeServiceCode": "02",
+                        "storeServiceName": "딜리버리"
+                    },
+                    {
+                        "storeServiceCode": "06",
+                        "storeServiceName": "주차"
+                    }
+                ],
+                "distance": "236598",
+                "storTelNo": "053-354-0332",
+                "storPromotionInfo": [
+                    {
+                        "prmMenuDeliveryYn": "N",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "7713704",
+                        "prmCd": "2512059",
+                        "prmCoverMenuCd": "6600644",
+                        "prmNm": "행사_12월_2FOR6K_7K"
+                    },
+                    {
+                        "prmMenuDeliveryYn": "Y",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "7713844",
+                        "prmCd": "2512042",
+                        "prmCoverMenuCd": null,
+                        "prmNm": "25년 12월_내부 DV 메뉴할인"
+                    },
+                    {
+                        "prmMenuDeliveryYn": "N",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "6600628",
+                        "prmCd": "2507028",
+                        "prmCoverMenuCd": null,
+                        "prmNm": "행사_올데이스넥"
+                    }
+                ],
+                "storAddr": "대구광역시 북구 호암로 51  ",
+                "salesHourNote": "월~금 : 10:00~23:00 / 토~일 : 09:00~23:00",
+                "storCd": "00000322",
+                "storDetailNote": "",
+                "storCoordY": "35.883688163",
+                "crmKordPauseStartDt": null,
+                "todayBusinessTime": "10:00~23:00",
+                "crmKordPauseEndDt": null,
+                "storCloseDate": null,
+                "storCloseCause": null,
+                "crmKordPauseMessage": null,
+                "storImgThumPath": "https://mob-prd.burgerking.co.kr/images/store/thumbnail/2025/01/06/c6c3e645-5db1-406b-9d68-9358349f1a6d.jpg",
+                "storTimeHoliday": "09:00~23:00",
+                "todayDelivery24Time": "10:00~23:00",
+                "storDetailNoteList": null,
+                "pickupTime": "10:00~22:45",
+                "storEventMessage": "",
+                "storTimeDays": "10:00~23:00",
+                "storNm": "대구삼성창조캠퍼스점",
+                "todayDeliveryTime": "10:00~23:00",
+                "tmrDeliveryTime": "10:00~23:00",
+                "prmCd": "",
+                "storMembershipYn": "Y",
+                "storCoordX": "128.5959763042",
+                "storImgMainList": [
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/01/06/e0ee9cc0-f0a5-4fa5-b90e-f5c207e88707.jpg"
+                    },
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/01/06/ffcaaa93-4f48-416e-8252-2f1fdc7068e1.jpg"
+                    }
+                ],
+                "crmKordPauseYn": null,
+                "todayKmomTime": null,
+                "storTimeWeekend": "09:00~23:00",
+                "storStatusOper": "12",
+                "todayKordTime": "10:00~22:45",
+                "storStatusOrder": "2"
+            },
+            {
+                "storeServiceCodeList": [
+                    {
+                        "storeServiceCode": "01",
+                        "storeServiceName": "킹오더"
+                    },
+                    {
+                        "storeServiceCode": "02",
+                        "storeServiceName": "딜리버리"
+                    },
+                    {
+                        "storeServiceCode": "06",
+                        "storeServiceName": "주차"
+                    }
+                ],
+                "distance": "232612",
+                "storTelNo": "070-7462-6867",
+                "storPromotionInfo": [
+                    {
+                        "prmMenuDeliveryYn": "N",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "7713704",
+                        "prmCd": "2512059",
+                        "prmCoverMenuCd": "6600644",
+                        "prmNm": "행사_12월_2FOR6K_7K"
+                    },
+                    {
+                        "prmMenuDeliveryYn": "Y",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "7713844",
+                        "prmCd": "2512042",
+                        "prmCoverMenuCd": null,
+                        "prmNm": "25년 12월_내부 DV 메뉴할인"
+                    },
+                    {
+                        "prmMenuDeliveryYn": "N",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "6600628",
+                        "prmCd": "2507028",
+                        "prmCoverMenuCd": null,
+                        "prmNm": "행사_올데이스넥"
+                    }
+                ],
+                "storAddr": "대구광역시 달성군 다사읍 서재로 66  ",
+                "salesHourNote": "연중무휴 (10:00~23:00)",
+                "storCd": "00000440",
+                "storDetailNote": "",
+                "storCoordY": "35.8694585",
+                "crmKordPauseStartDt": null,
+                "todayBusinessTime": "10:00~23:00",
+                "crmKordPauseEndDt": null,
+                "storCloseDate": null,
+                "storCloseCause": null,
+                "crmKordPauseMessage": null,
+                "storImgThumPath": "https://mob-prd.burgerking.co.kr/images/store/thumbnail/2025/01/06/f8e4a6b5-932e-4da6-9c5a-8baed8bc6f59.jpg",
+                "storTimeHoliday": "10:00~23:00",
+                "todayDelivery24Time": "10:00~23:00",
+                "storDetailNoteList": null,
+                "pickupTime": "10:00~22:45",
+                "storEventMessage": "",
+                "storTimeDays": "10:00~23:00",
+                "storNm": "대구서재FS점",
+                "todayDeliveryTime": "10:00~23:00",
+                "tmrDeliveryTime": "10:00~23:00",
+                "prmCd": "",
+                "storMembershipYn": "Y",
+                "storCoordX": "128.4965960",
+                "storImgMainList": [
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/01/06/cf28158b-90f7-4feb-861b-6bd1675eab37.jpg"
+                    },
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/01/06/db33e050-b6ea-4fae-86ba-20bf98f246a5.jpg"
+                    }
+                ],
+                "crmKordPauseYn": null,
+                "todayKmomTime": null,
+                "storTimeWeekend": "10:00~23:00",
+                "storStatusOper": "12",
+                "todayKordTime": "10:00~22:45",
+                "storStatusOrder": "2"
+            },
+            {
+                "storeServiceCodeList": [
+                    {
+                        "storeServiceCode": "01",
+                        "storeServiceName": "킹오더"
+                    },
+                    {
+                        "storeServiceCode": "02",
+                        "storeServiceName": "딜리버리"
+                    },
+                    {
+                        "storeServiceCode": "06",
+                        "storeServiceName": "주차"
+                    }
+                ],
+                "distance": "234783",
+                "storTelNo": "053-583-1332",
+                "storPromotionInfo": [
+                    {
+                        "prmMenuDeliveryYn": "N",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "7713704",
+                        "prmCd": "2512059",
+                        "prmCoverMenuCd": "6600644",
+                        "prmNm": "행사_12월_2FOR6K_7K"
+                    },
+                    {
+                        "prmMenuDeliveryYn": "Y",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "7713844",
+                        "prmCd": "2512042",
+                        "prmCoverMenuCd": null,
+                        "prmNm": "25년 12월_내부 DV 메뉴할인"
+                    },
+                    {
+                        "prmMenuDeliveryYn": "N",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "6600628",
+                        "prmCd": "2507028",
+                        "prmCoverMenuCd": null,
+                        "prmNm": "행사_올데이스넥"
+                    }
+                ],
+                "storAddr": "대구광역시 달서구 이곡동로 24  ",
+                "salesHourNote": "영업시간 (10:00~22:00), 매월 둘째주/넷째주 월요일 휴점",
+                "storCd": "00000312",
+                "storDetailNote": "",
+                "storCoordY": "35.8533295694",
+                "crmKordPauseStartDt": null,
+                "todayBusinessTime": "휴업 : 25.12.22 ~ 25.12.23",
+                "crmKordPauseEndDt": null,
+                "storCloseDate": null,
+                "storCloseCause": null,
+                "crmKordPauseMessage": null,
+                "storImgThumPath": "https://mob-prd.burgerking.co.kr/images/store/thumbnail/2025/01/06/bf20c4c6-0266-46cf-b3d0-8beaf9b25eeb.jpg",
+                "storTimeHoliday": "10:00~22:00",
+                "todayDelivery24Time": "10:00~22:00",
+                "storDetailNoteList": null,
+                "pickupTime": "10:00~21:45",
+                "storEventMessage": "",
+                "storTimeDays": "10:00~22:00",
+                "storNm": "대구성서이마트점",
+                "todayDeliveryTime": "10:00~22:00",
+                "tmrDeliveryTime": "10:00~22:00",
+                "prmCd": "",
+                "storMembershipYn": "Y",
+                "storCoordX": "128.5101701882",
+                "storImgMainList": [
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/01/06/a04318be-78a6-43c8-90aa-dacdf119a1a4.jpg"
+                    },
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/01/06/a5159ed3-7e16-4ff4-a76a-6af9e25c442f.jpg"
+                    }
+                ],
+                "crmKordPauseYn": null,
+                "todayKmomTime": null,
+                "storTimeWeekend": "10:00~22:00",
+                "storStatusOper": "12",
+                "todayKordTime": "10:00~21:45",
+                "storStatusOrder": "2"
+            },
+            {
+                "storeServiceCodeList": [
+                    {
+                        "storeServiceCode": "01",
+                        "storeServiceName": "킹오더"
+                    },
+                    {
+                        "storeServiceCode": "02",
+                        "storeServiceName": "딜리버리"
+                    }
+                ],
+                "distance": "239950",
+                "storTelNo": "070-7459-7552",
+                "storPromotionInfo": [
+                    {
+                        "prmMenuDeliveryYn": "N",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "7713704",
+                        "prmCd": "2512059",
+                        "prmCoverMenuCd": "6600644",
+                        "prmNm": "행사_12월_2FOR6K_7K"
+                    },
+                    {
+                        "prmMenuDeliveryYn": "Y",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "7713844",
+                        "prmCd": "2512042",
+                        "prmCoverMenuCd": null,
+                        "prmNm": "25년 12월_내부 DV 메뉴할인"
+                    },
+                    {
+                        "prmMenuDeliveryYn": "N",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "6600628",
+                        "prmCd": "2507028",
+                        "prmCoverMenuCd": null,
+                        "prmNm": "행사_올데이스넥"
+                    }
+                ],
+                "storAddr": "대구광역시 수성구 들안로 325  ",
+                "salesHourNote": "연중무휴 (10:00~22:00)",
+                "storCd": "00000622",
+                "storDetailNote": "",
+                "storCoordY": "35.858883507853136",
+                "crmKordPauseStartDt": null,
+                "todayBusinessTime": "10:00~22:00",
+                "crmKordPauseEndDt": null,
+                "storCloseDate": null,
+                "storCloseCause": null,
+                "crmKordPauseMessage": null,
+                "storImgThumPath": "https://mob-prd.burgerking.co.kr/images/store/thumbnail/2025/05/27/fe881b93-2c7f-4480-b815-b896d40294ed.jpg",
+                "storTimeHoliday": "10:00~22:00",
+                "todayDelivery24Time": "10:00~22:00",
+                "storDetailNoteList": null,
+                "pickupTime": "10:00~21:45",
+                "storEventMessage": "",
+                "storTimeDays": "10:00~22:00",
+                "storNm": "대구수성점",
+                "todayDeliveryTime": "10:00~22:00",
+                "tmrDeliveryTime": "10:00~22:00",
+                "prmCd": "",
+                "storMembershipYn": "Y",
+                "storCoordX": "128.61715550819915",
+                "storImgMainList": [
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/05/27/da9a76c5-4c65-4338-bcd4-2f287f2aaeac.jpg"
+                    },
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/05/27/a72e8468-8c46-408f-984d-0f8ad85925ed.jpg"
+                    }
+                ],
+                "crmKordPauseYn": null,
+                "todayKmomTime": null,
+                "storTimeWeekend": "10:00~22:00",
+                "storStatusOper": "12",
+                "todayKordTime": "10:00~21:45",
+                "storStatusOrder": "2"
+            },
+            {
+                "storeServiceCodeList": [
+                    {
+                        "storeServiceCode": "01",
+                        "storeServiceName": "킹오더"
+                    },
+                    {
+                        "storeServiceCode": "02",
+                        "storeServiceName": "딜리버리"
+                    },
+                    {
+                        "storeServiceCode": "06",
+                        "storeServiceName": "주차"
+                    }
+                ],
+                "distance": "246605",
+                "storTelNo": "053-791-0331",
+                "storPromotionInfo": [
+                    {
+                        "prmMenuDeliveryYn": "N",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "7713704",
+                        "prmCd": "2512059",
+                        "prmCoverMenuCd": "6600644",
+                        "prmNm": "행사_12월_2FOR6K_7K"
+                    },
+                    {
+                        "prmMenuDeliveryYn": "Y",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "7713844",
+                        "prmCd": "2512042",
+                        "prmCoverMenuCd": null,
+                        "prmNm": "25년 12월_내부 DV 메뉴할인"
+                    },
+                    {
+                        "prmMenuDeliveryYn": "N",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "6600628",
+                        "prmCd": "2507028",
+                        "prmCoverMenuCd": null,
+                        "prmNm": "행사_올데이스넥"
+                    }
+                ],
+                "storAddr": "대구광역시 수성구 신매로19길 46  ",
+                "salesHourNote": "월~금 : 10:00~23:00 / 토~일 : 09:00~23:00",
+                "storCd": "00000271",
+                "storDetailNote": "",
+                "storCoordY": "35.8394876618",
+                "crmKordPauseStartDt": null,
+                "todayBusinessTime": "10:00~23:00",
+                "crmKordPauseEndDt": null,
+                "storCloseDate": null,
+                "storCloseCause": null,
+                "crmKordPauseMessage": null,
+                "storImgThumPath": "https://mob-prd.burgerking.co.kr/images/store/thumbnail/2025/01/06/fd0d7fb6-9f1b-470a-a653-00a71150bf62.jpg",
+                "storTimeHoliday": "09:00~23:00",
+                "todayDelivery24Time": "10:00~23:00",
+                "storDetailNoteList": null,
+                "pickupTime": "10:00~22:45",
+                "storEventMessage": "",
+                "storTimeDays": "10:00~23:00",
+                "storNm": "대구시지점",
+                "todayDeliveryTime": "10:00~23:00",
+                "tmrDeliveryTime": "10:00~23:00",
+                "prmCd": "",
+                "storMembershipYn": "Y",
+                "storCoordX": "128.7072397697",
+                "storImgMainList": [
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/01/06/a4b6055f-8b1a-468b-80df-93381c1cc0c3.jpg"
+                    },
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/01/06/d96cbc8e-4f27-4b76-8982-06e43460c4ae.jpg"
+                    }
+                ],
+                "crmKordPauseYn": null,
+                "todayKmomTime": null,
+                "storTimeWeekend": "09:00~23:00",
+                "storStatusOper": "12",
+                "todayKordTime": "10:00~22:45",
+                "storStatusOrder": "2"
+            },
+            {
+                "storeServiceCodeList": [
+                    {
+                        "storeServiceCode": "01",
+                        "storeServiceName": "킹오더"
+                    },
+                    {
+                        "storeServiceCode": "02",
+                        "storeServiceName": "딜리버리"
+                    },
+                    {
+                        "storeServiceCode": "05",
+                        "storeServiceName": "드라이브스루"
+                    },
+                    {
+                        "storeServiceCode": "06",
+                        "storeServiceName": "주차"
+                    }
+                ],
+                "distance": "244337",
+                "storTelNo": "070-7462-8651",
+                "storPromotionInfo": [
+                    {
+                        "prmMenuDeliveryYn": "N",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "7713704",
+                        "prmCd": "2512059",
+                        "prmCoverMenuCd": "6600644",
+                        "prmNm": "행사_12월_2FOR6K_7K"
+                    },
+                    {
+                        "prmMenuDeliveryYn": "Y",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "7713844",
+                        "prmCd": "2512042",
+                        "prmCoverMenuCd": null,
+                        "prmNm": "25년 12월_내부 DV 메뉴할인"
+                    },
+                    {
+                        "prmMenuDeliveryYn": "N",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "6600628",
+                        "prmCd": "2507028",
+                        "prmCoverMenuCd": null,
+                        "prmNm": "행사_올데이스넥"
+                    }
+                ],
+                "storAddr": "대구광역시 동구 이노밸리로 277  ",
+                "salesHourNote": "연중무휴 (10:00~23:00)",
+                "storCd": "00000509",
+                "storDetailNote": "",
+                "storCoordY": "35.8784926",
+                "crmKordPauseStartDt": null,
+                "todayBusinessTime": "10:00~23:00",
+                "crmKordPauseEndDt": null,
+                "storCloseDate": null,
+                "storCloseCause": null,
+                "crmKordPauseMessage": null,
+                "storImgThumPath": "https://mob-prd.burgerking.co.kr/images/store/thumbnail/2025/01/06/c50915f5-c9a5-4108-8f44-21193664b2d6.jpg",
+                "storTimeHoliday": "10:00~23:00",
+                "todayDelivery24Time": "10:00~23:00",
+                "storDetailNoteList": null,
+                "pickupTime": "10:00~22:45",
+                "storEventMessage": "",
+                "storTimeDays": "10:00~23:00",
+                "storNm": "대구신서혁신도시DT점",
+                "todayDeliveryTime": "10:00~23:00",
+                "tmrDeliveryTime": "10:00~23:00",
+                "prmCd": "",
+                "storMembershipYn": "Y",
+                "storCoordX": "128.7272353",
+                "storImgMainList": [
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/01/06/add2e9e5-2a6e-4291-ad61-724e8f428b3d.jpg"
+                    },
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/01/06/b109eaa4-66be-44a3-99aa-d3cdc18849e0.jpg"
+                    }
+                ],
+                "crmKordPauseYn": null,
+                "todayKmomTime": null,
+                "storTimeWeekend": "10:00~23:00",
+                "storStatusOper": "12",
+                "todayKordTime": "10:00~22:45",
+                "storStatusOrder": "2"
+            },
+            {
+                "storeServiceCodeList": [
+                    {
+                        "storeServiceCode": "01",
+                        "storeServiceName": "킹오더"
+                    },
+                    {
+                        "storeServiceCode": "02",
+                        "storeServiceName": "딜리버리"
+                    }
+                ],
+                "distance": "232534",
+                "storTelNo": "053-262-5000",
+                "storPromotionInfo": [
+                    {
+                        "prmMenuDeliveryYn": "N",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "7713704",
+                        "prmCd": "2512059",
+                        "prmCoverMenuCd": "6600644",
+                        "prmNm": "행사_12월_2FOR6K_7K"
+                    },
+                    {
+                        "prmMenuDeliveryYn": "Y",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "7713844",
+                        "prmCd": "2512042",
+                        "prmCoverMenuCd": null,
+                        "prmNm": "25년 12월_내부 DV 메뉴할인"
+                    },
+                    {
+                        "prmMenuDeliveryYn": "N",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "6600628",
+                        "prmCd": "2507028",
+                        "prmCoverMenuCd": null,
+                        "prmNm": "행사_올데이스넥"
+                    }
+                ],
+                "storAddr": "대구광역시 북구 동화천로 229  ",
+                "salesHourNote": "연중무휴(10:00~22:00)",
+                "storCd": "00010123",
+                "storDetailNote": "",
+                "storCoordY": "35.9423807",
+                "crmKordPauseStartDt": null,
+                "todayBusinessTime": "10:00~22:00",
+                "crmKordPauseEndDt": null,
+                "storCloseDate": null,
+                "storCloseCause": null,
+                "crmKordPauseMessage": null,
+                "storImgThumPath": "https://mob-prd.burgerking.co.kr/images/store/thumbnail/2025/01/06/c9ccae91-0828-4d9a-9c25-4117967102c9.jpg",
+                "storTimeHoliday": "10:00~22:00",
+                "todayDelivery24Time": "10:00~22:00",
+                "storDetailNoteList": null,
+                "pickupTime": "10:00~21:45",
+                "storEventMessage": "",
+                "storTimeDays": "10:00~22:00",
+                "storNm": "대구연경점",
+                "todayDeliveryTime": "10:00~22:00",
+                "tmrDeliveryTime": "10:00~22:00",
+                "prmCd": "",
+                "storMembershipYn": "Y",
+                "storCoordX": "128.6160520",
+                "storImgMainList": [
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/01/06/aff48a4f-47f2-4d2a-839a-2d92114688aa.jpg"
+                    },
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/01/06/b1dbaf93-68d6-44ae-bb41-d3c0c5374783.jpg"
+                    }
+                ],
+                "crmKordPauseYn": null,
+                "todayKmomTime": null,
+                "storTimeWeekend": "10:00~22:00",
+                "storStatusOper": "12",
+                "todayKordTime": "10:00~21:45",
+                "storStatusOrder": "2"
+            },
+            {
+                "storeServiceCodeList": [
+                    {
+                        "storeServiceCode": "01",
+                        "storeServiceName": "킹오더"
+                    },
+                    {
+                        "storeServiceCode": "02",
+                        "storeServiceName": "딜리버리"
+                    },
+                    {
+                        "storeServiceCode": "06",
+                        "storeServiceName": "주차"
+                    }
+                ],
+                "distance": "238268",
+                "storTelNo": "070-7459-7099",
+                "storPromotionInfo": [
+                    {
+                        "prmMenuDeliveryYn": "N",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "7713704",
+                        "prmCd": "2512059",
+                        "prmCoverMenuCd": "6600644",
+                        "prmNm": "행사_12월_2FOR6K_7K"
+                    },
+                    {
+                        "prmMenuDeliveryYn": "Y",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "7713844",
+                        "prmCd": "2512042",
+                        "prmCoverMenuCd": null,
+                        "prmNm": "25년 12월_내부 DV 메뉴할인"
+                    },
+                    {
+                        "prmMenuDeliveryYn": "N",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "6600628",
+                        "prmCd": "2507028",
+                        "prmCoverMenuCd": null,
+                        "prmNm": "행사_올데이스넥"
+                    }
+                ],
+                "storAddr": "대구광역시 달서구 조암로 29  ",
+                "salesHourNote": "연중무휴 (09:00~24:00)",
+                "storCd": "00000566",
+                "storDetailNote": "",
+                "storCoordY": "35.8246183",
+                "crmKordPauseStartDt": null,
+                "todayBusinessTime": "09:00~23:59",
+                "crmKordPauseEndDt": null,
+                "storCloseDate": null,
+                "storCloseCause": null,
+                "crmKordPauseMessage": null,
+                "storImgThumPath": "https://mob-prd.burgerking.co.kr/images/store/thumbnail/2025/01/06/d107b412-1e56-43ea-a280-32ce2238438c.jpg",
+                "storTimeHoliday": "09:00~23:59",
+                "todayDelivery24Time": "09:00~23:59",
+                "storDetailNoteList": null,
+                "pickupTime": "09:00~23:45",
+                "storEventMessage": "",
+                "storTimeDays": "09:00~23:59",
+                "storNm": "대구월성점",
+                "todayDeliveryTime": "09:00~23:59",
+                "tmrDeliveryTime": "09:00~23:59",
+                "prmCd": "",
+                "storMembershipYn": "Y",
+                "storCoordX": "128.5269727",
+                "storImgMainList": [
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/01/06/c93404c3-9095-4c01-bc9d-5577dbeca77e.jpg"
+                    },
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/01/06/d12e611e-b5af-400b-b22e-3f74a22e908a.jpg"
+                    }
+                ],
+                "crmKordPauseYn": null,
+                "todayKmomTime": null,
+                "storTimeWeekend": "09:00~23:59",
+                "storStatusOper": "12",
+                "todayKordTime": "09:00~23:45",
+                "storStatusOrder": "2"
+            },
+            {
+                "storeServiceCodeList": [
+                    {
+                        "storeServiceCode": "01",
+                        "storeServiceName": "킹오더"
+                    },
+                    {
+                        "storeServiceCode": "02",
+                        "storeServiceName": "딜리버리"
+                    },
+                    {
+                        "storeServiceCode": "06",
+                        "storeServiceName": "주차"
+                    }
+                ],
+                "distance": "239327",
+                "storTelNo": "070-7462-6880",
+                "storPromotionInfo": [
+                    {
+                        "prmMenuDeliveryYn": "N",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "7713704",
+                        "prmCd": "2512059",
+                        "prmCoverMenuCd": "6600644",
+                        "prmNm": "행사_12월_2FOR6K_7K"
+                    },
+                    {
+                        "prmMenuDeliveryYn": "Y",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "7713844",
+                        "prmCd": "2512042",
+                        "prmCoverMenuCd": null,
+                        "prmNm": "25년 12월_내부 DV 메뉴할인"
+                    },
+                    {
+                        "prmMenuDeliveryYn": "N",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "6600628",
+                        "prmCd": "2507028",
+                        "prmCoverMenuCd": null,
+                        "prmNm": "행사_올데이스넥"
+                    }
+                ],
+                "storAddr": "대구광역시 달서구 월배로 320  ",
+                "salesHourNote": "연중무휴 (10:00~23:00)",
+                "storCd": "00000451",
+                "storDetailNote": "",
+                "storCoordY": "35.8239328",
+                "crmKordPauseStartDt": null,
+                "todayBusinessTime": "10:00~23:00",
+                "crmKordPauseEndDt": null,
+                "storCloseDate": null,
+                "storCloseCause": null,
+                "crmKordPauseMessage": null,
+                "storImgThumPath": "https://mob-prd.burgerking.co.kr/images/store/thumbnail/2025/01/06/dd383d42-b9f9-4b1c-935e-a5278bb1229e.jpg",
+                "storTimeHoliday": "10:00~23:00",
+                "todayDelivery24Time": "10:00~23:00",
+                "storDetailNoteList": null,
+                "pickupTime": "10:00~22:45",
+                "storEventMessage": "",
+                "storTimeDays": "10:00~23:00",
+                "storNm": "대구월촌역FS점",
+                "todayDeliveryTime": "10:00~23:00",
+                "tmrDeliveryTime": "10:00~23:00",
+                "prmCd": "",
+                "storMembershipYn": "Y",
+                "storCoordX": "128.5462328",
+                "storImgMainList": [
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/01/06/f67fb160-d37a-489d-adad-3c820c6dbd2b.jpg"
+                    },
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/01/06/ed4ca25d-a777-4227-85ab-6dc074b0bab3.jpg"
+                    }
+                ],
+                "crmKordPauseYn": null,
+                "todayKmomTime": null,
+                "storTimeWeekend": "10:00~23:00",
+                "storStatusOper": "12",
+                "todayKordTime": "10:00~22:45",
+                "storStatusOrder": "2"
+            },
+            {
+                "storeServiceCodeList": [
+                    {
+                        "storeServiceCode": "01",
+                        "storeServiceName": "킹오더"
+                    },
+                    {
+                        "storeServiceCode": "02",
+                        "storeServiceName": "딜리버리"
+                    }
+                ],
+                "distance": "243631",
+                "storTelNo": "053-959-1126",
+                "storPromotionInfo": [
+                    {
+                        "prmMenuDeliveryYn": "N",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "7713704",
+                        "prmCd": "2512059",
+                        "prmCoverMenuCd": "6600644",
+                        "prmNm": "행사_12월_2FOR6K_7K"
+                    },
+                    {
+                        "prmMenuDeliveryYn": "Y",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "7713844",
+                        "prmCd": "2512042",
+                        "prmCoverMenuCd": null,
+                        "prmNm": "25년 12월_내부 DV 메뉴할인"
+                    },
+                    {
+                        "prmMenuDeliveryYn": "N",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "6600628",
+                        "prmCd": "2507028",
+                        "prmCoverMenuCd": null,
+                        "prmNm": "행사_올데이스넥"
+                    }
+                ],
+                "storAddr": "대구광역시 동구 안심로22길 10  ",
+                "salesHourNote": "연중무휴(10:00~22:00)",
+                "storCd": "00010059",
+                "storDetailNote": "",
+                "storCoordY": "35.8664014",
+                "crmKordPauseStartDt": null,
+                "todayBusinessTime": "10:00~22:00",
+                "crmKordPauseEndDt": null,
+                "storCloseDate": null,
+                "storCloseCause": null,
+                "crmKordPauseMessage": null,
+                "storImgThumPath": "https://mob-prd.burgerking.co.kr/images/store/thumbnail/2025/01/06/f3eff30f-fc06-492f-a227-6d2f61d50346.jpg",
+                "storTimeHoliday": "10:00~22:00",
+                "todayDelivery24Time": "10:00~21:40",
+                "storDetailNoteList": null,
+                "pickupTime": "10:00~21:45",
+                "storEventMessage": "",
+                "storTimeDays": "10:00~22:00",
+                "storNm": "대구율하점",
+                "todayDeliveryTime": "10:00~21:40",
+                "tmrDeliveryTime": "10:00~21:40",
+                "prmCd": "",
+                "storMembershipYn": "Y",
+                "storCoordX": "128.6960714",
+                "storImgMainList": [
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/01/06/b4c10ff9-6199-489d-b22e-c8cd821f78dd.jpg"
+                    },
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/01/06/c3f78ac1-094e-42dd-981c-8d260cf2b4dd.jpg"
+                    }
+                ],
+                "crmKordPauseYn": null,
+                "todayKmomTime": null,
+                "storTimeWeekend": "10:00~22:00",
+                "storStatusOper": "12",
+                "todayKordTime": "10:00~21:45",
+                "storStatusOrder": "2"
+            },
+            {
+                "storeServiceCodeList": [
+                    {
+                        "storeServiceCode": "01",
+                        "storeServiceName": "킹오더"
+                    },
+                    {
+                        "storeServiceCode": "02",
+                        "storeServiceName": "딜리버리"
+                    }
+                ],
+                "distance": "235537",
+                "storTelNo": "053-986-7733",
+                "storPromotionInfo": null,
+                "storAddr": "대구광역시 동구 팔공로 49길 51  ",
+                "salesHourNote": "연중무휴(10:00~22:00)",
+                "storCd": "00010107",
+                "storDetailNote": "",
+                "storCoordY": "35.9206687",
+                "crmKordPauseStartDt": null,
+                "todayBusinessTime": "",
+                "crmKordPauseEndDt": null,
+                "storCloseDate": null,
+                "storCloseCause": null,
+                "crmKordPauseMessage": null,
+                "storImgThumPath": "https://mob-prd.burgerking.co.kr/images/store/thumbnail/2025/01/06/d5a26b45-52c8-4440-883f-b6193540c8df.jpg",
+                "storTimeHoliday": "10:00~22:00",
+                "todayDelivery24Time": "",
+                "storDetailNoteList": null,
+                "pickupTime": "10:00~21:30",
+                "storEventMessage": "",
+                "storTimeDays": "10:00~22:00",
+                "storNm": "대구이시아폴리스점",
+                "todayDeliveryTime": "",
+                "tmrDeliveryTime": "10:00~21:30",
+                "prmCd": "",
+                "storMembershipYn": "N",
+                "storCoordX": "128.6359096",
+                "storImgMainList": [
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/01/06/bc2a1d80-9bd7-4211-88bc-f01841b39d7c.jpg"
+                    },
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/01/06/a3b7b801-a671-465a-9ba8-c87699d3418b.jpg"
+                    }
+                ],
+                "crmKordPauseYn": null,
+                "todayKmomTime": "",
+                "storTimeWeekend": "10:00~22:00",
+                "storStatusOper": "13",
+                "todayKordTime": "",
+                "storStatusOrder": "3"
+            },
+            {
+                "storeServiceCodeList": [
+                    {
+                        "storeServiceCode": "01",
+                        "storeServiceName": "킹오더"
+                    },
+                    {
+                        "storeServiceCode": "02",
+                        "storeServiceName": "딜리버리"
+                    },
+                    {
+                        "storeServiceCode": "05",
+                        "storeServiceName": "드라이브스루"
+                    }
+                ],
+                "distance": "236428",
+                "storTelNo": "010-9515-5353",
+                "storPromotionInfo": [
+                    {
+                        "prmMenuDeliveryYn": "Y",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "7713844",
+                        "prmCd": "2512042",
+                        "prmCoverMenuCd": null,
+                        "prmNm": "25년 12월_내부 DV 메뉴할인"
+                    }
+                ],
+                "storAddr": "대구광역시 달서구 달구벌대로 1536  ",
+                "salesHourNote": "연중무휴(10:00~22:00) ",
+                "storCd": "00010017",
+                "storDetailNote": "",
+                "storCoordY": "35.8495270764",
+                "crmKordPauseStartDt": null,
+                "todayBusinessTime": "10:00~22:00",
+                "crmKordPauseEndDt": null,
+                "storCloseDate": null,
+                "storCloseCause": null,
+                "crmKordPauseMessage": null,
+                "storImgThumPath": "https://mob-prd.burgerking.co.kr/images/store/thumbnail/2025/01/06/b13e7c26-9777-4bda-8a71-e0a8c09c9433.jpg",
+                "storTimeHoliday": "10:00~22:00",
+                "todayDelivery24Time": "10:00~21:40",
+                "storDetailNoteList": null,
+                "pickupTime": "10:00~21:45",
+                "storEventMessage": "",
+                "storTimeDays": "10:00~22:00",
+                "storNm": "대구죽전네거리DT",
+                "todayDeliveryTime": "10:00~21:45",
+                "tmrDeliveryTime": "10:00~21:45",
+                "prmCd": "",
+                "storMembershipYn": "Y",
+                "storCoordX": "128.5351664857",
+                "storImgMainList": [
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/01/06/c8aa4335-bf19-40a2-bcab-500575bec7fd.jpg"
+                    },
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/01/06/fdd0f9e9-7d21-4410-af53-9097b1ff3bcf.jpg"
+                    }
+                ],
+                "crmKordPauseYn": null,
+                "todayKmomTime": null,
+                "storTimeWeekend": "10:00~22:00",
+                "storStatusOper": "12",
+                "todayKordTime": "10:00~21:45",
+                "storStatusOrder": "2"
+            },
+            {
+                "storeServiceCodeList": [
+                    {
+                        "storeServiceCode": "01",
+                        "storeServiceName": "킹오더"
+                    },
+                    {
+                        "storeServiceCode": "02",
+                        "storeServiceName": "딜리버리"
+                    }
+                ],
+                "distance": "237838",
+                "storTelNo": "070-7462-6757",
+                "storPromotionInfo": [
+                    {
+                        "prmMenuDeliveryYn": "N",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "7713704",
+                        "prmCd": "2512059",
+                        "prmCoverMenuCd": "6600644",
+                        "prmNm": "행사_12월_2FOR6K_7K"
+                    },
+                    {
+                        "prmMenuDeliveryYn": "Y",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "7713844",
+                        "prmCd": "2512042",
+                        "prmCoverMenuCd": null,
+                        "prmNm": "25년 12월_내부 DV 메뉴할인"
+                    },
+                    {
+                        "prmMenuDeliveryYn": "N",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "6600628",
+                        "prmCd": "2507028",
+                        "prmCoverMenuCd": null,
+                        "prmNm": "행사_올데이스넥"
+                    }
+                ],
+                "storAddr": "대구광역시 중구 중앙대로 398  ",
+                "salesHourNote": "연중무휴 (10:00~22:00)",
+                "storCd": "00000384",
+                "storDetailNote": "",
+                "storCoordY": "35.86853588775503",
+                "crmKordPauseStartDt": null,
+                "todayBusinessTime": "10:00~22:00",
+                "crmKordPauseEndDt": null,
+                "storCloseDate": null,
+                "storCloseCause": null,
+                "crmKordPauseMessage": null,
+                "storImgThumPath": "https://mob-prd.burgerking.co.kr/images/store/thumbnail/2025/01/06/f5bda3a4-3e2e-48f6-9370-9800525b6aa1.jpg",
+                "storTimeHoliday": "10:00~22:00",
+                "todayDelivery24Time": "10:00~22:00",
+                "storDetailNoteList": null,
+                "pickupTime": "10:00~21:45",
+                "storEventMessage": "",
+                "storTimeDays": "10:00~22:00",
+                "storNm": "대구중앙로점",
+                "todayDeliveryTime": "10:00~22:00",
+                "tmrDeliveryTime": "10:00~22:00",
+                "prmCd": "",
+                "storMembershipYn": "Y",
+                "storCoordX": "128.5939762277822",
+                "storImgMainList": [
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/01/06/ececa0a8-4e57-408e-acdf-8e51f2e08da3.jpg"
+                    },
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/01/06/c0976ac8-c2e0-4e38-9d97-51de3b92d9b8.jpg"
+                    }
+                ],
+                "crmKordPauseYn": null,
+                "todayKmomTime": null,
+                "storTimeWeekend": "10:00~22:00",
+                "storStatusOper": "12",
+                "todayKordTime": "10:00~21:45",
+                "storStatusOrder": "2"
+            },
+            {
+                "storeServiceCodeList": [
+                    {
+                        "storeServiceCode": "01",
+                        "storeServiceName": "킹오더"
+                    },
+                    {
+                        "storeServiceCode": "02",
+                        "storeServiceName": "딜리버리"
+                    }
+                ],
+                "distance": "244271",
+                "storTelNo": "053-783-1557",
+                "storPromotionInfo": [
+                    {
+                        "prmMenuDeliveryYn": "Y",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "7713844",
+                        "prmCd": "2512042",
+                        "prmCoverMenuCd": null,
+                        "prmNm": "25년 12월_내부 DV 메뉴할인"
+                    }
+                ],
+                "storAddr": "대구광역시 수성구 지범로 159  ",
+                "salesHourNote": "연중무휴(10:00~22:00)",
+                "storCd": "00010073",
+                "storDetailNote": "",
+                "storCoordY": "35.8227619",
+                "crmKordPauseStartDt": null,
+                "todayBusinessTime": "10:00~22:00",
+                "crmKordPauseEndDt": null,
+                "storCloseDate": null,
+                "storCloseCause": null,
+                "crmKordPauseMessage": null,
+                "storImgThumPath": "https://mob-prd.burgerking.co.kr/images/store/thumbnail/2025/01/06/d4f8a70c-5ace-460a-bd70-b91f57fce40e.jpg",
+                "storTimeHoliday": "10:00~22:00",
+                "todayDelivery24Time": "10:00~21:45",
+                "storDetailNoteList": null,
+                "pickupTime": "10:00~21:45",
+                "storEventMessage": "",
+                "storTimeDays": "10:00~22:00",
+                "storNm": "대구지산점",
+                "todayDeliveryTime": "10:00~21:45",
+                "tmrDeliveryTime": "10:00~21:45",
+                "prmCd": "",
+                "storMembershipYn": "Y",
+                "storCoordX": "128.637626",
+                "storImgMainList": [
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/01/06/d839dde7-d80a-4c37-aa8e-187b2065198f.jpg"
+                    },
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/01/06/ee5b022d-904a-4543-9002-f7a19c3a73c3.jpg"
+                    }
+                ],
+                "crmKordPauseYn": null,
+                "todayKmomTime": null,
+                "storTimeWeekend": "10:00~22:00",
+                "storStatusOper": "12",
+                "todayKordTime": "10:00~21:45",
+                "storStatusOrder": "2"
+            },
+            {
+                "storeServiceCodeList": [
+                    {
+                        "storeServiceCode": "01",
+                        "storeServiceName": "킹오더"
+                    },
+                    {
+                        "storeServiceCode": "02",
+                        "storeServiceName": "딜리버리"
+                    }
+                ],
+                "distance": "229239",
+                "storTelNo": "010-4417-1199",
+                "storPromotionInfo": [
+                    {
+                        "prmMenuDeliveryYn": "N",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "7713704",
+                        "prmCd": "2512059",
+                        "prmCoverMenuCd": "6600644",
+                        "prmNm": "행사_12월_2FOR6K_7K"
+                    },
+                    {
+                        "prmMenuDeliveryYn": "Y",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "7713844",
+                        "prmCd": "2512042",
+                        "prmCoverMenuCd": null,
+                        "prmNm": "25년 12월_내부 DV 메뉴할인"
+                    },
+                    {
+                        "prmMenuDeliveryYn": "N",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "6600628",
+                        "prmCd": "2507028",
+                        "prmCoverMenuCd": null,
+                        "prmNm": "행사_올데이스넥"
+                    }
+                ],
+                "storAddr": "대구광역시 북구 팔거천동로 224  ",
+                "salesHourNote": "연중무휴(09:00~24:00)",
+                "storCd": "00010091",
+                "storDetailNote": "",
+                "storCoordY": "35.9438862",
+                "crmKordPauseStartDt": null,
+                "todayBusinessTime": "09:00~23:59",
+                "crmKordPauseEndDt": null,
+                "storCloseDate": null,
+                "storCloseCause": null,
+                "crmKordPauseMessage": null,
+                "storImgThumPath": "https://mob-prd.burgerking.co.kr/images/store/thumbnail/2025/01/06/d3421c71-8234-4655-a37f-d9b2c76825be.jpg",
+                "storTimeHoliday": "09:00~23:59",
+                "todayDelivery24Time": "09:00~23:50",
+                "storDetailNoteList": null,
+                "pickupTime": "09:00~23:50",
+                "storEventMessage": "",
+                "storTimeDays": "09:00~23:59",
+                "storNm": "대구칠곡3지구점",
+                "todayDeliveryTime": "09:00~23:50",
+                "tmrDeliveryTime": "09:00~23:50",
+                "prmCd": "",
+                "storMembershipYn": "Y",
+                "storCoordX": "128.5587504",
+                "storImgMainList": [
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/01/06/f43447ac-5735-4eaf-b787-7e2118ba1caa.jpg"
+                    },
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/01/06/a2184270-6ea8-4f9f-84b4-5cb22651579e.jpg"
+                    }
+                ],
+                "crmKordPauseYn": null,
+                "todayKmomTime": null,
+                "storTimeWeekend": "09:00~23:59",
+                "storStatusOper": "12",
+                "todayKordTime": "09:00~23:50",
+                "storStatusOrder": "2"
+            },
+            {
+                "storeServiceCodeList": [
+                    {
+                        "storeServiceCode": "01",
+                        "storeServiceName": "킹오더"
+                    },
+                    {
+                        "storeServiceCode": "02",
+                        "storeServiceName": "딜리버리"
+                    },
+                    {
+                        "storeServiceCode": "06",
+                        "storeServiceName": "주차"
+                    }
+                ],
+                "distance": "229667",
+                "storTelNo": "070-7459-7564",
+                "storPromotionInfo": [
+                    {
+                        "prmMenuDeliveryYn": "N",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "7713704",
+                        "prmCd": "2512059",
+                        "prmCoverMenuCd": "6600644",
+                        "prmNm": "행사_12월_2FOR6K_7K"
+                    },
+                    {
+                        "prmMenuDeliveryYn": "Y",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "7713844",
+                        "prmCd": "2512042",
+                        "prmCoverMenuCd": null,
+                        "prmNm": "25년 12월_내부 DV 메뉴할인"
+                    },
+                    {
+                        "prmMenuDeliveryYn": "N",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "6600628",
+                        "prmCd": "2507028",
+                        "prmCoverMenuCd": null,
+                        "prmNm": "행사_올데이스넥"
+                    }
+                ],
+                "storAddr": "대구광역시 북구 칠곡중앙대로 411  ",
+                "salesHourNote": "연중무휴(09:00~24:00)",
+                "storCd": "00000630",
+                "storDetailNote": "",
+                "storCoordY": "35.93252943834629",
+                "crmKordPauseStartDt": null,
+                "todayBusinessTime": "09:00~23:59",
+                "crmKordPauseEndDt": null,
+                "storCloseDate": null,
+                "storCloseCause": null,
+                "crmKordPauseMessage": null,
+                "storImgThumPath": "https://mob-prd.burgerking.co.kr/images/store/thumbnail/2025/07/09/ae9e3d3c-3593-4a0a-8a11-debbe75a651f.jpg",
+                "storTimeHoliday": "09:00~23:59",
+                "todayDelivery24Time": "09:00~23:59",
+                "storDetailNoteList": null,
+                "pickupTime": "09:00~23:45",
+                "storEventMessage": "",
+                "storTimeDays": "09:00~23:59",
+                "storNm": "대구태전점",
+                "todayDeliveryTime": "09:00~23:59",
+                "tmrDeliveryTime": "09:00~23:59",
+                "prmCd": "",
+                "storMembershipYn": "Y",
+                "storCoordX": "128.54812183460845",
+                "storImgMainList": [
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/07/09/dfbeb7f9-61ac-4fd9-a94d-889a42ce65ce.jpg"
+                    },
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/07/09/d9773da1-dddb-46f0-a915-7dbdf45bdec1.jpg"
+                    }
+                ],
+                "crmKordPauseYn": null,
+                "todayKmomTime": null,
+                "storTimeWeekend": "09:00~23:59",
+                "storStatusOper": "12",
+                "todayKordTime": "09:00~23:45",
+                "storStatusOrder": "2"
+            },
+            {
+                "storeServiceCodeList": [
+                    {
+                        "storeServiceCode": "01",
+                        "storeServiceName": "킹오더"
+                    },
+                    {
+                        "storeServiceCode": "02",
+                        "storeServiceName": "딜리버리"
+                    }
+                ],
+                "distance": "247130",
+                "storTelNo": "053-617-6777",
+                "storPromotionInfo": [
+                    {
+                        "prmMenuDeliveryYn": "Y",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "7713844",
+                        "prmCd": "2512042",
+                        "prmCoverMenuCd": null,
+                        "prmNm": "25년 12월_내부 DV 메뉴할인"
+                    },
+                    {
+                        "prmMenuDeliveryYn": "N",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "6600628",
+                        "prmCd": "2507028",
+                        "prmCoverMenuCd": null,
+                        "prmNm": "행사_올데이스넥"
+                    }
+                ],
+                "storAddr": "대구광역시 달성군 현풍면 테크노중앙대로 243  ",
+                "salesHourNote": "연중무휴(10:00~22:00)",
+                "storCd": "00010064",
+                "storDetailNote": "",
+                "storCoordY": "35.692139",
+                "crmKordPauseStartDt": null,
+                "todayBusinessTime": "10:00~22:00",
+                "crmKordPauseEndDt": null,
+                "storCloseDate": null,
+                "storCloseCause": null,
+                "crmKordPauseMessage": null,
+                "storImgThumPath": "https://mob-prd.burgerking.co.kr/images/store/thumbnail/2025/01/06/de63376d-317b-47c6-bc97-98c9e9abcfd8.jpg",
+                "storTimeHoliday": "10:00~22:00",
+                "todayDelivery24Time": "10:00~21:50",
+                "storDetailNoteList": null,
+                "pickupTime": "10:00~21:45",
+                "storEventMessage": "",
+                "storTimeDays": "10:00~22:00",
+                "storNm": "대구테크노폴리스점",
+                "todayDeliveryTime": "10:00~22:00",
+                "tmrDeliveryTime": "10:00~22:00",
+                "prmCd": "",
+                "storMembershipYn": "Y",
+                "storCoordX": "128.4573906",
+                "storImgMainList": [
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/01/06/adfa1abe-355d-4d7c-94fd-ec15450ff32e.jpg"
+                    },
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/01/06/aab5e5b8-420b-4dad-9f43-0f377473d766.jpg"
+                    }
+                ],
+                "crmKordPauseYn": null,
+                "todayKmomTime": null,
+                "storTimeWeekend": "10:00~22:00",
+                "storStatusOper": "12",
+                "todayKordTime": "10:00~21:45",
+                "storStatusOrder": "2"
+            },
+            {
+                "storeServiceCodeList": [
+                    {
+                        "storeServiceCode": "01",
+                        "storeServiceName": "킹오더"
+                    },
+                    {
+                        "storeServiceCode": "02",
+                        "storeServiceName": "딜리버리"
+                    },
+                    {
+                        "storeServiceCode": "05",
+                        "storeServiceName": "드라이브스루"
+                    },
+                    {
+                        "storeServiceCode": "06",
+                        "storeServiceName": "주차"
+                    }
+                ],
+                "distance": "235937",
+                "storTelNo": "053-566-0332",
+                "storPromotionInfo": [
+                    {
+                        "prmMenuDeliveryYn": "N",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "7713704",
+                        "prmCd": "2512059",
+                        "prmCoverMenuCd": "6600644",
+                        "prmNm": "행사_12월_2FOR6K_7K"
+                    },
+                    {
+                        "prmMenuDeliveryYn": "Y",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "7713844",
+                        "prmCd": "2512042",
+                        "prmCoverMenuCd": null,
+                        "prmNm": "25년 12월_내부 DV 메뉴할인"
+                    },
+                    {
+                        "prmMenuDeliveryYn": "N",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "6600628",
+                        "prmCd": "2507028",
+                        "prmCoverMenuCd": null,
+                        "prmNm": "행사_올데이스넥"
+                    }
+                ],
+                "storAddr": "대구광역시 서구 국채보상로 298  ",
+                "salesHourNote": "연중무휴 (10:00~24:00)",
+                "storCd": "00000320",
+                "storDetailNote": "",
+                "storCoordY": "35.87153561070116",
+                "crmKordPauseStartDt": null,
+                "todayBusinessTime": "10:00~23:59",
+                "crmKordPauseEndDt": null,
+                "storCloseDate": null,
+                "storCloseCause": null,
+                "crmKordPauseMessage": null,
+                "storImgThumPath": "https://mob-prd.burgerking.co.kr/images/store/thumbnail/2025/01/06/ab94ece6-d5c9-47d4-9e1a-f304b4b5bf39.jpg",
+                "storTimeHoliday": "10:00~23:59",
+                "todayDelivery24Time": "10:00~23:59",
+                "storDetailNoteList": null,
+                "pickupTime": "10:00~23:45",
+                "storEventMessage": "",
+                "storTimeDays": "10:00~23:59",
+                "storNm": "대구평리DT점",
+                "todayDeliveryTime": "10:00~23:59",
+                "tmrDeliveryTime": "10:00~23:59",
+                "prmCd": "",
+                "storMembershipYn": "Y",
+                "storCoordX": "128.56348291343173",
+                "storImgMainList": [
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/01/06/ea9fe185-12d1-4b9e-94f0-00c3a7e790f8.jpg"
+                    },
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/01/06/cb3878a9-ac06-4f74-bbc5-ed23ba73ca83.jpg"
+                    }
+                ],
+                "crmKordPauseYn": null,
+                "todayKmomTime": null,
+                "storTimeWeekend": "10:00~23:59",
+                "storStatusOper": "12",
+                "todayKordTime": "10:00~23:45",
+                "storStatusOrder": "2"
+            },
+            {
+                "storeServiceCodeList": [
+                    {
+                        "storeServiceCode": "01",
+                        "storeServiceName": "킹오더"
+                    },
+                    {
+                        "storeServiceCode": "02",
+                        "storeServiceName": "딜리버리"
+                    }
+                ],
+                "distance": "238670",
+                "storTelNo": "010-2664-6056",
+                "storPromotionInfo": [
+                    {
+                        "prmMenuDeliveryYn": "N",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "7713704",
+                        "prmCd": "2512059",
+                        "prmCoverMenuCd": "6600644",
+                        "prmNm": "행사_12월_2FOR6K_7K"
+                    },
+                    {
+                        "prmMenuDeliveryYn": "Y",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "7713844",
+                        "prmCd": "2512042",
+                        "prmCoverMenuCd": null,
+                        "prmNm": "25년 12월_내부 DV 메뉴할인"
+                    },
+                    {
+                        "prmMenuDeliveryYn": "N",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "6600628",
+                        "prmCd": "2507028",
+                        "prmCoverMenuCd": null,
+                        "prmNm": "행사_올데이스넥"
+                    }
+                ],
+                "storAddr": "대구광역시 달성군 화원읍 성화로 2  ",
+                "salesHourNote": "연중무휴(10:00~22:00)",
+                "storCd": "00010132",
+                "storDetailNote": "",
+                "storCoordY": "35.8011148",
+                "crmKordPauseStartDt": null,
+                "todayBusinessTime": "10:00~22:00",
+                "crmKordPauseEndDt": null,
+                "storCloseDate": null,
+                "storCloseCause": null,
+                "crmKordPauseMessage": null,
+                "storImgThumPath": "https://mob-prd.burgerking.co.kr/images/store/thumbnail/2025/01/06/ead76746-11ae-4b66-b0cb-d9270e44cf0f.jpg",
+                "storTimeHoliday": "10:00~22:00",
+                "todayDelivery24Time": "10:00~21:50",
+                "storDetailNoteList": null,
+                "pickupTime": "10:00~21:50",
+                "storEventMessage": "",
+                "storTimeDays": "10:00~22:00",
+                "storNm": "대구화원점",
+                "todayDeliveryTime": "10:00~21:50",
+                "tmrDeliveryTime": "10:00~21:50",
+                "prmCd": "",
+                "storMembershipYn": "Y",
+                "storCoordX": "128.4925561",
+                "storImgMainList": [
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/01/06/c6fb9423-93bb-449b-a22b-49ba2fb43336.jpg"
+                    },
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/01/06/d56ae1ad-6f9f-4ebe-8fff-d3c4343008b5.jpg"
+                    }
+                ],
+                "crmKordPauseYn": null,
+                "todayKmomTime": null,
+                "storTimeWeekend": "10:00~22:00",
+                "storStatusOper": "12",
+                "todayKordTime": "10:00~21:50",
+                "storStatusOrder": "2"
+            },
+            {
+                "storeServiceCodeList": [
+                    {
+                        "storeServiceCode": "01",
+                        "storeServiceName": "킹오더"
+                    },
+                    {
+                        "storeServiceCode": "02",
+                        "storeServiceName": "딜리버리"
+                    }
+                ],
+                "distance": "239790",
+                "storTelNo": "070-7459-7544",
+                "storPromotionInfo": [
+                    {
+                        "prmMenuDeliveryYn": "N",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "7713704",
+                        "prmCd": "2512059",
+                        "prmCoverMenuCd": "6600644",
+                        "prmNm": "행사_12월_2FOR6K_7K"
+                    },
+                    {
+                        "prmMenuDeliveryYn": "Y",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "7713844",
+                        "prmCd": "2512042",
+                        "prmCoverMenuCd": null,
+                        "prmNm": "25년 12월_내부 DV 메뉴할인"
+                    },
+                    {
+                        "prmMenuDeliveryYn": "N",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "6600628",
+                        "prmCd": "2507028",
+                        "prmCoverMenuCd": null,
+                        "prmNm": "행사_올데이스넥"
+                    }
+                ],
+                "storAddr": "대구광역시 수성구 화랑로 76  ",
+                "salesHourNote": "연중무휴 (10:00~22:00)",
+                "storCd": "00000623",
+                "storDetailNote": "",
+                "storCoordY": "35.87177841041165",
+                "crmKordPauseStartDt": null,
+                "todayBusinessTime": "10:00~22:00",
+                "crmKordPauseEndDt": null,
+                "storCloseDate": null,
+                "storCloseCause": null,
+                "crmKordPauseMessage": null,
+                "storImgThumPath": "https://mob-prd.burgerking.co.kr/images/store/thumbnail/2025/05/27/ae40be0d-559d-4ce3-9dff-28c182a2be71.jpg",
+                "storTimeHoliday": "10:00~22:00",
+                "todayDelivery24Time": "10:00~22:00",
+                "storDetailNoteList": null,
+                "pickupTime": "10:00~21:45",
+                "storEventMessage": "",
+                "storTimeDays": "10:00~22:00",
+                "storNm": "대구효신네거리점",
+                "todayDeliveryTime": "10:00~22:00",
+                "tmrDeliveryTime": "10:00~22:00",
+                "prmCd": "",
+                "storMembershipYn": "Y",
+                "storCoordX": "128.63519874459024",
+                "storImgMainList": [
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/05/27/eede10fa-814e-4f34-a84d-3325b3d5c176.jpg"
+                    },
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/05/27/fbda8314-d416-454f-9fe4-466f0b9fe464.jpg"
+                    }
+                ],
+                "crmKordPauseYn": null,
+                "todayKmomTime": null,
+                "storTimeWeekend": "10:00~22:00",
+                "storStatusOper": "12",
+                "todayKordTime": "10:00~21:45",
+                "storStatusOrder": "2"
+            },
+            {
+                "storeServiceCodeList": [
+                    {
+                        "storeServiceCode": "01",
+                        "storeServiceName": "킹오더"
+                    },
+                    {
+                        "storeServiceCode": "02",
+                        "storeServiceName": "딜리버리"
+                    },
+                    {
+                        "storeServiceCode": "06",
+                        "storeServiceName": "주차"
+                    }
+                ],
+                "distance": "146962",
+                "storTelNo": "070-7459-7285",
+                "storPromotionInfo": [
+                    {
+                        "prmMenuDeliveryYn": "N",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "7713704",
+                        "prmCd": "2512059",
+                        "prmCoverMenuCd": "6600644",
+                        "prmNm": "행사_12월_2FOR6K_7K"
+                    },
+                    {
+                        "prmMenuDeliveryYn": "Y",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "7713844",
+                        "prmCd": "2512042",
+                        "prmCoverMenuCd": null,
+                        "prmNm": "25년 12월_내부 DV 메뉴할인"
+                    },
+                    {
+                        "prmMenuDeliveryYn": "N",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "6600628",
+                        "prmCd": "2507028",
+                        "prmCoverMenuCd": null,
+                        "prmNm": "행사_올데이스넥"
+                    }
+                ],
+                "storAddr": "대전광역시 동구 은어송로 63  ",
+                "salesHourNote": "연중무휴(10:00~22:00)",
+                "storCd": "00000583",
+                "storDetailNote": "",
+                "storCoordY": "36.3066737",
+                "crmKordPauseStartDt": null,
+                "todayBusinessTime": "10:00~22:00",
+                "crmKordPauseEndDt": null,
+                "storCloseDate": null,
+                "storCloseCause": null,
+                "crmKordPauseMessage": null,
+                "storImgThumPath": "https://mob-prd.burgerking.co.kr/images/store/thumbnail/2025/04/14/bbca31cc-db53-4825-bb96-769a3e01b481.jpg",
+                "storTimeHoliday": "10:00~22:00",
+                "todayDelivery24Time": "10:00~22:00",
+                "storDetailNoteList": null,
+                "pickupTime": "10:00~21:45",
+                "storEventMessage": "",
+                "storTimeDays": "10:00~22:00",
+                "storNm": "대전가오점",
+                "todayDeliveryTime": "10:00~22:00",
+                "tmrDeliveryTime": "10:00~22:00",
+                "prmCd": "",
+                "storMembershipYn": "Y",
+                "storCoordX": "127.4560317",
+                "storImgMainList": [
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/01/06/ca110ff5-9ab9-43d7-97aa-1082de831c6f.jpg"
+                    },
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/01/06/afacf4b9-92e5-40b2-a9b2-8ace0542becb.jpg"
+                    }
+                ],
+                "crmKordPauseYn": null,
+                "todayKmomTime": null,
+                "storTimeWeekend": "10:00~22:00",
+                "storStatusOper": "12",
+                "todayKordTime": "10:00~21:45",
+                "storStatusOrder": "2"
+            },
+            {
+                "storeServiceCodeList": [
+                    {
+                        "storeServiceCode": "01",
+                        "storeServiceName": "킹오더"
+                    },
+                    {
+                        "storeServiceCode": "02",
+                        "storeServiceName": "딜리버리"
+                    },
+                    {
+                        "storeServiceCode": "06",
+                        "storeServiceName": "주차"
+                    }
+                ],
+                "distance": "145119",
+                "storTelNo": "070-7462-6766",
+                "storPromotionInfo": [
+                    {
+                        "prmMenuDeliveryYn": "N",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "7713704",
+                        "prmCd": "2512059",
+                        "prmCoverMenuCd": "6600644",
+                        "prmNm": "행사_12월_2FOR6K_7K"
+                    },
+                    {
+                        "prmMenuDeliveryYn": "Y",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "7713844",
+                        "prmCd": "2512042",
+                        "prmCoverMenuCd": null,
+                        "prmNm": "25년 12월_내부 DV 메뉴할인"
+                    },
+                    {
+                        "prmMenuDeliveryYn": "N",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "6600628",
+                        "prmCd": "2507028",
+                        "prmCoverMenuCd": null,
+                        "prmNm": "행사_올데이스넥"
+                    }
+                ],
+                "storAddr": "대전광역시 서구 구봉로 147번길 68-12  ",
+                "salesHourNote": "연중무휴 (10:00~23:00) ",
+                "storCd": "00000393",
+                "storDetailNote": "",
+                "storCoordY": "36.299292523826125",
+                "crmKordPauseStartDt": null,
+                "todayBusinessTime": "10:00~23:00",
+                "crmKordPauseEndDt": null,
+                "storCloseDate": null,
+                "storCloseCause": null,
+                "crmKordPauseMessage": null,
+                "storImgThumPath": "https://mob-prd.burgerking.co.kr/images/store/thumbnail/2025/01/06/e4fffac2-4eda-42e5-a649-059f324aeed9.jpg",
+                "storTimeHoliday": "10:00~23:00",
+                "todayDelivery24Time": "10:00~23:00",
+                "storDetailNoteList": null,
+                "pickupTime": "10:00~22:45",
+                "storEventMessage": "",
+                "storTimeDays": "10:00~23:00",
+                "storNm": "대전관저점",
+                "todayDeliveryTime": "10:00~23:00",
+                "tmrDeliveryTime": "10:00~23:00",
+                "prmCd": "",
+                "storMembershipYn": "Y",
+                "storCoordX": "127.33896845269916",
+                "storImgMainList": [
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/01/06/c825ef1a-9371-45fb-8254-88ab01bc4ee1.jpg"
+                    },
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/01/06/dd1c2abc-893e-43fb-8e90-a559fb6c3d51.jpg"
+                    }
+                ],
+                "crmKordPauseYn": null,
+                "todayKmomTime": null,
+                "storTimeWeekend": "10:00~23:00",
+                "storStatusOper": "12",
+                "todayKordTime": "10:00~22:45",
+                "storStatusOrder": "2"
+            },
+            {
+                "storeServiceCodeList": [
+                    {
+                        "storeServiceCode": "01",
+                        "storeServiceName": "킹오더"
+                    },
+                    {
+                        "storeServiceCode": "02",
+                        "storeServiceName": "딜리버리"
+                    }
+                ],
+                "distance": "132642",
+                "storTelNo": "042-934-0113",
+                "storPromotionInfo": null,
+                "storAddr": "대전광역시 유성구 테크노4로 105  ",
+                "salesHourNote": "연중무휴(10:00~21:30)",
+                "storCd": "00010006",
+                "storDetailNote": "",
+                "storCoordY": "36.4252862",
+                "crmKordPauseStartDt": null,
+                "todayBusinessTime": "10:00~21:30",
+                "crmKordPauseEndDt": null,
+                "storCloseDate": null,
+                "storCloseCause": null,
+                "crmKordPauseMessage": null,
+                "storImgThumPath": "https://mob-prd.burgerking.co.kr/images/store/thumbnail/2025/04/14/f6ab5959-ec49-491c-8e66-ef599e682bae.jpg",
+                "storTimeHoliday": "10:00~21:30",
+                "todayDelivery24Time": "10:00~21:00",
+                "storDetailNoteList": null,
+                "pickupTime": "10:00~21:00",
+                "storEventMessage": "",
+                "storTimeDays": "10:00~21:30",
+                "storNm": "대전관평점",
+                "todayDeliveryTime": "10:00~21:00",
+                "tmrDeliveryTime": "10:00~21:00",
+                "prmCd": "",
+                "storMembershipYn": "N",
+                "storCoordX": "127.3897464",
+                "storImgMainList": [
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/01/06/a8535da6-1a7e-454f-8a3c-52492f43a036.jpg"
+                    },
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/04/14/be08773a-3b09-4e4b-933c-5ffd6c309913.jpg"
+                    }
+                ],
+                "crmKordPauseYn": null,
+                "todayKmomTime": null,
+                "storTimeWeekend": "10:00~21:30",
+                "storStatusOper": "12",
+                "todayKordTime": "10:00~21:00",
+                "storStatusOrder": "2"
+            },
+            {
+                "storeServiceCodeList": [
+                    {
+                        "storeServiceCode": "01",
+                        "storeServiceName": "킹오더"
+                    },
+                    {
+                        "storeServiceCode": "02",
+                        "storeServiceName": "딜리버리"
+                    }
+                ],
+                "distance": "136505",
+                "storTelNo": "070-7462-6875",
+                "storPromotionInfo": [
+                    {
+                        "prmMenuDeliveryYn": "N",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "7713704",
+                        "prmCd": "2512059",
+                        "prmCoverMenuCd": "6600644",
+                        "prmNm": "행사_12월_2FOR6K_7K"
+                    },
+                    {
+                        "prmMenuDeliveryYn": "Y",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "7713844",
+                        "prmCd": "2512042",
+                        "prmCoverMenuCd": null,
+                        "prmNm": "25년 12월_내부 DV 메뉴할인"
+                    },
+                    {
+                        "prmMenuDeliveryYn": "N",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "6600628",
+                        "prmCd": "2507028",
+                        "prmCoverMenuCd": null,
+                        "prmNm": "행사_올데이스넥"
+                    }
+                ],
+                "storAddr": "대전광역시 유성구 은구비남로33번길 61  ",
+                "salesHourNote": "월~금 : 10:00~23:00 / 토~일 : 09:00~23:00",
+                "storCd": "00000447",
+                "storDetailNote": "",
+                "storCoordY": "36.3751035",
+                "crmKordPauseStartDt": null,
+                "todayBusinessTime": "10:00~23:00",
+                "crmKordPauseEndDt": null,
+                "storCloseDate": null,
+                "storCloseCause": null,
+                "crmKordPauseMessage": null,
+                "storImgThumPath": "https://mob-prd.burgerking.co.kr/images/store/thumbnail/2025/01/06/e332c534-0036-4138-9a58-5adc75ab3ccd.jpg",
+                "storTimeHoliday": "09:00~23:00",
+                "todayDelivery24Time": "10:00~23:00",
+                "storDetailNoteList": null,
+                "pickupTime": "10:00~22:45",
+                "storEventMessage": "",
+                "storTimeDays": "10:00~23:00",
+                "storNm": "대전노은역점",
+                "todayDeliveryTime": "10:00~23:00",
+                "tmrDeliveryTime": "10:00~23:00",
+                "prmCd": "",
+                "storMembershipYn": "Y",
+                "storCoordX": "127.3191307",
+                "storImgMainList": [
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/01/06/a20c65f9-3567-47c2-873d-4b6c5b8b7897.jpg"
+                    },
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/01/06/aa3c0f48-93ac-4330-8fc5-45a0f0b7ee78.jpg"
+                    }
+                ],
+                "crmKordPauseYn": null,
+                "todayKmomTime": null,
+                "storTimeWeekend": "09:00~23:00",
+                "storStatusOper": "12",
+                "todayKordTime": "10:00~22:45",
+                "storStatusOrder": "2"
+            },
+            {
+                "storeServiceCodeList": [
+                    {
+                        "storeServiceCode": "01",
+                        "storeServiceName": "킹오더"
+                    },
+                    {
+                        "storeServiceCode": "02",
+                        "storeServiceName": "딜리버리"
+                    },
+                    {
+                        "storeServiceCode": "05",
+                        "storeServiceName": "드라이브스루"
+                    },
+                    {
+                        "storeServiceCode": "06",
+                        "storeServiceName": "주차"
+                    }
+                ],
+                "distance": "144755",
+                "storTelNo": "070-7462-8639",
+                "storPromotionInfo": [
+                    {
+                        "prmMenuDeliveryYn": "N",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "7713704",
+                        "prmCd": "2512059",
+                        "prmCoverMenuCd": "6600644",
+                        "prmNm": "행사_12월_2FOR6K_7K"
+                    },
+                    {
+                        "prmMenuDeliveryYn": "Y",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "7713844",
+                        "prmCd": "2512042",
+                        "prmCoverMenuCd": null,
+                        "prmNm": "25년 12월_내부 DV 메뉴할인"
+                    },
+                    {
+                        "prmMenuDeliveryYn": "N",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "6600628",
+                        "prmCd": "2507028",
+                        "prmCoverMenuCd": null,
+                        "prmNm": "행사_올데이스넥"
+                    }
+                ],
+                "storAddr": "대전광역시 동구 계족로 120  ",
+                "salesHourNote": "연중무휴 (09:00~24:00)",
+                "storCd": "00000508",
+                "storDetailNote": "",
+                "storCoordY": "36.3249586",
+                "crmKordPauseStartDt": null,
+                "todayBusinessTime": "09:00~23:59",
+                "crmKordPauseEndDt": null,
+                "storCloseDate": null,
+                "storCloseCause": null,
+                "crmKordPauseMessage": null,
+                "storImgThumPath": "https://mob-prd.burgerking.co.kr/images/store/thumbnail/2025/01/06/d77db868-be97-42b3-b2da-d8bd81b49213.jpg",
+                "storTimeHoliday": "09:00~23:59",
+                "todayDelivery24Time": "09:00~23:59",
+                "storDetailNoteList": null,
+                "pickupTime": "09:00~23:45",
+                "storEventMessage": "",
+                "storTimeDays": "09:00~23:59",
+                "storNm": "대전대동DT점",
+                "todayDeliveryTime": "09:00~23:59",
+                "tmrDeliveryTime": "09:00~23:59",
+                "prmCd": "",
+                "storMembershipYn": "Y",
+                "storCoordX": "127.4459107",
+                "storImgMainList": [
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/01/06/aca74d42-107a-4cd9-a510-91063362f24a.jpg"
+                    },
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/01/06/bc2e063d-9da1-44b6-88cf-f1b87f3c1fa6.jpg"
+                    }
+                ],
+                "crmKordPauseYn": null,
+                "todayKmomTime": null,
+                "storTimeWeekend": "09:00~23:59",
+                "storStatusOper": "12",
+                "todayKordTime": "09:00~23:45",
+                "storStatusOrder": "2"
+            },
+            {
+                "storeServiceCodeList": [
+                    {
+                        "storeServiceCode": "01",
+                        "storeServiceName": "킹오더"
+                    },
+                    {
+                        "storeServiceCode": "02",
+                        "storeServiceName": "딜리버리"
+                    }
+                ],
+                "distance": "144526",
+                "storTelNo": "070-7772-1107",
+                "storPromotionInfo": [
+                    {
+                        "prmMenuDeliveryYn": "N",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "7713704",
+                        "prmCd": "2512059",
+                        "prmCoverMenuCd": "6600644",
+                        "prmNm": "행사_12월_2FOR6K_7K"
+                    },
+                    {
+                        "prmMenuDeliveryYn": "Y",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "7713844",
+                        "prmCd": "2512042",
+                        "prmCoverMenuCd": null,
+                        "prmNm": "25년 12월_내부 DV 메뉴할인"
+                    },
+                    {
+                        "prmMenuDeliveryYn": "N",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "6600628",
+                        "prmCd": "2507028",
+                        "prmCoverMenuCd": null,
+                        "prmNm": "행사_올데이스넥"
+                    }
+                ],
+                "storAddr": "대전광역시 서구 계백로  1426  ",
+                "salesHourNote": "연중무휴(10:00~22:00)",
+                "storCd": "00010156",
+                "storDetailNote": "",
+                "storCoordY": "36.3125494",
+                "crmKordPauseStartDt": null,
+                "todayBusinessTime": "10:00~22:00",
+                "crmKordPauseEndDt": null,
+                "storCloseDate": null,
+                "storCloseCause": null,
+                "crmKordPauseMessage": null,
+                "storImgThumPath": "https://mob-prd.burgerking.co.kr/images/store/thumbnail/2025/04/14/a5861957-0424-4e68-bf96-2beb70159157.jpg",
+                "storTimeHoliday": "10:00~22:00",
+                "todayDelivery24Time": "10:00~21:45",
+                "storDetailNoteList": null,
+                "pickupTime": "10:00~21:45",
+                "storEventMessage": "",
+                "storTimeDays": "10:00~22:00",
+                "storNm": "대전도마점",
+                "todayDeliveryTime": "10:00~21:45",
+                "tmrDeliveryTime": "10:00~21:45",
+                "prmCd": "",
+                "storMembershipYn": "Y",
+                "storCoordX": "127.3797473",
+                "storImgMainList": [
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/01/06/c94a0bf0-46b5-4079-a12b-5c513911ead7.jpg"
+                    },
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/01/06/d58a91e0-aac8-4757-9c57-09d479f09707.jpg"
+                    }
+                ],
+                "crmKordPauseYn": null,
+                "todayKmomTime": null,
+                "storTimeWeekend": "10:00~22:00",
+                "storStatusOper": "12",
+                "todayKordTime": "10:00~21:45",
+                "storStatusOrder": "2"
+            },
+            {
+                "storeServiceCodeList": [
+                    {
+                        "storeServiceCode": "01",
+                        "storeServiceName": "킹오더"
+                    },
+                    {
+                        "storeServiceCode": "02",
+                        "storeServiceName": "딜리버리"
+                    }
+                ],
+                "distance": "141585",
+                "storTelNo": "042-825-0282",
+                "storPromotionInfo": [
+                    {
+                        "prmMenuDeliveryYn": "N",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "7713704",
+                        "prmCd": "2512059",
+                        "prmCoverMenuCd": "6600644",
+                        "prmNm": "행사_12월_2FOR6K_7K"
+                    },
+                    {
+                        "prmMenuDeliveryYn": "Y",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "7713844",
+                        "prmCd": "2512042",
+                        "prmCoverMenuCd": null,
+                        "prmNm": "25년 12월_내부 DV 메뉴할인"
+                    },
+                    {
+                        "prmMenuDeliveryYn": "N",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "6600628",
+                        "prmCd": "2507028",
+                        "prmCoverMenuCd": null,
+                        "prmNm": "행사_올데이스넥"
+                    }
+                ],
+                "storAddr": "대전광역시 서구 동서대로 682  ",
+                "salesHourNote": "연중무휴(10:00~22:00)",
+                "storCd": "00010042",
+                "storDetailNote": "",
+                "storCoordY": "36.3318089",
+                "crmKordPauseStartDt": null,
+                "todayBusinessTime": "10:00~22:00",
+                "crmKordPauseEndDt": null,
+                "storCloseDate": null,
+                "storCloseCause": null,
+                "crmKordPauseMessage": null,
+                "storImgThumPath": "https://mob-prd.burgerking.co.kr/images/store/thumbnail/2025/01/06/ab609ae2-5a31-401a-b75a-00b712436312.jpg",
+                "storTimeHoliday": "10:00~22:00",
+                "todayDelivery24Time": "10:00~21:55",
+                "storDetailNoteList": null,
+                "pickupTime": "10:00~21:55",
+                "storEventMessage": "",
+                "storTimeDays": "10:00~22:00",
+                "storNm": "대전도안점",
+                "todayDeliveryTime": "10:00~21:55",
+                "tmrDeliveryTime": "10:00~21:55",
+                "prmCd": "",
+                "storMembershipYn": "Y",
+                "storCoordX": "127.3386219",
+                "storImgMainList": [
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/01/06/a9aa0192-90c3-4e45-91a4-7ecd4abc0b20.jpg"
+                    },
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/01/06/c84aa562-654f-4973-bf1b-8e204303ba66.jpg"
+                    }
+                ],
+                "crmKordPauseYn": null,
+                "todayKmomTime": null,
+                "storTimeWeekend": "10:00~22:00",
+                "storStatusOper": "12",
+                "todayKordTime": "10:00~21:55",
+                "storStatusOrder": "2"
+            },
+            {
+                "storeServiceCodeList": [
+                    {
+                        "storeServiceCode": "01",
+                        "storeServiceName": "킹오더"
+                    },
+                    {
+                        "storeServiceCode": "02",
+                        "storeServiceName": "딜리버리"
+                    },
+                    {
+                        "storeServiceCode": "03",
+                        "storeServiceName": "24시"
+                    },
+                    {
+                        "storeServiceCode": "04",
+                        "storeServiceName": "킹모닝"
+                    }
+                ],
+                "distance": "140382",
+                "storTelNo": "070-7462-6805",
+                "storPromotionInfo": [
+                    {
+                        "prmMenuDeliveryYn": "N",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "7713704",
+                        "prmCd": "2512059",
+                        "prmCoverMenuCd": "6600644",
+                        "prmNm": "행사_12월_2FOR6K_7K"
+                    },
+                    {
+                        "prmMenuDeliveryYn": "Y",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "7713844",
+                        "prmCd": "2512042",
+                        "prmCoverMenuCd": null,
+                        "prmNm": "25년 12월_내부 DV 메뉴할인"
+                    },
+                    {
+                        "prmMenuDeliveryYn": "N",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "6600628",
+                        "prmCd": "2507028",
+                        "prmCoverMenuCd": null,
+                        "prmNm": "행사_올데이스넥"
+                    }
+                ],
+                "storAddr": "대전광역시 서구 대덕대로 193  ",
+                "salesHourNote": "Cleaning Day(Close): 매월 셋째주 월요일 02:00~08:00",
+                "storCd": "00000409",
+                "storDetailNote": "",
+                "storCoordY": "36.3505317",
+                "crmKordPauseStartDt": null,
+                "todayBusinessTime": "00:00~23:59",
+                "crmKordPauseEndDt": null,
+                "storCloseDate": null,
+                "storCloseCause": null,
+                "crmKordPauseMessage": null,
+                "storImgThumPath": "https://mob-prd.burgerking.co.kr/images/store/thumbnail/2025/04/14/c174d673-9331-49e9-883f-52c4b7e4c267.jpg",
+                "storTimeHoliday": "00:00~23:59",
+                "todayDelivery24Time": "00:00~23:59",
+                "storDetailNoteList": null,
+                "pickupTime": "00:00~23:59",
+                "storEventMessage": "",
+                "storTimeDays": "00:00~23:59",
+                "storNm": "대전둔산1점",
+                "todayDeliveryTime": "00:00~23:55",
+                "tmrDeliveryTime": "00:00~23:55",
+                "prmCd": "",
+                "storMembershipYn": "Y",
+                "storCoordX": "127.3774762",
+                "storImgMainList": [
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/01/06/fce31522-7a3a-4fc2-92a2-e17dc6b466a5.jpg"
+                    },
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/01/06/ce23b68c-4f3b-456b-9393-37cab3462af0.jpg"
+                    }
+                ],
+                "crmKordPauseYn": null,
+                "todayKmomTime": "04:00~11:00",
+                "storTimeWeekend": "00:00~23:59",
+                "storStatusOper": "12",
+                "todayKordTime": "00:00~23:59",
+                "storStatusOrder": "2"
+            },
+            {
+                "storeServiceCodeList": [
+                    {
+                        "storeServiceCode": "01",
+                        "storeServiceName": "킹오더"
+                    },
+                    {
+                        "storeServiceCode": "02",
+                        "storeServiceName": "딜리버리"
+                    }
+                ],
+                "distance": "136279",
+                "storTelNo": "042-861-9934",
+                "storPromotionInfo": [
+                    {
+                        "prmMenuDeliveryYn": "N",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "7713704",
+                        "prmCd": "2512059",
+                        "prmCoverMenuCd": "6600644",
+                        "prmNm": "행사_12월_2FOR6K_7K"
+                    },
+                    {
+                        "prmMenuDeliveryYn": "Y",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "7713844",
+                        "prmCd": "2512042",
+                        "prmCoverMenuCd": null,
+                        "prmNm": "25년 12월_내부 DV 메뉴할인"
+                    },
+                    {
+                        "prmMenuDeliveryYn": "N",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "6600628",
+                        "prmCd": "2507028",
+                        "prmCoverMenuCd": null,
+                        "prmNm": "행사_올데이스넥"
+                    }
+                ],
+                "storAddr": "대전광역시 유성구 문지로 311-32  ",
+                "salesHourNote": "연중무휴(10:30 ~ 21:30)",
+                "storCd": "00010141",
+                "storDetailNote": "",
+                "storCoordY": "36.3948165",
+                "crmKordPauseStartDt": null,
+                "todayBusinessTime": "10:30~21:30",
+                "crmKordPauseEndDt": null,
+                "storCloseDate": null,
+                "storCloseCause": null,
+                "crmKordPauseMessage": null,
+                "storImgThumPath": "https://mob-prd.burgerking.co.kr/images/store/thumbnail/2025/01/06/db454720-d876-434d-995f-f34d7c2c070f.jpg",
+                "storTimeHoliday": "10:30~21:30",
+                "todayDelivery24Time": "10:30~21:00",
+                "storDetailNoteList": null,
+                "pickupTime": "10:30~21:00",
+                "storEventMessage": "",
+                "storTimeDays": "10:30~21:30",
+                "storNm": "대전문지점",
+                "todayDeliveryTime": "10:30~21:00",
+                "tmrDeliveryTime": "10:30~21:00",
+                "prmCd": "",
+                "storMembershipYn": "Y",
+                "storCoordX": "127.4052089",
+                "storImgMainList": [
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/01/06/ff3c68de-3e92-4bcd-ad1d-11dcf5c59326.jpg"
+                    },
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/01/06/d138d150-9cf7-4e8a-913b-dfdc070076a1.jpg"
+                    }
+                ],
+                "crmKordPauseYn": null,
+                "todayKmomTime": null,
+                "storTimeWeekend": "10:30~21:30",
+                "storStatusOper": "12",
+                "todayKordTime": "10:30~21:00",
+                "storStatusOrder": "2"
+            },
+            {
+                "storeServiceCodeList": [
+                    {
+                        "storeServiceCode": "01",
+                        "storeServiceName": "킹오더"
+                    },
+                    {
+                        "storeServiceCode": "02",
+                        "storeServiceName": "딜리버리"
+                    },
+                    {
+                        "storeServiceCode": "05",
+                        "storeServiceName": "드라이브스루"
+                    },
+                    {
+                        "storeServiceCode": "06",
+                        "storeServiceName": "주차"
+                    }
+                ],
+                "distance": "134746",
+                "storTelNo": "042-825-0410",
+                "storPromotionInfo": [
+                    {
+                        "prmMenuDeliveryYn": "N",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "7713704",
+                        "prmCd": "2512059",
+                        "prmCoverMenuCd": "6600644",
+                        "prmNm": "행사_12월_2FOR6K_7K"
+                    },
+                    {
+                        "prmMenuDeliveryYn": "Y",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "7713844",
+                        "prmCd": "2512042",
+                        "prmCoverMenuCd": null,
+                        "prmNm": "25년 12월_내부 DV 메뉴할인"
+                    },
+                    {
+                        "prmMenuDeliveryYn": "N",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "6600628",
+                        "prmCd": "2507028",
+                        "prmCoverMenuCd": null,
+                        "prmNm": "행사_올데이스넥"
+                    }
+                ],
+                "storAddr": "대전광역시 유성구 북유성대로 288  ",
+                "salesHourNote": "연중무휴 (09:00~23:00)",
+                "storCd": "00000255",
+                "storDetailNote": "",
+                "storCoordY": "36.3907847362",
+                "crmKordPauseStartDt": null,
+                "todayBusinessTime": "09:00~23:00",
+                "crmKordPauseEndDt": null,
+                "storCloseDate": null,
+                "storCloseCause": null,
+                "crmKordPauseMessage": null,
+                "storImgThumPath": "https://mob-prd.burgerking.co.kr/images/store/thumbnail/2025/01/06/e935f7b8-4566-4ddd-bd31-a81dbcd8fe06.jpg",
+                "storTimeHoliday": "09:00~23:00",
+                "todayDelivery24Time": "09:00~23:00",
+                "storDetailNoteList": null,
+                "pickupTime": "09:00~22:45",
+                "storEventMessage": "",
+                "storTimeDays": "09:00~23:00",
+                "storNm": "대전반석DT점",
+                "todayDeliveryTime": "10:00~22:59",
+                "tmrDeliveryTime": "10:00~22:59",
+                "prmCd": "",
+                "storMembershipYn": "Y",
+                "storCoordX": "127.316216926",
+                "storImgMainList": [
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/01/06/a69edf0f-e74c-4fba-b662-ffb0909e7eca.jpg"
+                    },
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/01/06/fbdc478f-06a2-4d9f-ad4e-36d72b945d43.jpg"
+                    }
+                ],
+                "crmKordPauseYn": null,
+                "todayKmomTime": null,
+                "storTimeWeekend": "09:00~23:00",
+                "storStatusOper": "12",
+                "todayKordTime": "09:00~22:45",
+                "storStatusOrder": "2"
+            },
+            {
+                "storeServiceCodeList": [
+                    {
+                        "storeServiceCode": "01",
+                        "storeServiceName": "킹오더"
+                    },
+                    {
+                        "storeServiceCode": "02",
+                        "storeServiceName": "딜리버리"
+                    }
+                ],
+                "distance": "140733",
+                "storTelNo": "042-489-0331",
+                "storPromotionInfo": [
+                    {
+                        "prmMenuDeliveryYn": "N",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "7713704",
+                        "prmCd": "2512059",
+                        "prmCoverMenuCd": "6600644",
+                        "prmNm": "행사_12월_2FOR6K_7K"
+                    }
+                ],
+                "storAddr": "대전광역시 서구 문예로 35  ",
+                "salesHourNote": "연중무휴(월~금 09:30~23:00 / 토,일 09:00~23:00)",
+                "storCd": "00010028",
+                "storDetailNote": "",
+                "storCoordY": "36.3498712",
+                "crmKordPauseStartDt": null,
+                "todayBusinessTime": "09:30~23:59",
+                "crmKordPauseEndDt": null,
+                "storCloseDate": null,
+                "storCloseCause": null,
+                "crmKordPauseMessage": null,
+                "storImgThumPath": "https://mob-prd.burgerking.co.kr/images/store/thumbnail/2025/04/14/c2600d36-215a-4fb0-85b6-b4dea3d73377.jpg",
+                "storTimeHoliday": "09:30~23:59",
+                "todayDelivery24Time": "09:30~22:59",
+                "storDetailNoteList": null,
+                "pickupTime": "09:30~22:45",
+                "storEventMessage": "",
+                "storTimeDays": "09:30~23:59",
+                "storNm": "대전시청점",
+                "todayDeliveryTime": "09:30~22:59",
+                "tmrDeliveryTime": "09:30~22:59",
+                "prmCd": "",
+                "storMembershipYn": "Y",
+                "storCoordX": "127.3898448",
+                "storImgMainList": [
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/01/06/ac5446a5-a17a-4ff1-87f1-b03273a5840f.jpg"
+                    },
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/01/06/ef8e2ad3-f988-4572-a8d5-4979d9784f76.jpg"
+                    }
+                ],
+                "crmKordPauseYn": null,
+                "todayKmomTime": null,
+                "storTimeWeekend": "09:00~23:59",
+                "storStatusOper": "12",
+                "todayKordTime": "09:30~22:45",
+                "storStatusOrder": "2"
+            },
+            {
+                "storeServiceCodeList": [
+                    {
+                        "storeServiceCode": "01",
+                        "storeServiceName": "킹오더"
+                    },
+                    {
+                        "storeServiceCode": "02",
+                        "storeServiceName": "딜리버리"
+                    },
+                    {
+                        "storeServiceCode": "05",
+                        "storeServiceName": "드라이브스루"
+                    },
+                    {
+                        "storeServiceCode": "06",
+                        "storeServiceName": "주차"
+                    }
+                ],
+                "distance": "143859",
+                "storTelNo": "042-221-0332",
+                "storPromotionInfo": [
+                    {
+                        "prmMenuDeliveryYn": "N",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "7713704",
+                        "prmCd": "2512059",
+                        "prmCoverMenuCd": "6600644",
+                        "prmNm": "행사_12월_2FOR6K_7K"
+                    },
+                    {
+                        "prmMenuDeliveryYn": "Y",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "7713844",
+                        "prmCd": "2512042",
+                        "prmCoverMenuCd": null,
+                        "prmNm": "25년 12월_내부 DV 메뉴할인"
+                    },
+                    {
+                        "prmMenuDeliveryYn": "N",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "6600628",
+                        "prmCd": "2507028",
+                        "prmCoverMenuCd": null,
+                        "prmNm": "행사_올데이스넥"
+                    }
+                ],
+                "storAddr": "대전광역시 중구 계룡로 853  ",
+                "salesHourNote": "연중무휴 (10:00~24:00)",
+                "storCd": "00000330",
+                "storDetailNote": "",
+                "storCoordY": "36.3251035884",
+                "crmKordPauseStartDt": null,
+                "todayBusinessTime": "10:00~23:59",
+                "crmKordPauseEndDt": null,
+                "storCloseDate": null,
+                "storCloseCause": null,
+                "crmKordPauseMessage": null,
+                "storImgThumPath": "https://mob-prd.burgerking.co.kr/images/store/thumbnail/2025/01/06/f625e04c-b9a4-45da-9f9d-2d7e5aa2b2b2.jpg",
+                "storTimeHoliday": "10:00~23:59",
+                "todayDelivery24Time": "10:00~23:59",
+                "storDetailNoteList": null,
+                "pickupTime": "10:00~23:45",
+                "storEventMessage": "",
+                "storTimeDays": "10:00~23:59",
+                "storNm": "대전용두DT점",
+                "todayDeliveryTime": "10:00~23:59",
+                "tmrDeliveryTime": "10:00~23:59",
+                "prmCd": "",
+                "storMembershipYn": "Y",
+                "storCoordX": "127.4099233423",
+                "storImgMainList": [
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/01/06/c494903b-f05a-461f-afd5-d1a8be5201a2.jpg"
+                    },
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/01/06/fee71579-ba77-4cc8-ba6b-ec2b5fd35231.jpg"
+                    }
+                ],
+                "crmKordPauseYn": null,
+                "todayKmomTime": null,
+                "storTimeWeekend": "10:00~23:59",
+                "storStatusOper": "12",
+                "todayKordTime": "10:00~23:45",
+                "storStatusOrder": "2"
+            },
+            {
+                "storeServiceCodeList": [
+                    {
+                        "storeServiceCode": "01",
+                        "storeServiceName": "킹오더"
+                    },
+                    {
+                        "storeServiceCode": "02",
+                        "storeServiceName": "딜리버리"
+                    }
+                ],
+                "distance": "141948",
+                "storTelNo": "070-7462-6864",
+                "storPromotionInfo": [
+                    {
+                        "prmMenuDeliveryYn": "N",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "7713704",
+                        "prmCd": "2512059",
+                        "prmCoverMenuCd": "6600644",
+                        "prmNm": "행사_12월_2FOR6K_7K"
+                    },
+                    {
+                        "prmMenuDeliveryYn": "Y",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "7713844",
+                        "prmCd": "2512042",
+                        "prmCoverMenuCd": null,
+                        "prmNm": "25년 12월_내부 DV 메뉴할인"
+                    },
+                    {
+                        "prmMenuDeliveryYn": "N",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "6600628",
+                        "prmCd": "2507028",
+                        "prmCoverMenuCd": null,
+                        "prmNm": "행사_올데이스넥"
+                    }
+                ],
+                "storAddr": "대전광역시 서구 계룡로 630  ",
+                "salesHourNote": "연중무휴 (10:00~23:00)",
+                "storCd": "00000437",
+                "storDetailNote": "",
+                "storCoordY": "36.3390074",
+                "crmKordPauseStartDt": null,
+                "todayBusinessTime": "10:00~23:00",
+                "crmKordPauseEndDt": null,
+                "storCloseDate": null,
+                "storCloseCause": null,
+                "crmKordPauseMessage": null,
+                "storImgThumPath": "https://mob-prd.burgerking.co.kr/images/store/thumbnail/2025/04/14/b5d4785d-6315-4d02-a904-9ef58961a55d.jpg",
+                "storTimeHoliday": "10:00~23:00",
+                "todayDelivery24Time": "10:00~23:00",
+                "storDetailNoteList": null,
+                "pickupTime": "10:00~22:45",
+                "storEventMessage": "",
+                "storTimeDays": "10:00~23:00",
+                "storNm": "대전용문역점",
+                "todayDeliveryTime": "10:00~23:00",
+                "tmrDeliveryTime": "10:00~23:00",
+                "prmCd": "",
+                "storMembershipYn": "Y",
+                "storCoordX": "127.3919162",
+                "storImgMainList": [
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/01/06/b7b9da5c-5910-4efe-8f1b-ef9edfaab56d.jpg"
+                    },
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/01/06/d70b998d-cd60-490b-b540-91712fb3a1f1.jpg"
+                    }
+                ],
+                "crmKordPauseYn": null,
+                "todayKmomTime": null,
+                "storTimeWeekend": "10:00~23:00",
+                "storStatusOper": "12",
+                "todayKordTime": "10:00~22:45",
+                "storStatusOrder": "2"
+            },
+            {
+                "storeServiceCodeList": [
+                    {
+                        "storeServiceCode": "01",
+                        "storeServiceName": "킹오더"
+                    },
+                    {
+                        "storeServiceCode": "02",
+                        "storeServiceName": "딜리버리"
+                    }
+                ],
+                "distance": "139096",
+                "storTelNo": "070-7462-6717",
+                "storPromotionInfo": [
+                    {
+                        "prmMenuDeliveryYn": "N",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "7713704",
+                        "prmCd": "2512059",
+                        "prmCoverMenuCd": "6600644",
+                        "prmNm": "행사_12월_2FOR6K_7K"
+                    },
+                    {
+                        "prmMenuDeliveryYn": "Y",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "7713844",
+                        "prmCd": "2512042",
+                        "prmCoverMenuCd": null,
+                        "prmNm": "25년 12월_내부 DV 메뉴할인"
+                    },
+                    {
+                        "prmMenuDeliveryYn": "N",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "6600628",
+                        "prmCd": "2507028",
+                        "prmCoverMenuCd": null,
+                        "prmNm": "행사_올데이스넥"
+                    }
+                ],
+                "storAddr": "대전광역시 서구 월평북로 81  ",
+                "salesHourNote": "월~금 : 10:00~23:00 / 토~일 : 09:00~23:00",
+                "storCd": "00000359",
+                "storDetailNote": "",
+                "storCoordY": "36.3624439542",
+                "crmKordPauseStartDt": null,
+                "todayBusinessTime": "10:00~23:00",
+                "crmKordPauseEndDt": null,
+                "storCloseDate": null,
+                "storCloseCause": null,
+                "crmKordPauseMessage": null,
+                "storImgThumPath": "https://mob-prd.burgerking.co.kr/images/store/thumbnail/2025/01/06/c43f921b-9612-4602-be1c-9e83d5f6ff1b.jpg",
+                "storTimeHoliday": "09:00~23:00",
+                "todayDelivery24Time": "10:00~23:00",
+                "storDetailNoteList": null,
+                "pickupTime": "10:00~22:45",
+                "storEventMessage": "",
+                "storTimeDays": "10:00~23:00",
+                "storNm": "대전월평점",
+                "todayDeliveryTime": "10:00~23:00",
+                "tmrDeliveryTime": "10:00~23:00",
+                "prmCd": "",
+                "storMembershipYn": "Y",
+                "storCoordX": "127.3773168456",
+                "storImgMainList": [
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/01/06/a57e8035-a7ce-4e46-8ee4-98bd04b8c07d.jpg"
+                    },
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/01/06/ab058180-cde1-4b0b-a278-23b5f082e520.jpg"
+                    }
+                ],
+                "crmKordPauseYn": null,
+                "todayKmomTime": null,
+                "storTimeWeekend": "09:00~23:00",
+                "storStatusOper": "12",
+                "todayKordTime": "10:00~22:45",
+                "storStatusOrder": "2"
+            },
+            {
+                "storeServiceCodeList": [
+                    {
+                        "storeServiceCode": "01",
+                        "storeServiceName": "킹오더"
+                    },
+                    {
+                        "storeServiceCode": "02",
+                        "storeServiceName": "딜리버리"
+                    },
+                    {
+                        "storeServiceCode": "03",
+                        "storeServiceName": "24시"
+                    },
+                    {
+                        "storeServiceCode": "04",
+                        "storeServiceName": "킹모닝"
+                    }
+                ],
+                "distance": "139222",
+                "storTelNo": "070-7462-6759",
+                "storPromotionInfo": [
+                    {
+                        "prmMenuDeliveryYn": "N",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "7713704",
+                        "prmCd": "2512059",
+                        "prmCoverMenuCd": "6600644",
+                        "prmNm": "행사_12월_2FOR6K_7K"
+                    },
+                    {
+                        "prmMenuDeliveryYn": "Y",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "7713844",
+                        "prmCd": "2512042",
+                        "prmCoverMenuCd": null,
+                        "prmNm": "25년 12월_내부 DV 메뉴할인"
+                    },
+                    {
+                        "prmMenuDeliveryYn": "N",
+                        "prmMenuKingYn": "Y",
+                        "prmMenuCd": "6600628",
+                        "prmCd": "2507028",
+                        "prmCoverMenuCd": null,
+                        "prmNm": "행사_올데이스넥"
+                    }
+                ],
+                "storAddr": "대전광역시 유성구 대학로 8  ",
+                "salesHourNote": "Cleaning Day(Close): 매월 넷째주 월요일 02:00~08:00",
+                "storCd": "00000387",
+                "storDetailNote": "",
+                "storCoordY": "36.354291396993354",
+                "crmKordPauseStartDt": null,
+                "todayBusinessTime": "00:00~23:59",
+                "crmKordPauseEndDt": null,
+                "storCloseDate": null,
+                "storCloseCause": null,
+                "crmKordPauseMessage": null,
+                "storImgThumPath": "https://mob-prd.burgerking.co.kr/images/store/thumbnail/2025/01/06/d46d4793-0151-4b82-a5d8-e3cc34667150.jpg",
+                "storTimeHoliday": "00:00~23:59",
+                "todayDelivery24Time": "00:00~23:59",
+                "storDetailNoteList": null,
+                "pickupTime": "00:00~23:59",
+                "storEventMessage": "",
+                "storTimeDays": "00:00~23:59",
+                "storNm": "대전유성온천역점",
+                "todayDeliveryTime": "00:00~23:59",
+                "tmrDeliveryTime": "00:00~23:59",
+                "prmCd": "",
+                "storMembershipYn": "Y",
+                "storCoordX": "127.34217468935789",
+                "storImgMainList": [
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/01/06/b3fb3a06-9180-4625-8509-9983a6bb4d4a.jpg"
+                    },
+                    {
+                        "storImgMainPath": "https://mob-prd.burgerking.co.kr/images/store/main/2025/01/06/d34b642c-3109-413b-a449-0e078c4a3632.jpg"
+                    }
+                ],
+                "crmKordPauseYn": null,
+                "todayKmomTime": "04:00~11:00",
+                "storTimeWeekend": "00:00~23:59",
+                "storStatusOper": "12",
+                "todayKordTime": "00:00~23:59",
+                "storStatusOrder": "2"
+            }
+        ]
+    }
+}
