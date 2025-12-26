@@ -2,11 +2,12 @@ package com.burger.burgerking.mainpage.api;
 
 
 import com.burger.burgerking.global.common.ApiResponse;
+import com.burger.burgerking.mainpage.application.MainpageService;
 import com.burger.burgerking.mainpage.dto.request.AdVideoRequest;
 import com.burger.burgerking.mainpage.dto.request.EventRequest;
-import com.burger.burgerking.story.dto.response.AdVideoResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,14 +18,17 @@ import java.util.List;
 @Tag(name = "메인페이지", description = "메인페이지 섹션")
 @RestController
 @RequestMapping("/api/v1/mainpage")
+@RequiredArgsConstructor
 public class MainpageController {
+
+    private MainpageService mainpageService;
 
 // 최상단 컨텐츠 ( 이벤트, 앱 다운 쿠폰, 매장찾기 )
 
     @Operation(summary = "이벤트 링크", description = "이벤트를 리스트로 받아와 스와이프하는 이벤트 도메인. 링크를 클릭하면 Forward 를 통해 해당 이벤트 링크로 이동합니다.")
     @GetMapping("/event")
     public ResponseEntity<ApiResponse<EventRequest>> event(){
-
+            EventRequest response = mainpageService.getEvents();
         return ResponseEntity.ok(ApiResponse.success(null));
     }
 
