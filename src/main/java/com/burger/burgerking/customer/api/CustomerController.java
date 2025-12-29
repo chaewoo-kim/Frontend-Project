@@ -33,6 +33,7 @@ public class CustomerController {
     public ResponseEntity<ApiResponse<List<CategoryResponse>>> category(
             @PathVariable String categoryId
     ) {
+        // 근데 홈페이지 보면 사실상 그냥 QALIST 링크임
         return ResponseEntity.ok(ApiResponse.success(null));
     }
 
