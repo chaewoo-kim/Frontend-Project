@@ -1,10 +1,10 @@
 package com.burger.burgerking.customer.api;
 
-import com.burger.burgerking.customer.dto.request.QaDetailRequest;
+
+import com.burger.burgerking.customer.dto.response.QaDetailResponse;
 import com.burger.burgerking.global.common.ApiResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import org.springframework.http.RequestEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,7 +17,7 @@ public class DetailController {
 
     @Operation(summary = "문의사항 개별 조회", description = "Request를 통해 Category와 id를 받아와 개별문의사항을 조회한다.")
     @GetMapping
-    public ResponseEntity<ApiResponse<QaDetailRequest>> detail() {
+    public ResponseEntity<ApiResponse<QaDetailResponse>> detail() {
         return ResponseEntity.ok(ApiResponse.success(null));
     }
 }

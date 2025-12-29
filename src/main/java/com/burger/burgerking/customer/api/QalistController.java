@@ -1,6 +1,6 @@
 package com.burger.burgerking.customer.api;
 
-import com.burger.burgerking.customer.dto.request.QaRequest;
+import com.burger.burgerking.customer.dto.response.QaSummaryResponse;
 import com.burger.burgerking.global.common.ApiResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -18,7 +18,7 @@ public class QalistController {
 
     @Operation(summary = "문의사항 조회 기능 제공", description = "모든 문의사항을 조회")
     @GetMapping
-    public ResponseEntity<ApiResponse<List<QaRequest>>> getQalist() {
+    public ResponseEntity<ApiResponse<List<QaSummaryResponse>>> getQalist() {
         return ResponseEntity.ok(ApiResponse.success(null));
     }
 }
