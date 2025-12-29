@@ -15,13 +15,13 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class MenuService {
-    private MenuRepository menuRepository;
-    private CategoryRepository categoryRepository;
-    private KeywordRepository keywordRepository;
-    private MenuKeywordRepository menuKeywordRepository;
+    private final MenuRepository menuRepository;
+    private final CategoryRepository categoryRepository;
+    private final KeywordRepository keywordRepository;
+    private final MenuKeywordRepository menuKeywordRepository;
 
     public MainMenuResponse getMenu(){
-        List<Category> categories = categoryRepository.findAllByOrderByDisplayOrdercAsc();
+        List<Category> categories = categoryRepository.findAllByOrderByDisplayOrderAsc();
         List<CategoryMenuResponse> categoryMenuResponseList = new ArrayList<>();
         for(Category category : categories){
             List<Menu> menus = menuRepository.findByCategory(category);
@@ -38,13 +38,16 @@ public class MenuService {
     public MainMenuResponse getSearchMenu(List<Long> id) {
         // 키워드 id와 같은 메뉴(순서 상관없이)를 searchMenu로 받아옴.
         List<Menu> searchMenu = menuRepository.findBySearchMenu(id);
-        List<Category> categories = categoryRepository.findAllByOrderByDisplayOrdercAsc();
+        List<Category> categories = categoryRepository.findAllByOrderByDisplayOrderAsc();
         List<CategoryMenuResponse> categoryMenuResponseList = new ArrayList<>();
         for(Category category : categories){
             List<MenuListResponse> menuListResponses = new ArrayList<>();
-            for(Menu menu : searchMenu){
-                // 카테고리 순서에 맞춰 같은 카테고리 메뉴를 가져옴
-                if(menu.getCategory().getId().equals(category.getId())){
+            for (Menu menu : searchMenu) {
+                boolean tr = menu.getMenuCategories()
+                        .stream()
+                        .anyMatch(mc -> mc.getCategory().getId().equals(category.getId()));
+
+                if (tr) {
                     menuListResponses.add(toMenuList(menu));
                 }
             }
@@ -99,7 +102,8 @@ public class MenuService {
                     menu.getDescription(),
                     menu.getImageUrl(),
                     menu.getKcal(),
-                    keywords
+                    keywords,
+                    badges(menu)
             );
         }
         else{
@@ -109,10 +113,21 @@ public class MenuService {
                     menu.getDescription(),
                     menu.getImageUrl(),
                     menu.getKcal(),
-                    keywords
+                    keywords,
+                    badges(menu)
             );
         }
 
+    }
+    public List<String> badges(Menu menu){
+        List<String> badges = new ArrayList<>();
+        if (menu.isNewMenu()) badges.add("NEW");
+        if (menu.isLimited()) badges.add("LIMITED");
+        if (menu.isPopular()) badges.add("POPULAR");
+        if (menu.isSpicy()) badges.add("SPICY");
+        if (menu.isAllDaySnack()) badges.add("ALL_DAY_SNACK");
+        if (menu.isAllDayKing()) badges.add("ALL_DAY_KING");
+        return badges;
     }
 
     public KeyWordListResponse getMenuByKeyword() {

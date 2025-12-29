@@ -20,14 +20,14 @@ import java.util.List;
 @RequiredArgsConstructor
 @RequestMapping("/api/v1/menu/main")
 public class MenuController {
-    private MenuService menuService;
-    @GetMapping
+    private final MenuService menuService;
+    @GetMapping("/main")
     @Operation(summary = "메뉴 전체 조회", description = "메인 메뉴페이지 클릭시 전체메뉴")
     public ResponseEntity<ApiResponse<MainMenuResponse>> getMenu() {
         return ResponseEntity.ok(ApiResponse.success(menuService.getMenu()));
     }
 
-    @GetMapping
+    @GetMapping("/search")
     @Operation(summary = "메뉴 검색",description = "키워드 ID로 선택하여 메뉴 검색")
     public ResponseEntity<ApiResponse<MainMenuResponse>> getMenuById(@RequestParam List<Long> id) {
         return ResponseEntity.ok(ApiResponse.success(menuService.getSearchMenu(id)));
@@ -39,7 +39,7 @@ public class MenuController {
         return ResponseEntity.ok(ApiResponse.success(menuService.getMenuDetail(id)));
     }
 
-    @GetMapping
+    @GetMapping("/keywords")
     @Operation(summary = "키워드 창", description = "키워드창 띄우기")
     public ResponseEntity<ApiResponse<KeyWordListResponse>> getMenuByKeyword() {
         return ResponseEntity.ok(ApiResponse.success(menuService.getMenuByKeyword()));

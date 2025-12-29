@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-@Entity
+@Entity(name = "MenuCategory")
 @Getter
 @NoArgsConstructor
 @Table(name = "category")

@@ -26,7 +26,6 @@ public class Menu {
     @Column(length = 100)
     private String description;
     private int kcal;
-    private int price;
 
     private String imageUrl;
 
@@ -37,9 +36,8 @@ public class Menu {
     private boolean isAllDaySnack;    // All Day Snack
     private boolean isAllDayKing;     // All Day King
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "category_id")
-    private Category category;
+    @OneToMany(mappedBy = "menu", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<MenuCategory> menuCategories = new ArrayList<>();
 
     @OneToMany(mappedBy = "menu", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<MenuKeyword> menuKeywords = new ArrayList<>();

@@ -15,21 +15,24 @@ public class MenuDetailResponse {
     private String imageUrl;
     private int kcal;
     List<KeyWordResponse> keywords;
+    private List<String> badges;
 
-    public MenuDetailResponse(String name, String description, String imageUrl, int kcal, List<KeyWordResponse> keywords) {
+    public MenuDetailResponse(String name, String description, String imageUrl, int kcal, List<KeyWordResponse> keywords,List<String> badges) {
         this.name = name;
         this.description = description;
         this.imageUrl = imageUrl;
         this.kcal = kcal;
         this.keywords = keywords;
+        this.badges = badges;
     }
 
-    public MenuDetailResponse(String name, String menuComposition, String description, String imageUrl, int kcal, List<KeyWordResponse> keywords) {
+    public MenuDetailResponse(String name, String menuComposition, String description, String imageUrl, int kcal, List<KeyWordResponse> keywords, List<String> badges) {
         this.name = name;
         this.menuComposition = menuComposition;
         this.description = description;
         this.imageUrl = imageUrl;
         this.kcal = kcal;
         this.keywords = keywords;
+        this.badges = badges;
     }
 }

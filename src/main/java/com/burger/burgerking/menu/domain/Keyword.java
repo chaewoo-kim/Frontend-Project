@@ -13,6 +13,7 @@ public class Keyword {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     KeywordType keywordType;
     @Column(nullable = false)
