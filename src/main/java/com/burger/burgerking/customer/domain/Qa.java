@@ -8,7 +8,7 @@ import lombok.RequiredArgsConstructor;
 @Table(name="tbl_qa")
 @Getter
 @RequiredArgsConstructor
-public class QaService {
+public class Qa {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

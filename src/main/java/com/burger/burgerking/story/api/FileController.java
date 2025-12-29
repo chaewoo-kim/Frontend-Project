@@ -26,7 +26,7 @@ import java.util.List;
 @Slf4j
 @Tag(name = "파일 관리", description = "파일 업로드, 조회, 삭제, 다운로드 API")
 @RestController
-@RequestMapping("/api/files")
+@RequestMapping("/api/v1/files")
 @RequiredArgsConstructor
 public class FileController {
 
@@ -41,6 +41,16 @@ public class FileController {
         log.info("fileMeta: {}",  fileMeta);
         FileMetaData fileMetaData = fileService.uploadFile(file, fileMeta);
         return ResponseEntity.ok(fileMetaData);
+    }
+
+    @Operation(description = "여러 파일 한 번에 업로드")
+    @PostMapping(value = "/upload-images", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    public ResponseEntity<List<FileMetaData>>  uploadImages(
+            @RequestPart("file") List<MultipartFile> files,
+            @RequestPart("fileMeta") FileMeta fileMeta
+    ) throws IOException {
+        List<FileMetaData> fileMetaDataList = fileService.uploadFiles(files, fileMeta);
+        return ResponseEntity.ok(fileMetaDataList);
     }
 
     @Operation(description = "파일 리스트 조회")

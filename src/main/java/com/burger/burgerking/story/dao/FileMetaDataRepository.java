@@ -1,7 +1,6 @@
-package com.burger.burgerking.story.dto;
+package com.burger.burgerking.story.dao;
 
 import com.burger.burgerking.story.domain.FileMetaData;
-import com.burger.burgerking.story.dto.response.FileMetaDataResponse;
 import com.burger.burgerking.story.enums.FileType;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
