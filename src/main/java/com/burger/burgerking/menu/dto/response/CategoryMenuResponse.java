@@ -1,7 +1,5 @@
 package com.burger.burgerking.menu.dto.response;
 
-import com.burger.burgerking.menu.domain.Category;
-import com.burger.burgerking.menu.domain.Menu;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
