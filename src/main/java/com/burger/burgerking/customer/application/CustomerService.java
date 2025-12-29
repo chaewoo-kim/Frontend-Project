@@ -62,7 +62,19 @@ public class CustomerService {
                 .toList();
     }
 
-    // 카테고리별 문의사항 목록: (QALIST Forward Link로 대체)
+    // 카테고리별 목록
+    public List<QaSummaryResponse> getQaByCategoryId(Long categoryId) {
+        Map<Long, String> categoryNameMap = buildCategoryNameMap();
+
+        return qaRepository.findAllByCategoryIdOrderByQaIdDesc(categoryId).stream()
+                .map(qa-> QaSummaryResponse.of(
+                        qa.getQaId(),
+                        qa.getTitle(),
+                        qa.getCategoryId(),
+                        categoryNameMap.getOrDefault(qa.getCategoryId(), "기타")
+                ))
+                .toList();
+    }
 
     // 검색(제목, 키워드)
     public List<QaSummaryResponse> search(String keyword) {

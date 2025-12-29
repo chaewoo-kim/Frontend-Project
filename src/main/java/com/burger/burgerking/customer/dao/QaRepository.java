@@ -14,8 +14,6 @@ public interface QaRepository extends JpaRepository<Qa,Long> {
     List<Qa> findTop5ByOrderByQaIdDesc();
 
     /// 검색(제목 또는 내용의 키워드로 조회)
-    ///  String titleKeyword
-    ///
     List<Qa> findByTitleContainingIgnoreCaseOrContentContainingIgnoreCaseOrderByQaIdDesc(
             String titleKeyword,
             String contentKeyword

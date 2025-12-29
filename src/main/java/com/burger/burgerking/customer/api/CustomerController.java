@@ -29,7 +29,7 @@ public class CustomerController {
     @Operation(summary = "문의사항 검색 기능 제공", description = "고객문의 사항 검색 조회")
     @GetMapping("/search")
     public ResponseEntity<ApiResponse<List<QaSummaryResponse>>> search(
-            @RequestParam(name="q", required = false) String keyword
+            @RequestParam(name="keyword", required = false) String keyword
     ) {
         return ResponseEntity.ok(ApiResponse.success(customerService.search(keyword)));
     }
