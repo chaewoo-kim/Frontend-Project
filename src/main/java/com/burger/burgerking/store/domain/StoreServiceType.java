@@ -19,17 +19,14 @@ public enum StoreServiceType {
         this.displayName = displayName;
     }
 
-    /** JSON / DB 코드 값 */
     public String getCode() {
         return code;
     }
 
-    /** 화면 출력용 한글명 */
     public String getDisplayName() {
         return displayName;
     }
 
-    /** JSON 적재 시: code → enum */
     public static StoreServiceType fromCode(String code) {
         return Arrays.stream(values())
                 .filter(type -> type.code.equals(code))

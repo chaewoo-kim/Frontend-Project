@@ -22,5 +22,17 @@ public class StoreImage {
     private ImageType imageType;
 
     private int sortOrder;
+
+    public StoreImage(
+            Long storeId,
+            String imageUrl,
+            ImageType imageType,
+            int sortOrder
+    ) {
+        this.storeId = storeId;
+        this.imageUrl = imageUrl;
+        this.imageType = imageType;
+        this.sortOrder = sortOrder;
+    }
 }
 
