@@ -8,6 +8,6 @@ import lombok.Getter;
 public class NoticeDetailResponse {
 
     private Long noticeId;
-    private String titile;
+    private String title;
     private String content;
 }

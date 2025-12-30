@@ -34,7 +34,7 @@ public class NoticeController {
     @Operation(summary = "공지사항 상세 조회")
     @GetMapping("/{noticeId}")
     public ResponseEntity<ApiResponse<NoticeDetailResponse>> getNoticeDetail(
-            @PathVariable Integer noticeId
+            @PathVariable Long noticeId
     ) {
         return ResponseEntity.ok(
                 ApiResponse.success(noticeService.getNoticeDetail(noticeId))

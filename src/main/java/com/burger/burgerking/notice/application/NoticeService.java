@@ -1,6 +1,7 @@
 package com.burger.burgerking.notice.application;
 
 import com.burger.burgerking.notice.dao.NoticeRepository;
+import com.burger.burgerking.notice.domain.Notice;
 import com.burger.burgerking.notice.dto.Response.NoticeDetailResponse;
 import com.burger.burgerking.notice.dto.Response.NoticeListResponse;
 import lombok.RequiredArgsConstructor;
@@ -16,16 +17,31 @@ public class NoticeService {
 
     private final NoticeRepository noticeRepository;
 
-    public Page<NoticeListResponse> getNotices (int page, int size) {
-        Pageable pageable = PageRequest.of(page, size, Sort.by("noticeId").descending());
+    public NoticeListResponse getNotices(Integer page, Integer size) {
 
-        return noticeRepository.findAll(pageable)
-                .map(notice -> NoticeListResponse.builder()
-                        .noticeId(notice.getNoticeId())
-                        .title(notice.getTitle())
-                        .build());
+        int pageNumber = page != null ? page : 0;
+        int pageSize = size != null ? size : 10;
 
+        Pageable pageable = PageRequest.of(
+                pageNumber,
+                pageSize,
+                Sort.by("noticeId").descending()
+        );
+
+        Page<Notice> noticePage = noticeRepository.findAll(pageable);
+
+        return NoticeListResponse.builder()
+                .notices(
+                        noticePage.getContent().stream()
+                                .map(notice -> NoticeListResponse.NoticeSummary.builder()
+                                        .noticeId(notice.getNoticeId())
+                                        .title(notice.getTitle())
+                                        .build())
+                                .toList()
+                )
+                .build();
     }
+
 
     public NoticeDetailResponse getNoticeDetail(Long noticeId) {
         Notice notice = noticeRepository.findById(noticeId)

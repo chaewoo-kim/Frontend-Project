@@ -10,7 +10,14 @@ import java.util.List;
 @Builder
 public class NoticeListResponse {
 
-    private Long noticeId;
-    private String title;
+    private List<NoticeSummary> notices;
+
+
+    @Getter
+    @Builder
+    public static class NoticeSummary {
+        private Long noticeId;
+        private String title;
+    }
 
 }
