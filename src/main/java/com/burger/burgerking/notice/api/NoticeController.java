@@ -26,7 +26,9 @@ public class NoticeController {
             @RequestParam(required = false) Integer page,
             @RequestParam(required = false) Integer size
     ) {
-        return ResponseEntity.ok(ApiResponse.success(null));
+        return ResponseEntity.ok(
+                ApiResponse.success(noticeService.getNotices(page, size))
+        );
     }
 
     @Operation(summary = "공지사항 상세 조회")
@@ -34,6 +36,8 @@ public class NoticeController {
     public ResponseEntity<ApiResponse<NoticeDetailResponse>> getNoticeDetail(
             @PathVariable Integer noticeId
     ) {
-        return ResponseEntity.ok(ApiResponse.success(null));
+        return ResponseEntity.ok(
+                ApiResponse.success(noticeService.getNoticeDetail(noticeId))
+        );
     }
 }
