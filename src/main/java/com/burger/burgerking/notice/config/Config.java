@@ -1,4 +1,4 @@
 package com.burger.burgerking.notice.config;
 
-public class config {
+public class Config {
 }
