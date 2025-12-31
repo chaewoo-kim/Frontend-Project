@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font: "Sandoll GothicNeoRound", "Pretendard", sans-serif;
+  --font-pre: "Pretendard", "Sandoll GothicNeoRound", sans-serif;
+  --font-flame: "Flame", "Sandoll GothicNeoRound", sans-serif;
+  --font-BKR: "BKR", "Sandoll GothicNeoRound", "Pretendard", sans-serif;
+  --bg-base: #f5ebdc;
+  --bg-light: #fffcf8;
+  --normal: #502314;
+  --normal-rgb: 80, 35, 20;
+  --primary: #d62300;
+  --sub: #6f6f6f;
+  --light: #89665b;
+  --border: rgba(80, 35, 20, .1);
+  --form-border: #d4c3b4;
+  --disabled: #fffcf8;
+  --disabled-bg: rgba(80, 35, 20, .15);
+  --placeholder: rgba(80, 35, 20, .3);
+  --red: #d62300;
+  --orange: #ff8732;
+  --yellow: #fa0;
+  --green: #198737;
+  --king: #c9281d;
+  --swiper-navigation-size: 44px;
+  --swiper-theme-color: #007aff;
+}
+
+@supports (padding-top:env(safe-area-inset-top)) {
+  html {
+    --ion-safe-area-top: env(safe-area-inset-top);
+    --ion-safe-area-bottom: env(safe-area-inset-bottom);
+    --ion-safe-area-left: env(safe-area-inset-left);
+    --ion-safe-area-right: env(safe-area-inset-right);
+  }
+}
+
+@supports (padding-top:20px) {
+  html {
+    --ion-safe-area-top: var(--ion-statusbar-padding);
+  }
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font);
+  color: var(--normal);
+  -webkit-text-size-adjust: none;
+  --ion-default-dynamic-font: -apple-system-body;
+  --ion-font-family: var(--ion-default-font);
+}
+
+html.md {
+  --ion-default-font: "Roboto", "Helvetica Neue", sans-serif;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font);
+  background-color: var(--bg-base);
+  color: var(--normal);
+  word-break: break-all;
+  -webkit-touch-callout: none !important;
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  user-select: none !important;
+}
