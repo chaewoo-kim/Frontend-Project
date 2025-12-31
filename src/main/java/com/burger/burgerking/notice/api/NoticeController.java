@@ -40,4 +40,6 @@ public class NoticeController {
                 ApiResponse.success(noticeService.getNoticeDetail(noticeId))
         );
     }
+
+
 }

@@ -1,6 +1,6 @@
 package com.burger.burgerking.customer.application;
 
-import com.burger.burgerking.customer.dao.QaCategoryRepository;
+import com.burger.burgerking.customer.dao.CategoryRepository;
 import com.burger.burgerking.customer.dao.QaRepository;
 import com.burger.burgerking.customer.domain.Category;
 import com.burger.burgerking.customer.domain.Qa;
@@ -25,11 +25,11 @@ import java.util.stream.Collectors;
 public class CustomerService {
 
     private final QaRepository qaRepository;
-    private final QaCategoryRepository qaCategoryRepository;
+    private final CategoryRepository categoryRepository;
 
     // CategoryId 와 CategoryName 을 Map에 저장하여 조회하기
     public Map<Long, String> buildCategoryNameMap() {
-        List<Category> categories = qaCategoryRepository.findAll();
+        List<Category> categories = categoryRepository.findAll();
 
         return categories.stream()
                 .collect(Collectors.toMap(
@@ -56,7 +56,7 @@ public class CustomerService {
 
     // 카테고리 목록
     public List<CategoryResponse> getCategories() {
-        return qaCategoryRepository.findAll().stream()
+        return categoryRepository.findAll().stream()
                 .sorted((a, b) -> Long.compare(a.getCategoryId(), b.getCategoryId()))
                 .map(c -> CategoryResponse.of(c.getCategoryId(), c.getCategoryName()))
                 .toList();
@@ -108,7 +108,7 @@ public class CustomerService {
                 .orElseThrow(() -> new IllegalArgumentException("QA not found: " + qaId));
 
         // 카테고리 출력
-        String categoryName = qaCategoryRepository.findById(qa.getCategoryId())
+        String categoryName = categoryRepository.findById(qa.getCategoryId())
                 .map(Category::getCategoryName)
                 .orElse("기타");
 
