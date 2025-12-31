@@ -6,7 +6,7 @@ import lombok.Getter;
 @Entity
 @Table(name = "tbl_category")
 @Getter
-public class Category {
+public class QaCategory {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
