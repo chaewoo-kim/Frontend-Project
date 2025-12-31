@@ -2,9 +2,9 @@ package com.burger.burgerking.customer.application;
 
 import com.burger.burgerking.customer.dao.QaCategoryRepository;
 import com.burger.burgerking.customer.dao.QaRepository;
-import com.burger.burgerking.customer.domain.Category;
+import com.burger.burgerking.customer.domain.QaCategory;
 import com.burger.burgerking.customer.domain.Qa;
-import com.burger.burgerking.customer.dto.response.CategoryResponse;
+import com.burger.burgerking.customer.dto.response.QaCategoryResponse;
 import com.burger.burgerking.customer.dto.response.FaqResponse;
 import com.burger.burgerking.customer.dto.response.QaDetailResponse;
 import com.burger.burgerking.customer.dto.response.QaSummaryResponse;
@@ -29,12 +29,12 @@ public class CustomerService {
 
     // CategoryId 와 CategoryName 을 Map에 저장하여 조회하기
     public Map<Long, String> buildCategoryNameMap() {
-        List<Category> categories = qaCategoryRepository.findAll();
+        List<QaCategory> categories = qaCategoryRepository.findAll();
 
         return categories.stream()
                 .collect(Collectors.toMap(
-                        Category::getCategoryId,
-                        Category::getCategoryName
+                        QaCategory::getCategoryId,
+                        QaCategory::getCategoryName
                 ));
     }
 
@@ -55,10 +55,10 @@ public class CustomerService {
     }
 
     // 카테고리 목록
-    public List<CategoryResponse> getCategories() {
+    public List<QaCategoryResponse> getCategories() {
         return qaCategoryRepository.findAll().stream()
                 .sorted((a, b) -> Long.compare(a.getCategoryId(), b.getCategoryId()))
-                .map(c -> CategoryResponse.of(c.getCategoryId(), c.getCategoryName()))
+                .map(c -> QaCategoryResponse.of(c.getCategoryId(), c.getCategoryName()))
                 .toList();
     }
 
@@ -109,7 +109,7 @@ public class CustomerService {
 
         // 카테고리 출력
         String categoryName = qaCategoryRepository.findById(qa.getCategoryId())
-                .map(Category::getCategoryName)
+                .map(QaCategory::getCategoryName)
                 .orElse("기타");
 
         return QaDetailResponse.of(

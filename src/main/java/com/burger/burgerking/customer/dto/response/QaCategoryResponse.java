@@ -3,11 +3,11 @@ package com.burger.burgerking.customer.dto.response;
 /**
  * 카테고리 목록 반환
  * */
-public record CategoryResponse (
+public record QaCategoryResponse(
     Long categoryId,
     String categoryName
     ) {
-    public static CategoryResponse of(Long id, String name) {
-        return new CategoryResponse(id, name);
+    public static QaCategoryResponse of(Long id, String name) {
+        return new QaCategoryResponse(id, name);
     }
 }
