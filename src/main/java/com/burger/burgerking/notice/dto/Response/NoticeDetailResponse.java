@@ -16,4 +16,6 @@ public class NoticeDetailResponse {
     private String imageUrl;
     private String createdAt;
 
+    private List<FileMetaDataResponse> images;
+
 }
