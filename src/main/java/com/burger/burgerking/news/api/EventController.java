@@ -73,7 +73,7 @@ public class EventController {
     ) {
         return ResponseEntity.ok(
                 ApiResponse.success(
-                        eventService.getOngoingEventDetail(eventId)
+                        eventService.getEventDetail(eventId)
                 )
         );
     }
@@ -89,7 +89,7 @@ public class EventController {
     ) {
         return ResponseEntity.ok(
                 ApiResponse.success(
-                        eventService.getOngoingEventDetail(eventId)
+                        eventService.getEventDetail(eventId)
 
                 )
         );
