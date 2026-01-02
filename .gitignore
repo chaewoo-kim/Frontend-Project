@@ -40,10 +40,15 @@ out/
 .DS_Store
 **/.DS_Store
 
-### Frontend (Vue / Vite) ###
+### Node ###
+node_modules/
 Frontend/node_modules/
+dist/
 Frontend/dist/
-Frontend/.env
-Frontend/.env.*
-npm-debug.log*
-yarn-debug.log*
+.env
+.env.local
+.env.*.local
+dist/
+.env
+dist/
+.env

@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // 백엔드 API 주소 설정 (Spring Boot 기본 포트 8080 가정)
 const api = axios.create({
-  baseURL: 'http://localhost:8080/api/v1/menu/main',
+  baseURL: '/api/v1/menu/main',
   timeout: 5000,
 });
 

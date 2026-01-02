@@ -2,7 +2,7 @@
   <header class="headerWrap">
     <div class="titleBar">
         <!-- 로고 (BK Korea 스타일) -->
-        <router-link to="/menu" class="flex items-center">
+        <router-link to="/main" class="flex items-center">
              <span class="text-[#E2221F] font-black text-2xl md:text-3xl italic tracking-tighter transform -skew-x-12 font-['Black_Han_Sans']">BURGERKING</span>
         </router-link>
     
@@ -14,7 +14,28 @@
                                  "item === 'MENU' ? '/menu' :
                                   item === 'STORE' ? '/store' :'#'">
                     <span>{{ item }}</span>
+            <li
+                class="gnb_btnWrap"
+                v-for="item in navItems"
+                :key="item.name"
+                @mouseenter="item.name === 'STORY' ? (showStorySub = true) : null"
+                @mouseleave="item.name === 'STORY' ? (showStorySub = false) : null"
+            >
+                <router-link :to="item.path">
+                    <span>{{ item.name }}</span>
                 </router-link>
+
+                <!-- STORY 서브 네비게이션 (브라운 필 디자인) -->
+                <div v-if="item.name === 'STORY' && showStorySub" class="sub_gnb">
+                    <div class="sub_gnb_inner">
+                        <router-link to="/story/brand">브랜드</router-link>
+                        <router-link to="/story/why">Why 버거킹</router-link>
+                        <router-link to="/story/esg">ESG 경영</router-link>
+                        <router-link to="/story/qsr">Smart QSR</router-link>
+                        <router-link to="/story/awards">수상실적</router-link>
+                        <router-link to="/story/ad">광고영상</router-link>
+                    </div>
+                </div>
             </li>
         </ul>
     </nav>
@@ -29,7 +50,17 @@
 </template>
 
 <script setup>
-const navItems = ['MENU', 'STORY', 'NEWS', 'STORE', 'CUSTOMER'];
+import { ref } from 'vue';
+
+const showStorySub = ref(false);
+
+const navItems = [
+    { name: 'MENU', path: '/menu' },
+    { name: 'STORY', path: '/story/brand' },
+    { name: 'NEWS', path: '#' },
+    { name: 'STORE', path: '#' },
+    { name: 'CUSTOMER', path: '#' }
+];
 </script>
 
 <style scoped>
@@ -50,7 +81,7 @@ ul {
 .headerWrap {
     position: relative;
     padding: 0 20px;
-    z-index: 200;
+    z-index: 500; /* Increased z-index to stay above content */
     background-color: var(--bg-base);
 }
 
@@ -94,6 +125,7 @@ a {
 /* User GNB Styles */
 .GNBWrap, .GNBWrap>ul {
     display: flex;
+    height: 100%;
 }
 
 .GNBWrap {
@@ -101,6 +133,12 @@ a {
     height: 100%;
     justify-content: center;
     padding: 0 20px;
+}
+
+.gnb_btnWrap {
+    position: relative;
+    display: flex;
+    align-items: center;
 }
 
 .gnb_btnWrap > a {
@@ -118,10 +156,48 @@ a {
     color: #E2221F;
 }
 
+/* STORY Sub GNB - Brown Pill Design */
+.sub_gnb {
+    position: absolute;
+    top: 80%; /* Position below the header link */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 600;
+    white-space: nowrap;
+}
+
+.sub_gnb_inner {
+    display: flex;
+    background-color: #502314; /* 브라운 배경 */
+    border-radius: 50px; /* 필 디자인 */
+    padding: 10px 30px;
+    gap: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.sub_gnb_inner a {
+    color: #f5ebdc; /* 라이트 컬러 */
+    font-weight: 700;
+    font-size: 1.125rem;
+    transition: color 0.2s;
+    padding: 5px 0;
+}
+
+.sub_gnb_inner a:hover {
+    color: #E2221F; /* 호버 시 빨간색 */
+}
+
 @media screen and (min-width: 1024px) and (max-width: 1250px) {
     .gnb_btnWrap > a {
         padding: 10px 8px;
         font-size: 1.125rem;
+    }
+    .sub_gnb_inner {
+        padding: 8px 15px;
+        gap: 15px;
+    }
+    .sub_gnb_inner a {
+        font-size: 0.9rem;
     }
 }
 
