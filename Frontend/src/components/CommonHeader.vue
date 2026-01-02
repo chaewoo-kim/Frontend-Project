@@ -52,9 +52,9 @@ const showStorySub = ref(false);
 const navItems = [
     { name: 'MENU', path: '/menu' },
     { name: 'STORY', path: '/story/brand' },
-    { name: 'NEWS', path: '#' },
-    { name: 'STORE', path: '#' },
-    { name: 'CUSTOMER', path: '#' }
+    { name: 'NEWS', path: '/event' },
+    { name: 'STORE', path: '/store' },
+    { name: 'CUSTOMER', path: '/customer' }
 ];
 </script>
 

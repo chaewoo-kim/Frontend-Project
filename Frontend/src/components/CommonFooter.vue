@@ -5,11 +5,11 @@
         <h2 class="footer_logo">BURGER KING</h2>
         <div class="footer_content">
           <nav class="footer_links">
-            <a href="#">이용약관</a>
-            <a href="#" class="bold">개인정보처리방침</a>
-            <a href="#">위치정보 이용약관</a>
-            <a href="#">법적고지</a>
-            <a href="#">고정형 영상정보처리기기 운영관리방침</a>
+            <router-link to="/terms">이용약관</router-link>
+            <router-link to="/privacy" class="bold">개인정보처리방침</router-link>
+            <router-link to="/location">위치정보 이용약관</router-link>
+            <router-link to="/legal">법적고지</router-link>
+            <router-link to="/video-policy">고정형 영상정보처리기기 운영관리방침</router-link>
           </nav>
           <div class="footer_info">
             <p>서울특별시 종로구 삼봉로 71 G타워 4F,5F</p>
