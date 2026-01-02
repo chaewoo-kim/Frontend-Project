@@ -1,6 +1,5 @@
 package com.burger.burgerking.menu.domain;
 
-
 import com.burger.burgerking.menu.dto.response.CategoryMenuResponse;
 import com.burger.burgerking.menu.dto.response.KeyWordListResponse;
 import com.burger.burgerking.menu.dto.response.KeyWordResponse;
@@ -25,16 +24,17 @@ public class MenuService {
     private final KeywordRepository keywordRepository;
     private final MenuKeywordRepository menuKeywordRepository;
 
-    public MainMenuResponse getMenu(){
+    public MainMenuResponse getMenu() {
         List<Category> categories = categoryRepository.findAllByOrderByDisplayOrderAsc();
         List<CategoryMenuResponse> categoryMenuResponseList = new ArrayList<>();
-        for(Category category : categories){
+        for (Category category : categories) {
             List<Menu> menus = menuRepository.findByCategory(category);
             List<MenuListResponse> menuListResponses = new ArrayList<>();
-            for(Menu menu : menus){
+            for (Menu menu : menus) {
                 menuListResponses.add(toMenuList(menu));
             }
-            categoryMenuResponseList.add(new CategoryMenuResponse(category.getId(), category.getName(), menuListResponses));
+            categoryMenuResponseList
+                    .add(new CategoryMenuResponse(category.getId(), category.getName(), menuListResponses));
         }
         return new MainMenuResponse(categoryMenuResponseList);
     }
@@ -45,7 +45,7 @@ public class MenuService {
         List<Menu> searchMenu = menuRepository.findBySearchMenu(id);
         List<Category> categories = categoryRepository.findAllByOrderByDisplayOrderAsc();
         List<CategoryMenuResponse> categoryMenuResponseList = new ArrayList<>();
-        for(Category category : categories){
+        for (Category category : categories) {
             List<MenuListResponse> menuListResponses = new ArrayList<>();
             for (Menu menu : searchMenu) {
                 boolean tr = menu.getMenuCategories()
@@ -56,62 +56,65 @@ public class MenuService {
                     menuListResponses.add(toMenuList(menu));
                 }
             }
-            //menuListResponses가 비어있으면 해당 카테고리는 출력하지 않음.
+            // menuListResponses가 비어있으면 해당 카테고리는 출력하지 않음.
             if (menuListResponses.isEmpty()) {
                 continue;
             }
-            categoryMenuResponseList.add(new CategoryMenuResponse(category.getId(), category.getName(), menuListResponses));
+            categoryMenuResponseList
+                    .add(new CategoryMenuResponse(category.getId(), category.getName(), menuListResponses));
         }
         return new MainMenuResponse(categoryMenuResponseList);
     }
 
     // 뱃지와 메뉴 정보 메소드
-    public MenuListResponse toMenuList(Menu menu){
+    public MenuListResponse toMenuList(Menu menu) {
         List<String> badges = new ArrayList<>();
-        if (menu.isNewMenu()) badges.add("NEW");
-        if (menu.isLimited()) badges.add("LIMITED");
-        if (menu.isPopular()) badges.add("POPULAR");
-        if (menu.isSpicy()) badges.add("SPICY");
-        if (menu.isAllDaySnack()) badges.add("ALL_DAY_SNACK");
-        if (menu.isAllDayKing()) badges.add("ALL_DAY_KING");
+        if (menu.isNewMenu())
+            badges.add("NEW");
+        if (menu.isLimited())
+            badges.add("LIMITED");
+        if (menu.isPopular())
+            badges.add("POPULAR");
+        if (menu.isSpicy())
+            badges.add("SPICY");
+        if (menu.isAllDaySnack())
+            badges.add("ALL_DAY_SNACK");
+        if (menu.isAllDayKing())
+            badges.add("ALL_DAY_KING");
 
         return new MenuListResponse(
+                menu.getId(),
                 menu.getName(),
                 menu.getMenuComposition(),
                 menu.getImageUrl(),
-                badges
-        );
+                badges);
     }
 
     public MenuDetailResponse getMenuDetail(Long id) {
         Menu menu = menuRepository.findById(id).orElse(null);
         // 키워드 추출
         // 방법 1. JPQL 사용
-//        List<KeyWordResponse> keywords= menuKeywordRepository.findByMenuId(id)
-//                .stream()
-//                .map(k-> new KeyWordResponse(k.getId(),k.getKeywordType(),k.getName()))
-//                .toList();
+        // List<KeyWordResponse> keywords= menuKeywordRepository.findByMenuId(id)
+        // .stream()
+        // .map(k-> new KeyWordResponse(k.getId(),k.getKeywordType(),k.getName()))
+        // .toList();
 
         // 방법 2. menu엔티티 메소드 활용
         List<KeyWordResponse> keywords = menu.getMenuKeywords()
                 .stream()
-                .map(k-> new KeyWordResponse(
-                        k.getKeyword().getId()
-                        ,k.getKeyword().getKeywordType()
-                        ,k.getKeyword().getName()))
+                .map(k -> new KeyWordResponse(
+                        k.getKeyword().getId(), k.getKeyword().getKeywordType(), k.getKeyword().getName()))
                 .toList();
         // 메뉴명과 메뉴 구성품이 같은 경우
-        if(menu.getName().equals(menu.getMenuComposition())){
+        if (menu.getName().equals(menu.getMenuComposition())) {
             return new MenuDetailResponse(
                     menu.getName(),
                     menu.getDescription(),
                     menu.getImageUrl(),
                     menu.getKcal(),
                     keywords,
-                    badges(menu)
-            );
-        }
-        else{
+                    badges(menu));
+        } else {
             return new MenuDetailResponse(
                     menu.getName(),
                     menu.getMenuComposition(),
@@ -119,39 +122,41 @@ public class MenuService {
                     menu.getImageUrl(),
                     menu.getKcal(),
                     keywords,
-                    badges(menu)
-            );
+                    badges(menu));
         }
 
     }
-    public List<String> badges(Menu menu){
+
+    public List<String> badges(Menu menu) {
         List<String> badges = new ArrayList<>();
-        if (menu.isNewMenu()) badges.add("NEW");
-        if (menu.isLimited()) badges.add("LIMITED");
-        if (menu.isPopular()) badges.add("POPULAR");
-        if (menu.isSpicy()) badges.add("SPICY");
-        if (menu.isAllDaySnack()) badges.add("ALL_DAY_SNACK");
-        if (menu.isAllDayKing()) badges.add("ALL_DAY_KING");
+        if (menu.isNewMenu())
+            badges.add("NEW");
+        if (menu.isLimited())
+            badges.add("LIMITED");
+        if (menu.isPopular())
+            badges.add("POPULAR");
+        if (menu.isSpicy())
+            badges.add("SPICY");
+        if (menu.isAllDaySnack())
+            badges.add("ALL_DAY_SNACK");
+        if (menu.isAllDayKing())
+            badges.add("ALL_DAY_KING");
         return badges;
     }
 
     public KeyWordListResponse getMenuByKeyword() {
-        //모든 키워드를 찾아옴
+        // 모든 키워드를 찾아옴
         List<Keyword> keywords = keywordRepository.findAll();
 
         List<KeyWordResponse> categoryList = new ArrayList<>();
         List<KeyWordResponse> tasteList = new ArrayList<>();
 
-        for(Keyword keyword : keywords){
+        for (Keyword keyword : keywords) {
             KeyWordResponse result = new KeyWordResponse(
-                    keyword.getId()
-                    ,keyword.getKeywordType()
-                    ,keyword.getName()
-            );
-            if(result.getKeywordType() == KeywordType.CATEGORY){
+                    keyword.getId(), keyword.getKeywordType(), keyword.getName());
+            if (result.getKeywordType() == KeywordType.CATEGORY) {
                 categoryList.add(result);
-            }
-            else{
+            } else {
                 tasteList.add(result);
             }
         }
