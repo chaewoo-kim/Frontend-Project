@@ -7,5 +7,6 @@ public enum FileType {
     ESG,
     SMART_QSR,
     AWARD,
-    AD_VIDEO
+    AD_VIDEO,
+    NEWS
 }
