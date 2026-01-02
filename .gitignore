@@ -39,3 +39,11 @@ out/
 ### MAC OS ###
 .DS_Store
 **/.DS_Store
+
+### Frontend (Vue / Vite) ###
+Frontend/node_modules/
+Frontend/dist/
+Frontend/.env
+Frontend/.env.*
+npm-debug.log*
+yarn-debug.log*

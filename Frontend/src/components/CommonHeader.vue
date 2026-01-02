@@ -10,7 +10,9 @@
     <nav class="GNBWrap hidden lg:flex">
         <ul>
             <li class="gnb_btnWrap" v-for="item in navItems" :key="item">
-                <router-link :to="item === 'MENU' ? '/menu' : '#'">
+                <router-link :to=
+                                 "item === 'MENU' ? '/menu' :
+                                  item === 'STORE' ? '/store' :'#'">
                     <span>{{ item }}</span>
                 </router-link>
             </li>
