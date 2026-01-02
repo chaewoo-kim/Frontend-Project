@@ -71,7 +71,8 @@ const loadData = async () => {
         }
 
         if (qaRes.data && qaRes.data.data) {
-            allQAs.value = qaRes.data.data;
+            // Sort by qaId ascending (oldest first)
+            allQAs.value = qaRes.data.data.sort((a, b) => a.qaId - b.qaId);
         }
 
         // Set initial active tab
@@ -196,11 +197,11 @@ onMounted(async () => {
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 100%; /* Match container */
+    height: 100%;
     padding: 0 20px;
-    font-size: 18px; /* Bigger font */
+    font-size: 25px; /* Increased by 40% (18px -> 25px) */
     font-weight: 500;
-    color: #502314; /* Inactive color */
+    color: #502314;
     background: transparent;
     border: none;
     cursor: pointer;
@@ -222,21 +223,38 @@ onMounted(async () => {
 
 /* Category Sections */
 .category_section {
-    padding-bottom: 60px; /* Space inside the block */
-    margin-bottom: 60px; /* Space outside */
-    border-bottom: 3px solid #502314; /* Slightly thicker separator (approx 5% logic applied loosely as noticeable step) */
-    scroll-margin-top: 140px; /* Adjusted for larger header */
-}
-.category_section:last-child {
+    position: relative;
+    padding-bottom: 46px; /* Reduced by ~5% (48px -> 46px) */
+    margin-bottom: 46px; /* Reduced by ~5% (48px -> 46px) */
+    /* Border replaced by pseudo-element for length adjustment */
     border-bottom: none;
+    scroll-margin-top: 140px;
+}
+
+.category_section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%; /* Reduced by 10% (110% -> 100%) */
+    height: 4px; /* Reduced by 30% (6px -> 4.2px, rounded to 4px) */
+    background-color: rgba(80, 35, 20, 0.35);
+}
+
+.category_section:last-child {
     margin-bottom: 0;
+    padding-bottom: 0;
+}
+.category_section:last-child::after {
+    display: none;
 }
 
 .category_tit {
     font-size: 28px;
     font-weight: 800;
     color: #502314;
-    margin-bottom: 20px;
+    margin-bottom: 14px; /* Reduced by 30% (20px -> 14px) */
     padding-bottom: 0;
     border-bottom: none;
 }
@@ -247,9 +265,6 @@ onMounted(async () => {
   padding: 0;
   margin: 0;
 }
-.faq_list {
-    border-top: 2px solid #502314; /* Let's give a strong start to the list itself if the header doesn't have it */
-}
 
 .faq_list li {
     border-bottom: 1px solid #e5e5e5;
@@ -258,7 +273,7 @@ onMounted(async () => {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 24px 10px;
+    padding: 23px 10px; /* Reduced vertical padding by ~5% (24px -> 23px) */
     color: #2e2e2e;
     transition: background-color 0.2s;
     cursor: pointer;
