@@ -5,6 +5,8 @@ import com.burger.burgerking.global.common.ApiResponse;
 import com.burger.burgerking.mainpage.application.MainpageService;
 import com.burger.burgerking.mainpage.dto.request.AdVideoRequest;
 import com.burger.burgerking.mainpage.dto.request.EventRequest;
+import com.burger.burgerking.mainpage.dto.request.MainPageResponse;
+import com.burger.burgerking.mainpage.dto.request.WhyBKSlideResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
@@ -40,6 +42,13 @@ public class MainpageController {
     @GetMapping("/advideo")
     public ResponseEntity<ApiResponse<List<AdVideoRequest>>> advideo(){
         List<AdVideoRequest> response = mainpageService.getAdVideos();
+        return ResponseEntity.ok(ApiResponse.success(response));
+    }
+
+    @Operation(summary = "메인페이지 통합 데이터", description = "이벤트 배너, 광고 영상, Why BurgerKing 자료 등 메인페이지에 필요한 데이터를 한 번에 가져옵니다.")
+    @GetMapping("/total")
+    public ResponseEntity<ApiResponse<MainPageResponse>> total() {
+        MainPageResponse response = mainpageService.getMainPageData();
         return ResponseEntity.ok(ApiResponse.success(response));
     }
 
