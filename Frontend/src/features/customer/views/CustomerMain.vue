@@ -26,9 +26,9 @@
           </div>
           <div class="search_row">
             <div class="inp_box active">
-                <input type="text" id="" class="" placeholder="궁금한 내용을 검색해주세요.">
-                <button type="button" class="btn_inp_clear type02" style="display: none;">clear text</button>
-                <button type="button" class="btn_search type02">search</button>
+                <input type="text" v-model="searchKeyword" @keyup.enter="handleSearch" placeholder="궁금한 내용을 검색해주세요.">
+                <button type="button" class="btn_inp_clear type02" v-if="searchKeyword" @click="searchKeyword = ''">clear text</button>
+                <button type="button" class="btn_search type02" @click="handleSearch">search</button>
             </div>
           </div>
           <ul class="faq_category">
@@ -42,7 +42,7 @@
             <h5 class="faq_header">많이 물어본 질문</h5>
             <ul>
               <li v-for="(faq, i) in topFaqs" :key="i">
-                <router-link to="/customer/detail">
+                <router-link :to="`/customer/detail?id=${faq.id}`">
                     <p>{{ faq.title }}</p>
                     <button type="button" class="btn_arrow">arrow</button>
                 </router-link>
@@ -100,29 +100,56 @@
 <script setup>
 import CommonHeader from '@/components/CommonHeader.vue';
 import { useRouter } from 'vue-router';
+import { ref, onMounted } from 'vue';
+import { getCategories, getTopFaqs } from '@/api/customer';
 
 const router = useRouter();
 
-const categories = [
-  { id: '01', label: '딜리버리', iconClass: 'ico_faq_delivery' },
-  { id: '02', label: '킹오더', iconClass: 'ico_faq_order' },
-  { id: '03', label: '쿠폰', iconClass: 'ico_faq_coupon' },
-  { id: '04', label: '멤버십', iconClass: 'ico_faq_membership' },
-  { id: '05', label: '매장/상품/서비스', iconClass: 'ico_faq_product' },
-  { id: '06', label: '기타', iconClass: 'ico_faq_other' },
-];
+const categories = ref([]);
+const topFaqs = ref([]);
+const searchKeyword = ref('');
 
-const topFaqs = [
-    { title: '위치정보접근권한을 설정해도 앱 이용이 안되고 GPS 인식이 잘 안됩니다. 어떻게 해야하나요?' },
-    { title: '주문하려고 하는데 "유효하지 않은 위도, 경도 값입니다."라는 오류가 노출되면서 주문이 진행되지 않습니다.' },
-    { title: '개인정보(이름/전화번호/생년월일)를 변경하고 싶어요.' },
-    { title: '이메일주소 를 변경하고 싶어요.' },
-    { title: '생일 축하 쿠폰의 발급 기준은 어떻게 되나요?' },
-];
+const getIconClass = (name) => {
+    if (name.includes('딜리버리')) return 'ico_faq_delivery';
+    if (name.includes('킹오더')) return 'ico_faq_order';
+    if (name.includes('쿠폰')) return 'ico_faq_coupon';
+    if (name.includes('멤버십')) return 'ico_faq_membership';
+    if (name.includes('매장') || name.includes('상품') || name.includes('서비스')) return 'ico_faq_product';
+    return 'ico_faq_other';
+};
 
 const goToDocs = (id) => {
     router.push({ path: '/customer/qa_list', query: { category: id } });
 };
+
+const handleSearch = () => {
+    if (searchKeyword.value.trim()) {
+        router.push({ path: '/customer/qa_list', query: { keyword: searchKeyword.value } });
+    }
+};
+
+onMounted(async () => {
+    try {
+        const catRes = await getCategories();
+        if (catRes.data && catRes.data.data) {
+            categories.value = catRes.data.data.map(c => ({
+                id: c.categoryId,
+                label: c.categoryName,
+                iconClass: getIconClass(c.categoryName)
+            }));
+        }
+
+        const faqRes = await getTopFaqs();
+        if (faqRes.data && faqRes.data.data) {
+            topFaqs.value = faqRes.data.data.map(f => ({
+                id: f.qaId, // Ensure API returns qaId as expected in FaqResponse
+                title: f.title
+            }));
+        }
+    } catch (error) {
+        console.error('Failed to fetch customer data', error);
+    }
+});
 </script>
 
 <style scoped>

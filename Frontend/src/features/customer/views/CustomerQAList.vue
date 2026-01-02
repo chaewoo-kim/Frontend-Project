@@ -1,61 +1,47 @@
-
 <template>
-  <div class="w-full min-h-screen bg-white">
+  <div class="subWrap">
     <CommonHeader />
     
-    <div class="w-full max-w-[1144px] mx-auto px-4 pb-20 pt-10">
-      <div class="max-w-[800px] mx-auto">
-        <h2 class="text-[40px] font-extrabold text-[#2e2e2e] mb-10 text-center">고객지원</h2>
+    <div class="contentsWrap">
+      <div class="cont_min_area">
+        <div class="web_container">
+            <div class="page_title">
+                <h2 class="tit">고객지원</h2>
+            </div>
 
-        <!-- Tabs -->
-        <div class="flex border-b border-[#e5e5e5] mb-8 overflow-x-auto scrollbar-hide">
-            <button 
-                v-for="cat in categories" 
-                :key="cat.id"
-                @click="currentCategory = cat.id"
-                class="flex-1 py-4 text-lg font-bold min-w-[100px] text-center transition-colors border-b-4"
-                :class="currentCategory === cat.id ? 'text-[#e2221f] border-[#e2221f]' : 'text-[#b5b5b5] border-transparent hover:text-black'"
-            >
-                {{ cat.label }}
-            </button>
+            <!-- Tabs -->
+            <div class="tab01">
+                <ul>
+                    <li v-for="cat in categories" :key="cat.id" :class="{ 'on': activeTab === cat.id }">
+                        <button type="button" class="cat" @click="scrollToCategory(cat.id)">
+                            <span>{{ cat.label }}</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Category Sections -->
+            <div class="faq_list_wrap">
+                <div v-for="cat in categories" :key="cat.id" :id="`cat_${cat.id}`" class="category_section">
+                    <h3 class="category_tit">{{ cat.label }}</h3>
+                    <ul class="faq_list">
+                        <li v-for="qa in getQAsByCategory(cat.id)" :key="qa.qaId">
+                            <router-link :to="`/customer/detail?id=${qa.qaId}`">
+                                <div class="subject">
+                                    <span class="txt">{{ qa.title }}</span>
+                                </div>
+                                <span class="arrow"></span>
+                            </router-link>
+                        </li>
+                         <!-- Show message if no QAs in this category -->
+                        <li v-if="getQAsByCategory(cat.id).length === 0" class="no_data">
+                            등록된 문의사항이 없습니다.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
         </div>
-
-        <!-- Title of current category -->
-        <h3 class="text-2xl font-bold text-[#2e2e2e] mb-4">
-            {{ currentCategoryLabel }}
-        </h3>
-
-        <!-- List -->
-        <ul class="w-full border-t border-black">
-            <li v-for="(item, i) in filteredList" :key="i" class="border-b border-[#e5e5e5]">
-                <router-link to="/customer/detail" class="flex items-center justify-between py-5 px-2 hover:bg-[#f9f9f9]">
-                    <div class="flex items-center">
-                        <span class="w-6 h-6 rounded-full bg-[#f2f2f2] text-[#e2221f] font-bold flex items-center justify-center mr-4 text-sm">Q</span>
-                        <span class="text-lg text-[#2e2e2e]">{{ item.question }}</span>
-                    </div>
-                </router-link>
-            </li>
-        </ul>
-        
-        <!-- Pagination Stub (Visual Only) -->
-        <div class="flex justify-center mt-10">
-            <button class="w-8 h-8 flex items-center justify-center text-[#b5b5b5]">
-                &lt;
-            </button>
-            <button class="w-8 h-8 flex items-center justify-center bg-[#e2221f] text-white rounded-full font-bold mx-1">
-                1
-            </button>
-            <button class="w-8 h-8 flex items-center justify-center hover:bg-[#f2f2f2] rounded-full mx-1">
-                2
-            </button>
-            <button class="w-8 h-8 flex items-center justify-center hover:bg-[#f2f2f2] rounded-full mx-1">
-                3
-            </button>
-            <button class="w-8 h-8 flex items-center justify-center text-[#b5b5b5]">
-                &gt;
-            </button>
-        </div>
-
       </div>
     </div>
   </div>
@@ -63,65 +49,246 @@
 
 <script setup>
 import CommonHeader from '@/components/CommonHeader.vue';
-import { ref, computed, onMounted, watch } from 'vue';
+import { ref, onMounted, nextTick } from 'vue';
 import { useRoute } from 'vue-router';
+import { getCategories, getAllQAList } from '@/api/customer';
 
 const route = useRoute();
-const currentCategory = ref('01');
+const categories = ref([]);
+const allQAs = ref([]);
+const activeTab = ref(null);
 
-const categories = [
-  { id: '01', label: '딜리버리' },
-  { id: '02', label: '킹오더' },
-  { id: '03', label: '쿠폰' },
-  { id: '04', label: '멤버십' },
-  { id: '05', label: '매장/상품/서비스' },
-  { id: '06', label: '기타' },
-];
+const loadData = async () => {
+    try {
+        // Parallel fetch
+        const [catRes, qaRes] = await Promise.all([
+            getCategories(),
+            getAllQAList()
+        ]);
 
-// Dummy data generator
-const generateData = (catId) => {
-    const questions = [
-        "주문 취소는 어떻게 하나요?",
-        "배달 소요 시간은 얼마나 걸리나요?",
-        "영수증 재발급이 가능한가요?",
-        "회원 탈퇴는 어떻게 하나요?",
-        "알레르기 정보는 어디서 확인하나요?",
-        "단체 주문은 어떻게 하나요?",
-        "원산지 정보가 궁금합니다.",
-        "기프티콘 사용이 안됩니다.",
-        "매장 운영 시간은 언제인가요?",
-        "비회원 주문도 가능한가요?"
-    ];
-    // Return random subset
-    return questions.map((q, i) => ({
-        id: i,
-        question: `[${categories.find(c => c.id === catId)?.label}] ${q}`
-    }));
-}
+        if (catRes.data && catRes.data.data) {
+            categories.value = catRes.data.data.map(c => ({ id: c.categoryId, label: c.categoryName }));
+        }
 
-const listData = ref([]);
+        if (qaRes.data && qaRes.data.data) {
+            allQAs.value = qaRes.data.data;
+        }
 
-const filteredList = computed(() => {
-    return listData.value;
-});
+        // Set initial active tab
+        if (categories.value.length > 0) {
+            activeTab.value = categories.value[0].id;
+        }
 
-const currentCategoryLabel = computed(() => {
-    return categories.find(c => c.id === currentCategory.value)?.label || '';
-});
-
-const updateData = () => {
-    listData.value = generateData(currentCategory.value);
+    } catch (e) {
+        console.error("Failed to load data", e);
+    }
 };
 
-// Watch for route changes or local selection
-watch(currentCategory, () => {
-    updateData();
-});
+const getQAsByCategory = (catId) => {
+    return allQAs.value.filter(qa => qa.categoryId === catId);
+};
 
-onMounted(() => {
-    if (route.query.category) {
-        currentCategory.value = route.query.category;
+const scrollToCategory = (catId) => {
+    activeTab.value = catId;
+    const el = document.getElementById(`cat_${catId}`);
+    if (el) {
+        const headerOffset = 100; // Adjust for sticky header if any
+        const elementPosition = el.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+        });
     }
-    updateData();
+};
+
+onMounted(async () => {
+    await loadData();
+
+    // Check query param for initial scroll
+    if (route.query.category) {
+        // Wait for DOM
+        nextTick(() => {
+            const catId = Number(route.query.category);
+            // Verify category exists
+            if (categories.value.find(c => c.id === catId)) {
+               scrollToCategory(catId);
+            }
+        });
+    }
 });
 </script>
+
+<style scoped>
+/* Fonts & Colors Variables re-declared or assume global if configured */
+:root {
+    --font: "Sandoll GothicNeoRound", "Pretendard", sans-serif;
+    --bg-base: #f5ebdc;
+    --normal: #502314;
+    --primary: #d62300;
+    --border-color: #e4d7c8;
+}
+
+.subWrap {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #f5ebdc; /* Updated to BK BG */
+    font-family: var(--font, sans-serif);
+    color: #502314; /* Updated to BK Normal */
+}
+
+/* Contents */
+.contentsWrap {
+    padding-top: 50px;
+    padding-bottom: 100px;
+}
+
+.web_container {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* Page Title */
+.page_title {
+    margin-bottom: 50px;
+    text-align: center;
+}
+.tit {
+    font-size: 40px;
+    font-weight: 800;
+    color: #2e2e2e;
+}
+
+/* Tab Styles from Burger King */
+.tab01 {
+    width: 100%;
+    height: 70px; /* Increased size */
+    border-bottom: 1px solid #E4D7C8;
+    background-color: transparent;
+    margin-bottom: 40px;
+}
+
+.tab01.scroll {
+    overflow-x: auto;
+}
+
+.tab01 ul {
+    display: flex;
+    padding: 0 20px;
+    height: 100%; /* Match container */
+    margin: 0;
+    list-style: none;
+    min-width: 100%;
+}
+
+.tab01 li {
+    position: relative;
+    display: list-item;
+    height: 100%; /* Match container */
+    flex: 1;
+    text-align: center;
+    min-width: fit-content;
+}
+.tab01 li button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%; /* Match container */
+    padding: 0 20px;
+    font-size: 18px; /* Bigger font */
+    font-weight: 500;
+    color: #502314; /* Inactive color */
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.3s;
+}
+.tab01 li.on button {
+    color: #d62300; /* BK Red */
+}
+.tab01 li.on button::after {
+    content: '';
+    position: absolute;
+    bottom: 0; /* Overlap border */
+    left: 0;
+    width: 100%;
+    height: 3px; /* Thick active line */
+    background-color: #d62300;
+}
+
+/* Category Sections */
+.category_section {
+    padding-bottom: 60px; /* Space inside the block */
+    margin-bottom: 60px; /* Space outside */
+    border-bottom: 3px solid #502314; /* Slightly thicker separator (approx 5% logic applied loosely as noticeable step) */
+    scroll-margin-top: 140px; /* Adjusted for larger header */
+}
+.category_section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.category_tit {
+    font-size: 28px;
+    font-weight: 800;
+    color: #502314;
+    margin-bottom: 20px;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+/* List */
+.faq_list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.faq_list {
+    border-top: 2px solid #502314; /* Let's give a strong start to the list itself if the header doesn't have it */
+}
+
+.faq_list li {
+    border-bottom: 1px solid #e5e5e5;
+}
+.faq_list li a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 10px;
+    color: #2e2e2e;
+    transition: background-color 0.2s;
+    cursor: pointer;
+}
+.faq_list li a:hover {
+    background-color: rgba(255,255,255, 0.4);
+}
+
+.subject {
+    display: flex;
+    align-items: center;
+}
+/* Removed .icon_q style as it is removed from template */
+
+.txt {
+    font-size: 20px;
+    font-weight: 700; /* Bold */
+    color: #2e2e2e;
+}
+
+.arrow {
+    width: 24px;
+    height: 24px;
+    background: url('https://www.burgerking.co.kr/img/ico_more_arrow.svg') no-repeat center/contain;
+    opacity: 0.5;
+}
+
+.no_data {
+    padding: 50px 0;
+    text-align: center;
+    color: #999;
+}
+</style>

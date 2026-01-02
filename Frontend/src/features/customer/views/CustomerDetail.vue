@@ -14,23 +14,17 @@
                 <div class="flex items-start">
                     <span class="text-[#e2221f] font-extrabold text-2xl mr-3 leading-none mt-1">Q.</span>
                     <h3 class="text-2xl font-bold text-[#2e2e2e] leading-snug">
-                        버거킹 앱에서 주문 시 적립은 어떻게 하나요?
+                        {{ detail?.title }}
                     </h3>
                 </div>
                 <div class="mt-2 text-[#b5b5b5] text-sm pl-8">
-                    멤버십 > 적립
+                    {{ detail?.categoryName }}
                 </div>
             </div>
 
             <!-- Answer Body -->
             <div class="py-10 px-8 text-lg text-[#2e2e2e] leading-relaxed min-h-[300px]">
-                <div class="mb-8">
-                    <p class="mb-4">안녕하세요, 버거킹입니다.</p>
-                    <p class="mb-4">
-                        버거킹 앱을 통해 딜리버리 또는 킹오더 주문 시 자동으로 멤버십 포인트(킹스탬프)가 적립됩니다.<br/>
-                        매장에서 키오스크 주문 시에는 바코드를 스캔하여 적립할 수 있습니다.
-                    </p>
-                </div>
+                <div class="mb-8" v-html="detail?.content"></div>
 
                 <!-- User requested image placeholder -->
                 <div class="w-full bg-gray-100 rounded-lg flex items-center justify-center p-10 border-2 border-dashed border-gray-300 mb-8">
@@ -78,4 +72,24 @@
 
 <script setup>
 import CommonHeader from '@/components/CommonHeader.vue';
+import { getQADetail } from '@/api/customer';
+import { useRoute } from 'vue-router';
+import { ref, onMounted } from 'vue';
+
+const route = useRoute();
+const detail = ref(null);
+
+onMounted(async () => {
+    const id = route.query.id;
+    if (id) {
+        try {
+            const res = await getQADetail(id);
+            if (res.data && res.data.data) {
+                detail.value = res.data.data;
+            }
+        } catch (e) {
+            console.error(e);
+        }
+    }
+});
 </script>
