@@ -21,7 +21,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class MainpageController {
 
-    private MainpageService mainpageService;
+    private final MainpageService mainpageService;
 
 /*
 *   MainPage API
