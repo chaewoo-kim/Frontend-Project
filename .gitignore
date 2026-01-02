@@ -42,19 +42,13 @@ out/
 
 ### Node ###
 node_modules/
-<<<<<<< HEAD
-<<<<<<< HEAD
 Frontend/node_modules/
 dist/
 Frontend/dist/
 .env
 .env.local
 .env.*.local
-=======
 dist/
 .env
->>>>>>> ad4b548 ([feat]메뉴페이지 #34 프론트엔드 구현)
-=======
 dist/
 .env
->>>>>>> origin/dev
