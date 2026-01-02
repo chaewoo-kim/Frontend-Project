@@ -8,6 +8,7 @@
           <div class="home_notice">
             <div class="top_banner">
               <swiper
+                v-if="eventImages.length > 0"
                 :modules="[Autoplay, Pagination]"
                 :slides-per-view="1"
                 :loop="true"
@@ -15,9 +16,14 @@
                 :pagination="{ clickable: true }"
                 class="mainSwiper"
               >
-                <swiper-slide v-for="banner in mainData.eventBanners" :key="banner.id">
-                  <div class="image_area" @click="handleLink(mainData.links?.moreVideos)">
-                    <img :src="banner.imageUrl" :alt="banner.title">
+                <swiper-slide 
+                  v-for="banner in eventImages" 
+                  :key="banner.fileUrl"
+                  style="cursor: pointer"
+                  @click="handleLink('/news-event')"
+                >
+                  <div class="image_area">
+                    <img :src="banner.fileUrl" :alt="banner.originalFileName">
                   </div>
                 </swiper-slide>
               </swiper>
@@ -233,6 +239,7 @@ const mainData = ref({
   whyBkSlides: [],
   links: {}
 });
+const eventImages = ref([]);
 
 const fetchMainData = async () => {
   try {
@@ -242,6 +249,17 @@ const fetchMainData = async () => {
     }
   } catch (error) {
     console.error('Failed to fetch main page data:', error);
+  }
+};
+
+const fetchEventImages = async () => {
+  try {
+    const res = await mainApi.getEventImages();
+    if (res.data.success) {
+      eventImages.value = res.data.data;
+    }
+  } catch (error) {
+    console.error('Failed to fetch event images:', error);
   }
 };
 
@@ -261,6 +279,7 @@ const handleExternalLink = (url) => {
 
 onMounted(() => {
   fetchMainData();
+  fetchEventImages();
 });
 </script>
 
@@ -297,6 +316,30 @@ onMounted(() => {
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* Swiper Slide Styles */
+.mainSwiper :deep(.swiper-slide) {
+  height: auto;
+  overflow: hidden;
+  flex-shrink: 0;
+  width: 100%;
+  position: relative;
+  transition-property: transform;
+  display: block;
+  box-sizing: border-box;
+}
+
+.mainSwiper .image_area {
+  width: 100%;
+  height: auto;
+}
+
+.mainSwiper .image_area img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
 }
 
 .top_cont {

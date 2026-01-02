@@ -54,7 +54,7 @@ const navItems = [
     { name: 'STORY', path: '/story/brand' },
     { name: 'NEWS', path: '/event' },
     { name: 'STORE', path: '/store' },
-    { name: 'CUSTOMER', path: '/customer' }
+    { name: 'CUSTOMER', path: '/customer/main' }
 ];
 </script>
 
