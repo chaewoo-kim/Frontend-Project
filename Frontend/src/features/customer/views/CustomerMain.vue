@@ -22,7 +22,7 @@
             <h2 class="tit">고객지원</h2>
           </div>
           <div class="tit_faq">
-            <span>버거킹에 <br class="MOB sm">궁금한 점이 있나요?</span>
+            <span><b>버거킹에 궁금한 점이 있나요?</b></span>
           </div>
           <div class="search_row">
             <div class="inp_box active">
@@ -128,6 +128,20 @@ const goToDocs = (id) => {
 <style scoped>
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css");
 
+@font-face {
+    font-family: 'Sandoll GothicNeoRound';
+    font-weight: 400; /* Normal */
+    font-style: normal;
+    src: url('https://www.burgerking.co.kr/fonts/SDGothicNeoRound-gBd.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Sandoll GothicNeoRound';
+    font-weight: 700; /* Bold */
+    font-style: normal;
+    src: url('https://www.burgerking.co.kr/fonts/SDGothicNeoRound-hEb.woff2') format('woff2');
+}
+
 :root {
     --ion-default-dynamic-font: -apple-system-body;
     --ion-font-family: var(--ion-default-font);
@@ -183,7 +197,7 @@ const goToDocs = (id) => {
    The User's CSS had --bg-base: #f5ebdc. 
 */
 .web_container {
-    max-width: 1144px;
+    max-width: 1500px; /* Adjusted to 1500px */
     margin: 0 auto;
     padding: 0 16px;
     padding-bottom: 100px;
@@ -215,16 +229,16 @@ const goToDocs = (id) => {
 /* FAQ Title */
 .tit_faq {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     font-size: 20px;
 }
 
 /* Search Row */
 .search_row {
     width: 100%;
-    max-width: 560px; /* Center with limited width */
-    margin: 0 auto 60px;
-    height: 46px; /* Explicit height */
+    max-width: 1500px; /* Resize to 1500px */
+    margin: 0 auto 30px;
+    height: 40px; /* Explicit height */
 }
 .inp_box {
     position: relative;
@@ -241,14 +255,14 @@ const goToDocs = (id) => {
     padding: 5px 50px 3px 15px; /* Right padding for button */
     font-size: 15px;
     font-weight: 400;
-    color: #502314;
+    color: #ebe5e3ff;
     box-sizing: border-box;
     outline: none;
     font-family: var(--font);
 }
 .inp_box.active input {
-    border-color: #502314; /* Active state usually darker */
-    border-width: 2px; /* Maybe thicker? Or just color. Let's assume color change. */
+    border-color: #dcdcdc; /* Light gray border */
+    border-width: 2px;
 }
 .btn_search {
     position: absolute;
@@ -267,88 +281,107 @@ const goToDocs = (id) => {
 }
 
 /* FAQ Category */
+/* FAQ Category - Precise User Update */
 .faq_category {
     display: flex;
-    justify-content: center;
-    gap: 16px;
-    margin-bottom: 60px;
+    gap: 10px;
     flex-wrap: wrap;
+    margin-top: 0;
+    padding-left: 0;
+    list-style: none;
 }
+
+@media screen and (min-width: 1024px) {
+    .faq_category {
+        max-width: 964px;
+        margin: 20px auto;
+    }
+}
+
+@media screen and (min-width: 640px) {
+    .faq_category {
+        flex-wrap: nowrap;
+    }
+}
+
+.faq_category li {
+    flex: 1;
+    min-width: 0; /* Allow shrinking below content size if needed */
+}
+
+/* Category Button Style */
 .faq_category li button {
     display: block;
-    text-align: center;
+    font-size: .8125rem;
+    font-weight: 400;
+    width: 100%;
+    height: 135px; /* Reduced by 10% from 150px */
+    border-radius: 20px; /* Increased radius by ~10-20% */
+    border: 1px solid #e4d7c8;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-top-color: rgb(228, 215, 200);
+    border-right-color: rgb(228, 215, 200);
+    border-bottom-color: rgb(228, 215, 200);
+    border-left-color: rgb(228, 215, 200);
+    background: #fffcf8;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, .05);
+    overflow: hidden;
     cursor: pointer;
-}
-.faq_category span[class^="ico_faq"] {
-    display: block;
-    width: 100px;
-    height: 100px;
-    background-color: #f2f2f2;
-    border-radius: 30px;
-    margin: 0 auto 15px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 48px;
-    font-size: 0; /* Hide text inside span if icon handles it, but user HTML has text inside span. */
-    /* Wait, the HTML is <span class="ico...">Text</span>. */
-    /* Usually this means padding-top or something to show text below? */
-    /* Or the span IS the icon container and the text is somewhere else? */
-    /* "span class=ico_faq_delivery" containing "딜리버리". */
-    /* If I look at the screenshot, text is below the icon. */
-    /* So the span probably displays block, has padding top, background image at top. */
-    padding-top: 110px; /* Space for icon */
-    height: auto;
-    background-color: transparent;
-    font-size: 16px;
-    font-weight: 700;
-    color: #2e2e2e;
+    margin: 0;
+    color: var(--normal);
+    font-family: var(--font);
+    position: relative;
+    vertical-align: middle;
 }
 
-/* Icon Images - Using the URLs I found */
-.ico_faq_delivery { background-image: url('https://www.burgerking.co.kr/img/ico_faq_delivery.svg'); }
-.ico_faq_order { background-image: url('https://www.burgerking.co.kr/img/ico_faq_order.svg'); }
-.ico_faq_coupon { background-image: url('https://www.burgerking.co.kr/img/ico_faq_coupon.svg'); }
-.ico_faq_membership { background-image: url('https://www.burgerking.co.kr/img/ico_faq_membership.svg'); }
-.ico_faq_product { background-image: url('https://www.burgerking.co.kr/img/ico_faq_product.svg'); }
-.ico_faq_other { background-image: url('https://www.burgerking.co.kr/img/ico_faq_other.svg'); }
-
-/* Instead of padding-top on the span, maybe the span is just the icon and text is text? */
-/* HTML: list > button > span.ico */
-/* If span has the class, and contains text. */
-/* Let's try: */
-.faq_category li button {
-    width: 100px;
-}
+/* Update the span to align with the new button size */
 .faq_category span[class^="ico_faq"] {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     width: 100%;
-    padding-top: 0;
-    height: auto;
+    height: 100%;
     background-color: transparent;
+    border-radius: 0;
+    margin: 0;
+    background: none;
+    padding: 0;
+    font-size: 19px; /* Reduced by 5% from 20px */
+    font-weight: 700;
+    color: #502314;
+    box-sizing: border-box;
+    text-align: center;
 }
-/* We need a sudo element for the icon if the span contains text */
+
+/* Icon (Pseudo-element) adjustment */
 .faq_category span[class^="ico_faq"]::before {
     content: '';
     display: block;
-    width: 100px;
-    height: 100px;
-    background-color: #f2f2f2; /* Gray circle/rounded rect */
-    border-radius: 30px;
-    margin-bottom: 12px;
+    position: static;
+    transform: none;
+    margin: 0 auto 8px auto; /* Reduced distance */
+    width: 65px; /* Reduced by 10% */
+    height: 65px;
+    background-color: transparent;
+    border-radius: 0;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 50px;
-    transition: background-color 0.3s;
+    background-size: 49px; /* Reduced by 10% */
+    transition: none;
+    box-shadow: none;
 }
-.faq_category li button:hover span::before {
-    background-color: #e2221f; /* Red hover */
-    /* We also need to invert the icon color if it's black SVG */
-    filter: invert(100%) brightness(200%); /* Makes black white */
-    /* Wait, filter applies to the element. If I filter ::before, it works. */
-}
-/* Re-apply background images to ::before */
+
+/* Removed Hover Effect Block */
+
+/* Icon Images */
 .ico_faq_delivery::before { background-image: url('https://www.burgerking.co.kr/img/ico_faq_delivery.svg'); }
 .ico_faq_order::before { background-image: url('https://www.burgerking.co.kr/img/ico_faq_order.svg'); }
 .ico_faq_coupon::before { background-image: url('https://www.burgerking.co.kr/img/ico_faq_coupon.svg'); }
@@ -357,19 +390,44 @@ const goToDocs = (id) => {
 .ico_faq_other::before { background-image: url('https://www.burgerking.co.kr/img/ico_faq_other.svg'); }
 
 
+
+
+
+/* FAQ List */
 /* FAQ List */
 .faq_list {
-    max-width: 800px;
-    margin: 0 auto;
+    border-top: 5px solid rgba(80, 35, 20, .1);
+    margin: 21px -20px 0;
+    padding: 15px 20px 10px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
 }
+
+@media screen and (min-width: 640px) {
+    .faq_list {
+        margin: 30px -30px 0;
+        padding: 15px 30px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .faq_list {
+        max-width: 1500px;
+        padding: 30px 30px 0;
+        margin: 30px auto 0;
+    }
+}
+
 .faq_header {
     font-size: 24px;
     font-weight: 800;
     color: #2e2e2e;
     margin-bottom: 20px;
-    border-bottom: 2px solid #000;
+    /* Removed border-bottom */
     padding-bottom: 10px;
 }
+
 .faq_list ul li {
     border-bottom: 1px solid #e5e5e5;
 }
@@ -383,6 +441,7 @@ const goToDocs = (id) => {
 }
 .faq_list ul li p {
     font-size: 18px;
+    font-weight: bold; /* Bold text for top5Faq */
 }
 .btn_arrow {
     width: 24px;
@@ -392,6 +451,7 @@ const goToDocs = (id) => {
     transform: rotate(0deg); /* Right arrow? The icon is likely right arrow */
     opacity: 0.5;
 }
+
 
 /* Guide Contact */
 .guide_contact {
