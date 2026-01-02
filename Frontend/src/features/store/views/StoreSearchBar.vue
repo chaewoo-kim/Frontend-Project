@@ -1,13 +1,13 @@
 <script setup>
+</script>
 defineProps({
-  modelValue: {
-    type: String,
-    default: ''
-  }
+modelValue: {
+type: String,
+default: ''
+}
 })
 
 defineEmits(['update:modelValue', 'search', 'clear'])
-</script>
 
 <template>
   <div class="search-bar">

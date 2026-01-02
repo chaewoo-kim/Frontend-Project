@@ -1,4 +1,6 @@
 <script setup>
+import CommonHeader from "@/components/CommonHeader.vue";
+
 import { ref, onMounted } from 'vue'
 import { fetchStoreList } from '@/api/store'
 import StoreCard from '@/components/StoreCard.vue'
@@ -43,6 +45,7 @@ const onClear = () => {
 </script>
 
 <template>
+  <CommonHeader/>
   <section class="store-page">
     <h1>매장 찾기</h1>
 

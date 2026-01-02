@@ -1,4 +1,6 @@
 <script setup>
+import CommonHeader from "@/components/CommonHeader.vue";
+
 defineProps({
   modelValue: String
 })
@@ -6,6 +8,7 @@ defineEmits(['update:modelValue'])
 </script>
 
 <template>
+  <CommonHeader/>
   <div class="search-bar">
     <input
         :value="modelValue"
