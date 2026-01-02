@@ -8,6 +8,7 @@ import java.util.List;
 @Getter
 @AllArgsConstructor
 public class MenuListResponse {
+    private Long id;
     private String name;
     private String menuComposition;
     private String imageUrl;

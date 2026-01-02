@@ -39,3 +39,8 @@ out/
 ### MAC OS ###
 .DS_Store
 **/.DS_Store
+
+### Node ###
+node_modules/
+dist/
+.env
