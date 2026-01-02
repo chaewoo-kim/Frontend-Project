@@ -55,73 +55,58 @@ public class MainpageController {
 
 
 /*
-*   Redirect Links
+*   Redirect Links (Now returning URLs for Frontend to handle)
 * */
 
-    /*
-        TODO 앱 다운로드 링크 위치(최상단 & 최하단)
-        앱 다운로드 링크(플레이스토어, 앱스토어) - 이미지(QR)
-        최상단, 최하단에 위치. 두 곳에서 모두 참조됨
-    */
-    @Operation(summary = "버거킹 배달앱 플레이스토어 링크", description = "버거킹 배달앱링크로 redirect 이동합니다.")
+    @Operation(summary = "버거킹 배달앱 플레이스토어 링크", description = "버거킹 배달앱링크 URL을 반환합니다.")
     @GetMapping("/playstore")
-    public String playstore(){
-        return "redirect:https://play.google.com/store/apps/details?id=kr.co.burgerkinghybrid";
+    public ResponseEntity<ApiResponse<String>> playstore(){
+        return ResponseEntity.ok(ApiResponse.success("https://play.google.com/store/apps/details?id=kr.co.burgerkinghybrid"));
     }
 
-    @Operation(summary = "광고영상-더보기 링크", description = "'더보기'란을 통해 광고영상 페이지로 Forward이동합니다.")
+    @Operation(summary = "광고영상-더보기 링크", description = "'더보기'란을 통해 광고영상 페이지로 이동하기 위한 경로를 반환합니다.")
     @GetMapping("/morevideos")
-    public String morevideos(){
-        return "story/adarchive";
+    public ResponseEntity<ApiResponse<String>> morevideos(){
+        return ResponseEntity.ok(ApiResponse.success("/story/ad"));
     }
 
-    @Operation(summary = "버거킹 배달앱 앱스토어 링크", description = "버거킹 배달앱링크로 redirect 이동합니다.")
+    @Operation(summary = "버거킹 배달앱 앱스토어 링크", description = "버거킹 배달앱링크 URL을 반환합니다.")
     @GetMapping("/appstore")
-    public String appstore(){
-        return "redirect:https://apps.apple.com/kr/app/%EB%B2%84%EA%B1%B0%ED%82%B9-%ED%96%84%EB%B2%84%EA%B1%B0-%ED%82%B9%EC%98%A4%EB%8D%94-%EB%94%9C%EB%A6%AC%EB%B2%84%EB%A6%AC/id1017567032";
+    public ResponseEntity<ApiResponse<String>> appstore(){
+        return ResponseEntity.ok(ApiResponse.success("https://apps.apple.com/kr/app/%EB%B2%84%EA%B1%B0%ED%82%B9-%ED%96%84%EB%B2%84%EA%B1%B0-%ED%82%B9%EC%98%A4%EB%8D%94-%EB%94%9C%EB%A6%AC%EB%B2%84%EB%A6%AC/id1017567032"));
     }
 
 /*
-*   Forward Links
+*   Forward Links (Internal Navigation paths as Data)
 * */
-    // 메뉴, 매장소개,why버거킹(메뉴링크, 매장찾기링크, 스토리-why 버거킹)
-    @Operation(summary = "메뉴 링크", description = "메인페이지 메뉴소개 파트:메뉴링크 이동(Forward)")
+    @Operation(summary = "메뉴 링크", description = "메뉴페이지 이동을 위한 경로를 반환합니다.")
     @GetMapping("/menu")
-    public String menu(){
-        /*
-            TODO 링크확인 1
-            리턴 링크 다시 확인해야함. "./" 이 문법이 맞는가?
-        */
-        return "menu/main";
+    public ResponseEntity<ApiResponse<String>> menu(){
+        return ResponseEntity.ok(ApiResponse.success("/menu"));
     }
 
-    @Operation(summary = "매장소개 링크", description = "메인페이지 매장소개 파트:매장소개링크 이동(Forward)")
+    @Operation(summary = "매장소개 링크", description = "매장소개 페이지 이동을 위한 경로를 반환합니다.")
     @GetMapping("/store")
-    public String store(){
-        return "store/main";
+    public ResponseEntity<ApiResponse<String>> store(){
+        return ResponseEntity.ok(ApiResponse.success("/store"));
     }
 
-    @Operation(summary = "why버거킹 링크", description = "why버커깅 링크로 Forward이동")
+    @Operation(summary = "why버거킹 링크", description = "why버거킹 페이지 이동을 위한 경로를 반환합니다.")
     @GetMapping("/why")
-    public String whyburgerking(){
-        return "story/why";
+    public ResponseEntity<ApiResponse<String>> whyburgerking(){
+        return ResponseEntity.ok(ApiResponse.success("/story/why"));
     }
 
-    // 배달링크(이미지)
-    @Operation(summary = "배달주문번호 링크", description = "배달 주문 링크를 통해 Redirect 이동")
+    @Operation(summary = "배달주문번호 링크", description = "전화 주문을 위한 tel 스키마 URL을 반환합니다.")
     @GetMapping("/order")
-    public String order(){
-        /*
-            TODO 링크확인 2
-            리턴 링크 다시 확인해야함. "/call" 을 통해 전화를 걸도록 동작시킬 수 있는가?
-        */
-        return "redirect:call";
+    public ResponseEntity<ApiResponse<String>> order(){
+        return ResponseEntity.ok(ApiResponse.success("tel:1599-0505"));
     }
 
-    @Operation(summary = "브랜드-스토리 링크", description = "스토리의 브랜드 링크를 통해 Forward 이동")
+    @Operation(summary = "브랜드-스토리 링크", description = "브랜드 스토리 페이지 이동을 위한 경로를 반환합니다.")
     @GetMapping("/brand")
-    public String brand(){
-        return "story/brand";
+    public ResponseEntity<ApiResponse<String>> brand(){
+        return ResponseEntity.ok(ApiResponse.success("/story/brand"));
     }
 
 }
