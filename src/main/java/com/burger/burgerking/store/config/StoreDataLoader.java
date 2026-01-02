@@ -54,10 +54,13 @@ public class StoreDataLoader implements CommandLineRunner {
                         node.path("storCoordY").asDouble(),
                         node.path("storCoordX").asDouble(),
                         "Y".equals(node.path("storMembershipYn").asText()),
-                        node.path("salesHourNote").asText(null),
-                        node.path("todayBusinessTime").asText(null),
-                        node.path("todayDeliveryTime").asText(null),
-                        node.path("pickupTime").asText(null)
+                        node.path("salesHourNote").asText(null),          // 하단 설명
+                        node.path("todayBusinessTime").asText(null),     // 매장
+                        node.path("todayDeliveryTime").asText(null),     // 딜리버리
+                        node.path("todayKordTime").asText(null),         // 킹오더 ⭐
+                        node.path("storTimeDays").asText(null),           // 평일 운영시간 ⭐
+                        node.path("storTimeWeekend").asText(null),         // 주말/공휴일 ⭐
+                        node.path("storTimeWeekend").asText(null)         // 주말/공휴일 ⭐
                 );
 
                 storeRepository.save(store);

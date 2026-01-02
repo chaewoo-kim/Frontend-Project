@@ -55,10 +55,16 @@ public class StoreDetailService {
                 serviceNames,
                 imageUrls,
 
-                store.getSalesHourNote(),
-                store.getTodayBusinessTime(),
-                store.getTodayDeliveryTime(),
-                store.getPickupTime()
+                // 운영 시간
+                store.getStorTimeDays(),        // 평일
+                store.getStorTimeWeekend(),     // 주말·공휴일
+                store.getSalesHourNote(),       // 안내 문구
+
+                // 주문 가능 시간
+                store.getTodayBusinessTime(),   // 매장
+                store.getTodayDeliveryTime(),   // 딜리버리
+                store.getTodayKordTime(),       // 킹오더
+                store.getPickupTime()            // 픽업
         );
     }
 }

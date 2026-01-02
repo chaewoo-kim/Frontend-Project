@@ -25,10 +25,21 @@ public class Store extends BaseEntity {
 
     private boolean membershipAvailable;
 
-    private String salesHourNote;
-    private String todayBusinessTime;
-    private String todayDeliveryTime;
-    private String pickupTime;
+    @Column(length = 100)
+    private String storTimeDays;        // 평일 운영시간
+    @Column(length = 100)
+    private String storTimeWeekend;     // 주말/공휴일 운영시간
+    @Column(length = 200)
+    private String salesHourNote;       // 연중무휴 / Cleaning Day 등 안내 문구
+
+    @Column(length = 50)
+    private String todayBusinessTime;   // 매장 주문 가능 시간
+    @Column(length = 50)
+    private String todayDeliveryTime;   // 딜리버리 주문 가능 시간
+    @Column(length = 50)
+    private String todayKordTime;       // 킹오더 주문 가능 시간
+    @Column(length = 50)
+    private String pickupTime;           // 픽업 주문 가능 시간
 
     public Store(
             String storeCode,
@@ -38,9 +49,12 @@ public class Store extends BaseEntity {
             Double latitude,
             Double longitude,
             boolean membershipAvailable,
+            String storTimeDays,
+            String storTimeWeekend,
             String salesHourNote,
             String todayBusinessTime,
             String todayDeliveryTime,
+            String todayKordTime,
             String pickupTime
     ) {
         this.storeCode = storeCode;
@@ -50,9 +64,12 @@ public class Store extends BaseEntity {
         this.latitude = latitude;
         this.longitude = longitude;
         this.membershipAvailable = membershipAvailable;
+        this.storTimeDays = storTimeDays;
+        this.storTimeWeekend = storTimeWeekend;
         this.salesHourNote = salesHourNote;
         this.todayBusinessTime = todayBusinessTime;
         this.todayDeliveryTime = todayDeliveryTime;
+        this.todayKordTime = todayKordTime;
         this.pickupTime = pickupTime;
     }
 }
