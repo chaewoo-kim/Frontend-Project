@@ -1,0 +1,467 @@
+
+<template>
+  <div class="subWrap">
+    <CommonHeader />
+
+    <div class="titleBar_M">
+      <div class="title_btn">
+        <button type="button" class="btn_head_prev" @click="$router.go(-1)"><span>Previous page</span></button>
+      </div>
+      <div class="title">
+        <h1 class="tit"><span>고객지원</span></h1>
+      </div>
+      <div class="title_btn right">
+        <button type="button" class="btn_gnb"><span>GNB</span></button>
+      </div>
+    </div>
+
+    <section class="contentsWrap">
+      <div class="cont_min_area">
+        <div class="web_container">
+          <div class="title_page WEB">
+            <h2 class="tit">고객지원</h2>
+          </div>
+          <div class="tit_faq">
+            <span>버거킹에 <br class="MOB sm">궁금한 점이 있나요?</span>
+          </div>
+          <div class="search_row">
+            <div class="inp_box active">
+                <input type="text" id="" class="" placeholder="궁금한 내용을 검색해주세요.">
+                <button type="button" class="btn_inp_clear type02" style="display: none;">clear text</button>
+                <button type="button" class="btn_search type02">search</button>
+            </div>
+          </div>
+          <ul class="faq_category">
+             <li v-for="(cat, index) in categories" :key="index">
+                <button type="button" @click="goToDocs(cat.id)">
+                    <span :class="cat.iconClass">{{ cat.label }}</span>
+                </button>
+             </li>
+          </ul>
+          <div class="faq_list">
+            <h5 class="faq_header">많이 물어본 질문</h5>
+            <ul>
+              <li v-for="(faq, i) in topFaqs" :key="i">
+                <router-link to="/customer/detail">
+                    <p>{{ faq.title }}</p>
+                    <button type="button" class="btn_arrow">arrow</button>
+                </router-link>
+              </li>
+            </ul>
+          </div>
+          
+          <ul class="guide_contact">
+            <li>
+                <div>
+                    <p class="position">대표 소비자 상담</p>
+                    <p class="phone"><strong>080-022-8163</strong></p>
+                    <p class="working_hour"><span>상담 가능 시간 : 평일 오전 9시 ~ 오후 6시</span></p>
+                    <p class="breaktime"><span>(토,일,공휴일 휴무)</span></p>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <p class="position">매장 / SITE 개설상담</p>
+                    <p class="phone"><strong>02-6331-8344</strong></p>
+                    <p class="working_hour"><span>상담 가능 시간 : 평일 오전 10시~오후5시</span></p>
+                    <p class="breaktime"><span>(점심시간 12:00~13:00, 주말 공휴일 제외)</span></p>
+                </div>
+                <button class="btn01">가맹 모집안내 바로가기</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <article class="fabWrap">
+        <button type="button" class="btn_top none"><span>Go scroll top</span></button>
+      </article>
+
+      <footer class="footer">
+        <div class="container">
+            <div class="terms_menu">
+                <a href="#"><span class="mouse_over">이용약관</span></a>
+                <a href="#" class="txt_line"><span class="mouse_over">개인정보처리방침</span></a>
+                <a href="#"><span class="mouse_over">위치정보</span></a>
+            </div>
+            <div class="cont">
+                <div class="info">
+                    <p>서울 특별시 종로구 삼봉로 71 G타워 4F,5F</p>
+                    <p>사업자등록번호 : 101-86-76277 <a class="txt_line">사업자정보확인</a></p>
+                    <p>㈜ 비케이알 대표이사 : 이동형</p>
+                    <p>ⓒBKR Co., Ltd. All right Reserved</p>
+                </div>
+            </div>
+        </div>
+      </footer>
+    </section>
+  </div>
+</template>
+
+<script setup>
+import CommonHeader from '@/components/CommonHeader.vue';
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
+
+const categories = [
+  { id: '01', label: '딜리버리', iconClass: 'ico_faq_delivery' },
+  { id: '02', label: '킹오더', iconClass: 'ico_faq_order' },
+  { id: '03', label: '쿠폰', iconClass: 'ico_faq_coupon' },
+  { id: '04', label: '멤버십', iconClass: 'ico_faq_membership' },
+  { id: '05', label: '매장/상품/서비스', iconClass: 'ico_faq_product' },
+  { id: '06', label: '기타', iconClass: 'ico_faq_other' },
+];
+
+const topFaqs = [
+    { title: '위치정보접근권한을 설정해도 앱 이용이 안되고 GPS 인식이 잘 안됩니다. 어떻게 해야하나요?' },
+    { title: '주문하려고 하는데 "유효하지 않은 위도, 경도 값입니다."라는 오류가 노출되면서 주문이 진행되지 않습니다.' },
+    { title: '개인정보(이름/전화번호/생년월일)를 변경하고 싶어요.' },
+    { title: '이메일주소 를 변경하고 싶어요.' },
+    { title: '생일 축하 쿠폰의 발급 기준은 어떻게 되나요?' },
+];
+
+const goToDocs = (id) => {
+    router.push({ path: '/customer/qa_list', query: { category: id } });
+};
+</script>
+
+<style scoped>
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css");
+
+:root {
+    --ion-default-dynamic-font: -apple-system-body;
+    --ion-font-family: var(--ion-default-font);
+    --ion-safe-area-top: env(safe-area-inset-top);
+    --ion-safe-area-bottom: env(safe-area-inset-bottom);
+    --ion-safe-area-left: env(safe-area-inset-left);
+    --ion-safe-area-right: env(safe-area-inset-right);
+    --ion-default-font: "Roboto", "Helvetica Neue", sans-serif;
+    
+    --font: "Sandoll GothicNeoRound", "Pretendard", sans-serif;
+    --font-pre: "Pretendard", "Sandoll GothicNeoRound", sans-serif;
+    --font-flame: "Flame", "Sandoll GothicNeoRound", sans-serif;
+    --font-BKR: "BKR", "Sandoll GothicNeoRound", "Pretendard", sans-serif;
+    
+    --bg-base: #f5ebdc;
+    --bg-light: #fffcf8;
+    --normal: #502314;
+    --normal-rgb: 80, 35, 20;
+    --primary: #d62300;
+    --sub: #6f6f6f;
+    --light: #89665b;
+    --border: rgba(80, 35, 20, 0.1);
+    --form-border: #d4c3b4;
+    --disabled: #fffcf8;
+    --disabled-bg: rgba(80, 35, 20, 0.15);
+    --placeholder: rgba(80, 35, 20, 0.3);
+    --red: #d62300;
+    --orange: #ff8732;
+    --yellow: #fa0;
+    --green: #198737;
+    --king: #c9281d;
+    --swiper-theme-color: #007aff;
+    --swiper-navigation-size: 44px;
+}
+
+/* Base Styles */
+.subWrap {
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--bg-base); /* Changed from #fff to var(--bg-base) */
+    font-family: var(--font);
+    color: var(--normal);
+}
+
+/* Ensure contentsWrap is transparent or matches */
+.contentsWrap {
+    background-color: transparent; /* Changed from #fff */
+}
+
+/* If web_container needs background, usually it's transparent on the main bg, or white card? 
+   Looking at BK site, the main background is creamy (#f5ebdc). 
+   Let's check if there are white containers. 
+   The User's CSS had --bg-base: #f5ebdc. 
+*/
+.web_container {
+    max-width: 1144px;
+    margin: 0 auto;
+    padding: 0 16px;
+    padding-bottom: 100px;
+}
+
+/* Title Page */
+.title_page.WEB {
+    /* Layout inherited from user request context mostly implies the text inside */
+    text-align: center;
+}
+.title_page.WEB .tit {
+    display: block!important;
+    margin-top: 40px;
+    margin-bottom: 50px;
+    font-size: 2.125rem;
+    text-align: center;
+    
+    font-family: var(--font);
+    font-weight: 800; /* Keeping weight as it matches 'Bold' usually implied, though user CSS didn't explicitly strict it, it had variables */
+    color: var(--normal);
+    
+    /* Variables from user snippet applied via root, but here are specific property overrides if any */
+    user-select: none!important;
+    -webkit-text-size-adjust: none;
+    word-break: break-all;
+    box-sizing: border-box;
+}
+
+/* FAQ Title */
+.tit_faq {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 20px;
+}
+
+/* Search Row */
+.search_row {
+    width: 100%;
+    max-width: 560px; /* Center with limited width */
+    margin: 0 auto 60px;
+    height: 46px; /* Explicit height */
+}
+.inp_box {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /* Border is on the input usually, but user HTML has class 'active' on inp_box which implies wrapper styling */
+}
+.inp_box input {
+    width: 100%;
+    height: 46px;
+    background-color: #fffcf8;
+    border: 1px solid #d4c3b4; /* Normal state */
+    border-radius: 10px; /* As seen in subagent */
+    padding: 5px 50px 3px 15px; /* Right padding for button */
+    font-size: 15px;
+    font-weight: 400;
+    color: #502314;
+    box-sizing: border-box;
+    outline: none;
+    font-family: var(--font);
+}
+.inp_box.active input {
+    border-color: #502314; /* Active state usually darker */
+    border-width: 2px; /* Maybe thicker? Or just color. Let's assume color change. */
+}
+.btn_search {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50px;
+    height: 46px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 0;
+}
+.btn_search.type02 {
+    background: url('https://www.burgerking.co.kr/img/btn_form_search.svg') no-repeat center/contain;
+    background-size: 24px; /* Adjust size if needed */
+}
+
+/* FAQ Category */
+.faq_category {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+}
+.faq_category li button {
+    display: block;
+    text-align: center;
+    cursor: pointer;
+}
+.faq_category span[class^="ico_faq"] {
+    display: block;
+    width: 100px;
+    height: 100px;
+    background-color: #f2f2f2;
+    border-radius: 30px;
+    margin: 0 auto 15px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 48px;
+    font-size: 0; /* Hide text inside span if icon handles it, but user HTML has text inside span. */
+    /* Wait, the HTML is <span class="ico...">Text</span>. */
+    /* Usually this means padding-top or something to show text below? */
+    /* Or the span IS the icon container and the text is somewhere else? */
+    /* "span class=ico_faq_delivery" containing "딜리버리". */
+    /* If I look at the screenshot, text is below the icon. */
+    /* So the span probably displays block, has padding top, background image at top. */
+    padding-top: 110px; /* Space for icon */
+    height: auto;
+    background-color: transparent;
+    font-size: 16px;
+    font-weight: 700;
+    color: #2e2e2e;
+}
+
+/* Icon Images - Using the URLs I found */
+.ico_faq_delivery { background-image: url('https://www.burgerking.co.kr/img/ico_faq_delivery.svg'); }
+.ico_faq_order { background-image: url('https://www.burgerking.co.kr/img/ico_faq_order.svg'); }
+.ico_faq_coupon { background-image: url('https://www.burgerking.co.kr/img/ico_faq_coupon.svg'); }
+.ico_faq_membership { background-image: url('https://www.burgerking.co.kr/img/ico_faq_membership.svg'); }
+.ico_faq_product { background-image: url('https://www.burgerking.co.kr/img/ico_faq_product.svg'); }
+.ico_faq_other { background-image: url('https://www.burgerking.co.kr/img/ico_faq_other.svg'); }
+
+/* Instead of padding-top on the span, maybe the span is just the icon and text is text? */
+/* HTML: list > button > span.ico */
+/* If span has the class, and contains text. */
+/* Let's try: */
+.faq_category li button {
+    width: 100px;
+}
+.faq_category span[class^="ico_faq"] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding-top: 0;
+    height: auto;
+    background-color: transparent;
+}
+/* We need a sudo element for the icon if the span contains text */
+.faq_category span[class^="ico_faq"]::before {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 100px;
+    background-color: #f2f2f2; /* Gray circle/rounded rect */
+    border-radius: 30px;
+    margin-bottom: 12px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50px;
+    transition: background-color 0.3s;
+}
+.faq_category li button:hover span::before {
+    background-color: #e2221f; /* Red hover */
+    /* We also need to invert the icon color if it's black SVG */
+    filter: invert(100%) brightness(200%); /* Makes black white */
+    /* Wait, filter applies to the element. If I filter ::before, it works. */
+}
+/* Re-apply background images to ::before */
+.ico_faq_delivery::before { background-image: url('https://www.burgerking.co.kr/img/ico_faq_delivery.svg'); }
+.ico_faq_order::before { background-image: url('https://www.burgerking.co.kr/img/ico_faq_order.svg'); }
+.ico_faq_coupon::before { background-image: url('https://www.burgerking.co.kr/img/ico_faq_coupon.svg'); }
+.ico_faq_membership::before { background-image: url('https://www.burgerking.co.kr/img/ico_faq_membership.svg'); }
+.ico_faq_product::before { background-image: url('https://www.burgerking.co.kr/img/ico_faq_product.svg'); }
+.ico_faq_other::before { background-image: url('https://www.burgerking.co.kr/img/ico_faq_other.svg'); }
+
+
+/* FAQ List */
+.faq_list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+.faq_header {
+    font-size: 24px;
+    font-weight: 800;
+    color: #2e2e2e;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #000;
+    padding-bottom: 10px;
+}
+.faq_list ul li {
+    border-bottom: 1px solid #e5e5e5;
+}
+.faq_list ul li a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10px;
+    width: 100%;
+    color: #2e2e2e;
+}
+.faq_list ul li p {
+    font-size: 18px;
+}
+.btn_arrow {
+    width: 24px;
+    height: 24px;
+    background: url(https://www.burgerking.co.kr/img/ico_more_arrow.svg) no-repeat center/contain;
+    font-size: 0;
+    transform: rotate(0deg); /* Right arrow? The icon is likely right arrow */
+    opacity: 0.5;
+}
+
+/* Guide Contact */
+.guide_contact {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 60px;
+    border-top: 1px solid #e5e5e5;
+    padding-top: 40px;
+}
+.guide_contact li {
+    text-align: left;
+}
+.guide_contact .position { font-size: 14px; color: #000; font-weight: bold; margin-bottom: 5px; }
+.guide_contact .phone strong { font-size: 24px; color: #000; font-weight: 800; }
+.guide_contact .working_hour, .guide_contact .breaktime { font-size: 14px; color: #666; }
+.guide_contact .btn01 {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+/* Footer (Simplified) */
+.footer {
+    background-color: #2e2e2e;
+    padding: 40px 0;
+    color: #999;
+}
+.footer .container {
+    max-width: 1144px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+.terms_menu {
+    border-bottom: 1px solid #444;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+.terms_menu a {
+    color: #fff;
+    margin-right: 20px;
+    font-size: 14px;
+}
+.footer .info p {
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+/* Mobile Title Bar (Hide on Desktop) */
+.titleBar_M {
+    display: none;
+}
+@media screen and (max-width: 768px) {
+    .web_container { padding: 0; }
+    .title_page.WEB { display: none; }
+    .titleBar_M {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 50px;
+        padding: 0 16px;
+        background: #fff;
+        border-bottom: 1px solid #eee;
+    }
+    .titleBar_M .tit { font-size: 18px; font-weight: bold; }
+    .faq_category { gap: 10px; }
+    .faq_category li button { width: auto; }
+    .faq_category span[class^="ico_faq"]::before { width: 60px; height: 60px; background-size: 30px; }
+}
+</style>
