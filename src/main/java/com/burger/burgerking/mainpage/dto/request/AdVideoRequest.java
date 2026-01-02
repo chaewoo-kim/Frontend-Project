@@ -1,4 +1,8 @@
 package com.burger.burgerking.mainpage.dto.request;
 
-public class AdVideoRequest {
+public record AdVideoRequest(
+    Long id,
+    String originalFilename,
+    String fileUrl
+) {
 }
