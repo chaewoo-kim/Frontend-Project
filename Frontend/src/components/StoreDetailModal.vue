@@ -61,13 +61,14 @@ onMounted(async () => {
       </div>
 
       <!-- 매장 기본 정보 -->
-      <section class="store-basic">
-        <div class="store-header">
-          <h3 class="store-name">{{ detail.name }}</h3>
-        </div>
-        <p class="store-address">{{ detail.address }}</p>
-        <strong><p class="store-phone">{{ detail.phone }}</p></strong>
-      </section>
+        <section class="store-basic">
+          <div class="store-header">
+            <h3 class="store-name">{{ detail.name }}</h3>
+          </div>
+
+          <div class="store-address">{{ detail.address }}</div>
+          <div class="store-phone">{{ detail.phone }}</div>
+        </section>
 
       <section class="box">
         <h3>주문가능 시간</h3>
@@ -193,6 +194,7 @@ onMounted(async () => {
 .store-phone {
   margin-top: 4px;
   margin-bottom: 14px;
+  font-weight: 700;
 }
 
 .image-slider {
