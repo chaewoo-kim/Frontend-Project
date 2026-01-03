@@ -35,4 +35,16 @@ public enum StoreServiceType {
                         new IllegalArgumentException("Unknown StoreServiceType code: " + code)
                 );
     }
+    public static StoreServiceType from(String value) {
+        if (value == null) {
+            throw new IllegalArgumentException("Service type value is null");
+        }
+        String normalized = value.trim().toUpperCase();
+        return Arrays.stream(values())
+                .filter(v -> v.name().equals(normalized))
+                .findFirst()
+                .orElseThrow(() ->
+                        new IllegalArgumentException("Invalid service type: " + value)
+                );
+    }
 }

@@ -20,4 +20,11 @@ public interface StoreImageRepository extends JpaRepository<StoreImage,Long> {
           and si.imageType = 'THUMBNAIL'
     """)
     Optional<String> findThumbnailByStoreId(@Param("storeId") Long storeId);
-}
+        @Query("""
+        SELECT si.storeId, si.imageUrl
+        FROM StoreImage si
+        WHERE si.storeId IN :storeIds
+          AND si.imageType = 'THUMBNAIL'
+    """)
+        List<Object[]> findThumbnailTuplesByStoreIds(@Param("storeIds") List<Long> storeIds);
+    }
