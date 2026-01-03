@@ -32,12 +32,12 @@ const loadStores = async () => {
 // 최초 전체 매장 조회
 onMounted(loadStores)
 
-// 🔥 엔터 눌렀을 때만 실행
+//엔터 눌렀을 때만 실행
 const onSearch = () => {
   loadStores()
 }
 
-// 🔥 취소 버튼
+//취소 버튼
 const onClear = () => {
   keyword.value = ''
   loadStores()
@@ -61,9 +61,30 @@ const onClear = () => {
       {{ totalCount }}개의 매장이 있습니다.
     </p>
 
-    <p v-if="!isLoading && stores.length === 0">
-      검색 결과가 없습니다.
-    </p>
+    <div
+        v-if="!isLoading && stores.length === 0"
+        class="empty-result"
+    >
+      <p class="count">
+        {{ totalCount }}개의 매장이 있습니다.
+      </p>
+
+      <img
+          src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 96'><rect x='42' y='16' width='12' height='64' rx='6' fill='%23F2A900' transform='rotate(45 48 48)'/><rect x='44' y='20' width='4' height='56' rx='2' fill='%23FFD766' transform='rotate(45 48 48)'/><rect x='42' y='16' width='12' height='64' rx='6' fill='%23F2A900' transform='rotate(-45 48 48)'/><rect x='44' y='20' width='4' height='56' rx='2' fill='%23FFD766' transform='rotate(-45 48 48)'/></svg>"
+          alt="검색 결과 없음"
+          class="empty-icon"
+      />
+
+      <p class="message">
+        검색 결과가 없습니다.<br />
+        다른 검색어를 입력하거나 필터를 조정해보세요.
+      </p>
+
+      <button class="all-store-btn">
+        전체 매장 보기
+      </button>
+    </div>
+
 
     <div class="store-list">
       <StoreCard
@@ -90,6 +111,44 @@ const onClear = () => {
 </template>
 
 <style scoped>
+.empty-result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 80px 0;
+  text-align: center;
+}
+
+.count {
+  font-size: 14px;
+  color: #6b4e3d;
+  margin-bottom: 40px;
+}
+
+.empty-icon {
+  width: 80px;
+  height: auto;
+  margin-bottom: 24px;
+}
+
+.message {
+  font-size: 16px;
+  color: #4a2c1a;
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+
+.all-store-btn {
+  padding: 12px 24px;
+  border-radius: 24px;
+  border: 1px solid #d6c1b0;
+  background-color: transparent;
+  color: #4a2c1a;
+  cursor: pointer;
+}
+
 .store-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* ⭐ 한 줄에 2개 */
