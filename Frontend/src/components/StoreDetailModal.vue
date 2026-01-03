@@ -31,15 +31,9 @@ onMounted(async () => {
       <!-- 제목 -->
       <h2 class="modal-title">매장 상세 정보</h2>
 
+      <div class="modal-body">
       <!-- 이미지 슬라이더 -->
-      <div class="image-slider" v-if="detail.imageUrls?.length">
-        <img
-            class="main-image"
-            :src="detail.imageUrls[currentImageIndex]"
-            alt="매장 이미지"
-        />
-
-        <!-- 화살표 + 인디케이터는 이미지가 2장일 때만 -->
+        <div class="image-slider" v-if="detail.imageUrls?.length">
         <template v-if="detail.imageUrls.length === 2">
           <button
               class="nav prev"
@@ -47,37 +41,57 @@ onMounted(async () => {
           >
             ‹
           </button>
-
           <button
               class="nav next"
               @click.stop="toggleImage"
           >
             ›
           </button>
-
           <div class="indicator">
             {{ currentImageIndex + 1 }} / 2
           </div>
         </template>
+
+
+        <img
+            class="main-image"
+            :src="detail.imageUrls[currentImageIndex]"
+            alt="매장 이미지"
+        />
       </div>
+
+      <!-- 매장 기본 정보 -->
+      <section class="store-basic">
+        <div class="store-header">
+          <h3 class="store-name">{{ detail.name }}</h3>
+        </div>
+        <p class="store-address">{{ detail.address }}</p>
+        <strong><p class="store-phone">{{ detail.phone }}</p></strong>
+      </section>
 
       <section class="box">
         <h3>주문가능 시간</h3>
 
-        <div class="row">
+        <div class="row1">
           <span>매장</span>
-          <strong>{{ detail.todayBusinessTime }}</strong>
+          {{ detail.todayBusinessTime }}
         </div>
 
-        <div class="row">
+        <div class="row1">
           <span>딜리버리</span>
-          <strong>{{ detail.todayDeliveryTime }}</strong>
+          {{ detail.todayDeliveryTime }}
         </div>
 
-        <div class="row">
+        <div class="row1">
           <span>킹오더</span>
-          <strong>{{ detail.todayKordTime }}</strong>
+          {{ detail.todayKordTime }}
         </div>
+
+        <div class="row1">
+          <span>아침메뉴</span>
+          {{ detail.todayKmomTime }}
+        </div>
+      </section>
 
       <section class="box">
           <h3>운영시간</h3>
@@ -100,8 +114,6 @@ onMounted(async () => {
           </p>
         </section>
 
-
-
         <!-- 매장 서비스 -->
         <section class="box">
           <h3>매장서비스</h3>
@@ -116,13 +128,15 @@ onMounted(async () => {
           </span>
           </div>
         </section>
+      </div>
 
         <!-- 확인 버튼 -->
+    <div class="modal-footer">
         <button class="confirm" @click="emit('close')">
           확인
         </button>
-      </section>
     </div>
+  </div>
   </div>
 </template>
 
@@ -140,10 +154,16 @@ onMounted(async () => {
 .modal {
   width: 720px;
   max-height: 90vh;
-  overflow-y: auto;
   background: #f7efe2;
   border-radius: 24px;
-  padding: 32px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+.modal-body {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 4px;
 }
 
 .modal-title {
@@ -153,12 +173,43 @@ onMounted(async () => {
   color: #5a2d0c;
   margin-bottom: 24px;
 }
+.store-header{
+  margin: 0;
+  padding: 0 ;
+}
+.store-name {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.store-address {
+  margin-top: 6px;        /* 원하는 만큼만 */
+  margin-bottom: 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: #7a4a2e;
+}
+.store-phone {
+  margin-top: 4px;
+  margin-bottom: 14px;
+}
 
 .image-slider {
   position: relative;
   margin-bottom: 24px;
+  width: 100%;
+  height: 320px;
+  overflow: hidden;
+  background: #ddd;
 }
 
+.main-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 .nav {
   position: absolute;
   top: 50%;
@@ -195,25 +246,37 @@ onMounted(async () => {
 .box {
   background: #fdf7ec;
   border-radius: 16px;
-  padding: 20px;
-  margin-bottom: 20px;
+  padding: 24px;
+  margin-bottom: 24px;
 }
 
 .box h3 {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
   color: #5a2d0c;
-  margin-bottom: 12px;
+  border-radius: 16px;
+  margin-bottom: 5px;
+  padding: 0;
 }
 
 .row {
-  display: flex;
-  justify-content: space-between;
-  padding: 6px 0;
+  display: grid;
+  grid-template-columns: 80px auto;
+  align-items: center;
   font-size: 15px;
+  font-weight: 700;
   color: #7a4a2e;
+  margin-bottom: 0;
 }
-
+.row1 {
+  display: grid;
+  grid-template-columns: 80px auto;
+  align-items: center;
+  font-size: 14px;
+  color: #7a4a2e;
+  margin-bottom: 0;
+  margin-left: 10px;
+}
 .row strong {
   color: #5a2d0c;
 }
@@ -231,12 +294,13 @@ onMounted(async () => {
 }
 
 .pill {
-  padding: 6px 12px;
+  padding: 2px 8px;
   border-radius: 999px;
   border: 1px solid #d2b79b;
   font-size: 13px;
+  font-weight: 600;
   color: #5a2d0c;
-  background: #fff;
+  background: #fdf7ec;
 }
 
 .confirm {
@@ -248,5 +312,10 @@ onMounted(async () => {
   color: #fff;
   font-size: 18px;
   font-weight: 800;
+}
+
+.modal-footer {
+  padding-top: 16px;
+  background: #f7efe2;
 }
 </style>

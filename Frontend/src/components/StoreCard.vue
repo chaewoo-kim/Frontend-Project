@@ -97,14 +97,6 @@ const emit = defineEmits(['click'])
   font-weight: 600;
   background-color: #faf4ed;
   color: var(--light);  display: inline-block;
-
-/*
-  min-width: 25px;
-  height: 16px;
-  line-height: 12px;
-  border-radius: 20px;
-  box-sizing: border-box;
-  */
 }
 
 /* 매장정보 */
