@@ -1,10 +1,10 @@
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, computed } from 'vue'
 import { fetchStoreDetail } from '@/api/store'
 
 const props = defineProps({
   storeCode: String,
-  businessTime: String   // ← StoreCard에서 같이 넘겨도 됨
+  // businessTime: String   // ← StoreCard에서 같이 넘겨도 됨
 })
 
 const emit = defineEmits(['close'])
@@ -15,6 +15,15 @@ onMounted(async () => {
   if (res?.success) {
     detail.value = res.data
   }
+})
+
+const orderTimes = computed(() => {
+  if(!detail.value) return []
+  return [
+    { label: '매장', time: detail.value. },
+    { label: '딜리버리', time: detail.value.deliveryTime },
+    { label: '킹오더', time: detail.value.today }
+  ].filter(t => t.time)
 })
 </script>
 
@@ -54,7 +63,15 @@ onMounted(async () => {
         <h3>운영시간</h3>
 
         <div class="row">
-          <span>운영</span>
+          <span>평일</span>
+          <strong>{{ detail.todayBusinessTime }}</strong>
+        </div>
+        <div class="row">
+          <span>주말</span>
+          <strong>{{ detail.todayBusinessTime }}</strong>
+        </div>
+        <div class="row">
+          <span>공휴일</span>
           <strong>{{ detail.todayBusinessTime }}</strong>
         </div>
 
