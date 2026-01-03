@@ -13,13 +13,7 @@ public interface StoreImageRepository extends JpaRepository<StoreImage,Long> {
     List<StoreImage> findByStoreIdAndImageTypeOrderBySortOrderAsc(
             Long storeId, ImageType imageType
     );
-    @Query("""
-        select si.imageUrl
-        from StoreImage si
-        where si.storeId = :storeId
-          and si.imageType = 'THUMBNAIL'
-    """)
-    Optional<String> findThumbnailByStoreId(@Param("storeId") Long storeId);
+
         @Query("""
         SELECT si.storeId, si.imageUrl
         FROM StoreImage si

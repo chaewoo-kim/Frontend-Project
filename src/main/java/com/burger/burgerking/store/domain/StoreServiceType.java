@@ -19,10 +19,6 @@ public enum StoreServiceType {
         this.displayName = displayName;
     }
 
-    public String getCode() {
-        return code;
-    }
-
     public String getDisplayName() {
         return displayName;
     }

@@ -1,7 +1,6 @@
 package com.burger.burgerking.store.application;
 
 import com.burger.burgerking.store.domain.*;
-import com.burger.burgerking.store.dto.response.StoreDetailResponseDTO;
 import com.burger.burgerking.store.dao.StoreImageRepository;
 import com.burger.burgerking.store.dao.StoreRepository;
 import com.burger.burgerking.store.dao.StoreServiceRepository;
@@ -11,10 +10,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
@@ -62,7 +58,7 @@ public class StoreSearchService {
         }
 
         if("NAME_ASC".equalsIgnoreCase(sort)){ //대소문자 무시
-            stores.sort((a,b) ->a.getName().compareTo(b.getName()));
+            stores.sort(Comparator.comparing(Store::getName));
         }
 
         List<Long> storeIds = stores.stream().map(Store::getId).toList();
