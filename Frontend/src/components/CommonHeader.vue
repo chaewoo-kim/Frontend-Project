@@ -2,9 +2,11 @@
   <header class="headerWrap">
     <div class="titleBar">
         <!-- 로고 (BK Korea 스타일) -->
-        <router-link to="/main" class="flex items-center">
-             <span class="text-[#E2221F] font-black text-2xl md:text-3xl italic tracking-tighter transform -skew-x-12 font-['Black_Han_Sans']">BURGERKING</span>
-        </router-link>
+        <h1 class="title_logo">
+            <router-link to="/main" class="logo">
+                <img src="@/assets/img/bg_logo.svg" alt="Burger King">
+            </router-link>
+        </h1>
     
         <!-- 데스크탑 네비게이션: GNBWrap 구조 -->
     <nav class="GNBWrap hidden lg:flex">
@@ -37,8 +39,8 @@
 
     <!-- 우측 버튼 (side_menu) -->
     <div class="side_menu">
-        <a href="#" class="btn_link">채용 사이트</a>
-        <a href="#" class="btn_franchise">가맹점 모집</a>
+        <a href="https://bkr.recruiter.co.kr/career/home" class="btn_link" target="_blank" rel="noopener noreferrer">채용 사이트</a>
+        <a href="https://www.burgerking.co.kr/" class="btn_franchise" target="_blank" rel="noopener noreferrer">가맹점 모집</a>
     </div>
     </div>
   </header>
@@ -141,10 +143,11 @@ a {
     height: 100%;
     padding: 10px 20px;
     font-family: var(--font-BKR);
-    font-weight: 700;
-    font-size: 1.5rem;
+    font-weight: 800; /* Extra Bold/Black chunky feel */
+    font-size: 1.5625rem; /* ~25px */
     color: #502314;
     transition: color 0.3s;
+    letter-spacing: -0.02em;
 }
 
 .gnb_btnWrap > a:hover {
@@ -205,9 +208,10 @@ a {
 }
 
 .btn_link {
-    background: url(/img/ico_tit_link_w.svg) no-repeat left 16px center;
-    background-color: var(--normal);
+    background: url(@/assets/img/ico_tit_link_w.svg) no-repeat left 16px center;
+    background-color: #502314; /* Match footer recruit button brown */
     border-radius: 30px;
+    background-size: 14px;
 }
 
 .btn_franchise {
@@ -218,8 +222,33 @@ a {
 
 .btn_franchise, .btn_link {
     height: 36px;
-    padding: 5px 16px 5px 34px;
+    padding: 5px 16px 5px 38px;
     font-size: .8125rem;
-    color: var(--bg-base);
+    color: #fff;
+    font-weight: 700;
+}
+
+/* Precise Logo Styling based on User Request */
+.title_logo {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+.title_logo .logo {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.title_logo .logo img {
+    height: 24px; /* Burger King Korea official height */
+    width: auto;
+    object-fit: contain;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    font-size: 1em;
 }
 </style>
