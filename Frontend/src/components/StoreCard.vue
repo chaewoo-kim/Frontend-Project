@@ -1,15 +1,16 @@
 <script setup>
-defineProps({
+const props = defineProps({
   store: Object
 })
+const emit = defineEmits(['click'])
 </script>
 
 <template>
-  <article class="card">
+  <article class="card" @click="emit('click')">
     <div class="info">
       <h3>{{ store.name }}</h3>
       <p>{{ store.address }}</p>
-      <p class="time">{{ store.businessTime }}</p>
+      <p class="time">{{ store.salesHourNote }}</p>
 
       <div class="tags">
         <span v-if="store.membershipAvailable">멤버십 적립매장</span>

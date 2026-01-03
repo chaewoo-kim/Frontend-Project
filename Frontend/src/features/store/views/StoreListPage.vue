@@ -18,8 +18,8 @@ const loadStores = async () => {
     isLoading.value = true
     const res = await fetchStoreList(keyword.value)
 
-    stores.value = res.data.stores
-    totalCount.value = res.data.totalCount
+    stores.value = res.stores
+    totalCount.value = res.totalCount
   } catch (e) {
     console.error('매장 목록 조회 실패', e)
     stores.value = []
@@ -65,10 +65,6 @@ const onClear = () => {
         v-if="!isLoading && stores.length === 0"
         class="empty-result"
     >
-      <p class="count">
-        {{ totalCount }}개의 매장이 있습니다.
-      </p>
-
       <img
           src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 96'><rect x='42' y='16' width='12' height='64' rx='6' fill='%23F2A900' transform='rotate(45 48 48)'/><rect x='44' y='20' width='4' height='56' rx='2' fill='%23FFD766' transform='rotate(45 48 48)'/><rect x='42' y='16' width='12' height='64' rx='6' fill='%23F2A900' transform='rotate(-45 48 48)'/><rect x='44' y='20' width='4' height='56' rx='2' fill='%23FFD766' transform='rotate(-45 48 48)'/></svg>"
           alt="검색 결과 없음"
@@ -101,13 +97,6 @@ const onClear = () => {
         @close="selectedStoreCode = null"
     />
   </section>
-  <StoreDetailModal
-      v-if="selectedStore"
-      :storeCode="selectedStore.storeCode"
-      :businessTime="selectedStore.businessTime"
-      @close="selectedStore = null"
-  />
-
 </template>
 
 <style scoped>
@@ -151,7 +140,7 @@ const onClear = () => {
 
 .store-list {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* ⭐ 한 줄에 2개 */
+  grid-template-columns: repeat(2, 1fr); /* 한 줄에 2개 */
   gap: 24px;
 }
 </style>

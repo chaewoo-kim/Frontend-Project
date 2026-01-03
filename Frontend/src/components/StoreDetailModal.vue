@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted, computed } from 'vue'
+import { ref, onMounted } from 'vue'
 import { fetchStoreDetail } from '@/api/store'
 
 const props = defineProps({
@@ -9,6 +9,11 @@ const props = defineProps({
 
 const emit = defineEmits(['close'])
 const detail = ref(null)
+const currentImageIndex = ref(0)
+const toggleImage = () => {
+  currentImageIndex.value =
+      currentImageIndex.value === 0 ? 1 : 0
+}
 
 onMounted(async () => {
   const res = await fetchStoreDetail(props.storeCode)
@@ -17,14 +22,6 @@ onMounted(async () => {
   }
 })
 
-const orderTimes = computed(() => {
-  if(!detail.value) return []
-  return [
-    { label: '매장', time: detail.value. },
-    { label: '딜리버리', time: detail.value.deliveryTime },
-    { label: '킹오더', time: detail.value.today }
-  ].filter(t => t.time)
-})
 </script>
 
 <template>
@@ -33,14 +30,36 @@ const orderTimes = computed(() => {
       <!-- 제목 -->
       <h2 class="modal-title">매장 상세 정보</h2>
 
-      <!-- 이미지 -->
-      <img
-          class="main-image"
-          :src="detail.imageUrls?.[0]"
-          alt="매장 이미지"
-      />
+      <!-- 이미지 슬라이더 -->
+      <div class="image-slider" v-if="detail.imageUrls?.length">
+        <img
+            class="main-image"
+            :src="detail.imageUrls[currentImageIndex]"
+            alt="매장 이미지"
+        />
 
-      <!-- 주문 가능 시간 -->
+        <!-- 화살표 + 인디케이터는 이미지가 2장일 때만 -->
+        <template v-if="detail.imageUrls.length === 2">
+          <button
+              class="nav prev"
+              @click.stop="toggleImage"
+          >
+            ‹
+          </button>
+
+          <button
+              class="nav next"
+              @click.stop="toggleImage"
+          >
+            ›
+          </button>
+
+          <div class="indicator">
+            {{ currentImageIndex + 1 }} / 2
+          </div>
+        </template>
+      </div>
+
       <section class="box">
         <h3>주문가능 시간</h3>
 
@@ -48,43 +67,45 @@ const orderTimes = computed(() => {
           <span>매장</span>
           <strong>{{ detail.todayBusinessTime }}</strong>
         </div>
+
         <div class="row">
           <span>딜리버리</span>
-          <strong>{{ detail.deliveryTime }}</strong>
+          <strong>{{ detail.todayDeliveryTime }}</strong>
         </div>
+
         <div class="row">
           <span>킹오더</span>
-          <strong>{{ detail.pickupTime }}</strong>
+          <strong>{{ detail.todayKordTime }}</strong>
         </div>
-      </section>
 
-      <!-- 운영 시간 -->
       <section class="box">
-        <h3>운영시간</h3>
+          <h3>운영시간</h3>
 
-        <div class="row">
-          <span>평일</span>
-          <strong>{{ detail.todayBusinessTime }}</strong>
-        </div>
-        <div class="row">
-          <span>주말</span>
-          <strong>{{ detail.todayBusinessTime }}</strong>
-        </div>
-        <div class="row">
-          <span>공휴일</span>
-          <strong>{{ detail.todayBusinessTime }}</strong>
-        </div>
+          <div class="row">
+            <span>평일</span>
+            <strong>{{ detail.storTimeDays }}</strong>
+          </div>
+          <div class="row">
+            <span>주말</span>
+            <strong>{{ detail.storTimeWeekend }}</strong>
+          </div>
+          <div class="row">
+            <span>공휴일</span>
+            <strong>{{ detail.storTimeHoliday }}</strong>
+          </div>
 
-        <p class="note">
-          {{ detail.salesHourNote || businessTime }}
-        </p>
-      </section>
+          <p class="note" v-if="detail.salesHourNote">
+            {{ detail.salesHourNote }}
+          </p>
+        </section>
 
-      <!-- 매장 서비스 -->
-      <section class="box">
-        <h3>매장서비스</h3>
 
-        <div class="services">
+
+        <!-- 매장 서비스 -->
+        <section class="box">
+          <h3>매장서비스</h3>
+
+          <div class="services">
           <span
               v-for="service in detail.serviceNames"
               :key="service"
@@ -92,13 +113,14 @@ const orderTimes = computed(() => {
           >
             {{ service }}
           </span>
-        </div>
-      </section>
+          </div>
+        </section>
 
-      <!-- 확인 버튼 -->
-      <button class="confirm" @click="emit('close')">
-        확인
-      </button>
+        <!-- 확인 버튼 -->
+        <button class="confirm" @click="emit('close')">
+          확인
+        </button>
+      </section>
     </div>
   </div>
 </template>
@@ -131,10 +153,42 @@ const orderTimes = computed(() => {
   margin-bottom: 24px;
 }
 
-.main-image {
-  width: 100%;
-  border-radius: 16px;
+.image-slider {
+  position: relative;
   margin-bottom: 24px;
+}
+
+.nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0, 0, 0, 0.45);
+  color: #fff;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.nav.prev {
+  left: 12px;
+}
+
+.nav.next {
+  right: 12px;
+}
+
+.indicator {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  font-size: 13px;
+  padding: 4px 10px;
+  border-radius: 999px;
 }
 
 .box {
