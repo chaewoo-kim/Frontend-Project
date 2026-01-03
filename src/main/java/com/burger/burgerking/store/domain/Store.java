@@ -28,7 +28,9 @@ public class Store extends BaseEntity {
     @Column(length = 100)
     private String storTimeDays;        // 평일 운영시간
     @Column(length = 100)
-    private String storTimeWeekend;     // 주말/공휴일 운영시간
+    private String storTimeWeekend; // 주말 운영시간
+    @Column(length = 100)
+    private String storTimeHoliday; // 공휴일 운영시간
     @Column(length = 200)
     private String salesHourNote;       // 연중무휴 / Cleaning Day 등 안내 문구
 
@@ -39,7 +41,7 @@ public class Store extends BaseEntity {
     @Column(length = 50)
     private String todayKordTime;       // 킹오더 주문 가능 시간
     @Column(length = 50)
-    private String pickupTime;           // 픽업 주문 가능 시간
+    private String todayKmomTime;           // 픽업 주문 가능 시간
 
     public Store(
             String storeCode,
@@ -49,13 +51,14 @@ public class Store extends BaseEntity {
             Double latitude,
             Double longitude,
             boolean membershipAvailable,
-            String storTimeDays,
-            String storTimeWeekend,
-            String salesHourNote,
-            String todayBusinessTime,
-            String todayDeliveryTime,
-            String todayKordTime,
-            String pickupTime
+            String storTimeDays,        // 평일 (운영시간)
+            String storTimeWeekend,     // 주말 (운영시간)
+            String storTimeHoliday,     // 공휴일 (운영시간)
+            String salesHourNote,       // "월~금 : 10:00~23:00 / 토~일 : 09:00~23:00"
+            String todayBusinessTime,   // 매장(주문가능시간)
+            String todayDeliveryTime,   // 배달(주문가능시간)
+            String todayKordTime,       // 킹오더(주문가능시간)
+            String todayKmomTime        // 킹모닝(주문가능시간)
     ) {
         this.storeCode = storeCode;
         this.name = name;
@@ -66,10 +69,11 @@ public class Store extends BaseEntity {
         this.membershipAvailable = membershipAvailable;
         this.storTimeDays = storTimeDays;
         this.storTimeWeekend = storTimeWeekend;
+        this.storTimeHoliday = storTimeHoliday;
         this.salesHourNote = salesHourNote;
         this.todayBusinessTime = todayBusinessTime;
         this.todayDeliveryTime = todayDeliveryTime;
         this.todayKordTime = todayKordTime;
-        this.pickupTime = pickupTime;
+        this.todayKmomTime = todayKmomTime;
     }
 }
