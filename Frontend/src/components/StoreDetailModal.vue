@@ -16,9 +16,10 @@ const toggleImage = () => {
 }
 
 onMounted(async () => {
-  const res = await fetchStoreDetail(props.storeCode)
-  if (res?.success) {
-    detail.value = res.data
+  try {
+    detail.value = await fetchStoreDetail(props.storeCode)
+  } catch (e) {
+    console.error('매장 상세 조회 실패', e)
   }
 })
 

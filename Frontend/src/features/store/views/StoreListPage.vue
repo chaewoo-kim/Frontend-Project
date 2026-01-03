@@ -66,7 +66,7 @@ const onClear = () => {
         class="empty-result"
     >
       <img
-          src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 96'><rect x='42' y='16' width='12' height='64' rx='6' fill='%23F2A900' transform='rotate(45 48 48)'/><rect x='44' y='20' width='4' height='56' rx='2' fill='%23FFD766' transform='rotate(45 48 48)'/><rect x='42' y='16' width='12' height='64' rx='6' fill='%23F2A900' transform='rotate(-45 48 48)'/><rect x='44' y='20' width='4' height='56' rx='2' fill='%23FFD766' transform='rotate(-45 48 48)'/></svg>"
+          src="@/assets/img/empty.png"
           alt="검색 결과 없음"
           class="empty-icon"
       />
@@ -117,7 +117,7 @@ const onClear = () => {
 }
 
 .empty-icon {
-  width: 80px;
+  width: 100px;
   height: auto;
   margin-bottom: 24px;
 }
