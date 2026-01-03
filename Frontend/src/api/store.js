@@ -8,10 +8,10 @@ export const fetchStoreList = async (keyword = '') => {
     const res = await api.get('/stores', {
         params: { keyword }
     })
-    return res.data   // { success, data, error }
+    return res.data.data   // { success, data, error }
 }
 
 export const fetchStoreDetail = async (storeCode) => {
     const res = await api.get(`/stores/${storeCode}`)
-    return res.data
+    return res.data.data
 }

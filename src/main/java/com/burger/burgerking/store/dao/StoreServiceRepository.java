@@ -10,14 +10,23 @@ import java.util.List;
 
 public interface StoreServiceRepository extends JpaRepository<StoreService,Long> {
     List<StoreService> findByStoreId(Long storeId);
+
     @Query("""
-        select count(ss)
-        from StoreService ss
-        where ss.storeId = :storeId
-          and ss.serviceType in :types
-    """)
-    long countByStoreIdAndServiceTypeIn(
-            @Param("storeId") Long storeId,
-            @Param("types") List<StoreServiceType> types
+                select ss
+                from StoreService ss
+                where ss.storeId in :storeIds
+            """)
+    List<StoreService> findByStoreIds(@Param("storeIds") List<Long> storeIds);
+
+    @Query("""
+                SELECT ss.storeId
+                FROM StoreService ss
+                WHERE ss.serviceType IN :types
+                GROUP BY ss.storeId
+                HAVING COUNT(DISTINCT ss.serviceType) = :size
+            """)
+    List<Long> findStoreIdsByAllServiceTypes(
+            @Param("types") List<StoreServiceType> types,
+            @Param("size") long size
     );
 }
