@@ -7,34 +7,35 @@ const emit = defineEmits(['click'])
 
 <template>
   <article class="card" @click="emit('click')">
-<!--    좍측 영역     -->
-    <div class="left">
-      <h3 class="name">{{ store.name }}</h3>
-      <p class="address">{{ store.address }}</p>
-      <p class="time">{{ store.businessTime }}</p>
+<!--    상단 영역     -->
+    <div class="top">
+      <div class="info">
+        <h3 class="name">{{ store.name }}</h3>
+        <p class="address">{{ store.address }}</p>
+        <p class="time">{{ store.businessTime }}</p>
 
-      <div class="services">
-        <span
+        <div class="services">
+          <span
             v-for="service in store.serviceNames"
             :key="service"
             class="service-pill"
-        >
-          {{ service }}
-        </span>
+          >
+            {{ service }}
+          </span>
+        </div>
       </div>
 
+    <img
+        class="thumb"
+        :src="store.thumbnailImageUrl"
+        alt="매장 썸네일" />
+    </div>
+
+    <!--    하단 영역     -->
+    <div class="bottom">
       <div class="detail-link">
         매장정보 <span>&gt;</span>
       </div>
-    </div>
-
-    <!--    우측 영역     -->
-    <div class="right">
-      <img
-          class="thumb"
-          :src="store.thumbnailImageUrl"
-          alt="매장 썸네일" />
-
       <div
           v-if="store.membershipAvailable"
           class="membership">
@@ -52,13 +53,18 @@ const emit = defineEmits(['click'])
   border-radius: 20px;
   padding: 18px 20px;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   gap: 16px;
   cursor: pointer;
 }
 
-/* 좌측 정보 */
-.left {
+/* 상단 정보 */
+.top {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+.info {
   flex: 1;
 }
 
@@ -67,6 +73,7 @@ const emit = defineEmits(['click'])
   font-weight: 800;
   color: #5a2d0c;
   margin-bottom: 6px;
+  margin-top: 0;
 }
 
 .address {
@@ -86,14 +93,13 @@ const emit = defineEmits(['click'])
 .services {
   display: flex;
   gap: 8px;
-  margin-bottom: 16px;
 }
 
 .service-pill {
   text-align: center;
   padding: 2px 5px;
   border-radius: 999px;
-  font-size: 13px;
+  font-size: 10px;
   font-weight: 600;
   background-color: #faf4ed;
   color: var(--light);  display: inline-block;
@@ -106,19 +112,20 @@ const emit = defineEmits(['click'])
   color: #5a2d0c;
 }
 
-/* 우측 */
-.right {
+/* 하단 */
+.bottom {
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+  justify-content: space-between;
+  align-items: center;
   gap: 10px;
 }
 
 /* 이미지 1:1 */
 .thumb {
-  width: 150px;
+  width: 120px;
+  height: 120px;
   aspect-ratio: 1 / 1;
-  border-radius: 18px;
+  border-radius: 15px;
   object-fit: cover;
 }
 
@@ -126,9 +133,8 @@ const emit = defineEmits(['click'])
 .membership {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  margin-top: 14px;
-  padding: 8px 14px;
+  gap: 3px;
+  padding: 3px 10px;
   border-radius: 999px;
   background: #faf4ed;
   color: #5a2d0c;

@@ -6,8 +6,12 @@ import { fetchStoreList } from '@/api/store'
 import StoreCard from '@/components/StoreCard.vue'
 import StoreSearchBar from './StoreSearchBar.vue'
 import StoreDetailModal from '@/components/StoreDetailModal.vue'
+import StoreFilterModal from "@/features/store/views/StoreFilterModal.vue";
 
 const stores = ref([])
+const filteredStores = ref([])  // 필터 적용된 결과
+const activeFilters = ref(null) // 현재 적용된 필터
+const showFilter = ref(false)   // 필터 모달 열기/닫기
 const totalCount = ref(0)
 const keyword = ref('')
 const selectedStoreCode = ref(null)
@@ -19,10 +23,11 @@ const loadStores = async () => {
     const res = await fetchStoreList(keyword.value)
 
     stores.value = res.stores
-    totalCount.value = res.totalCount
+    applyFilters()
   } catch (e) {
     console.error('매장 목록 조회 실패', e)
     stores.value = []
+    filteredStores.value = []
     totalCount.value = 0
   } finally {
     isLoading.value = false
@@ -40,14 +45,51 @@ const onSearch = () => {
 //취소 버튼
 const onClear = () => {
   keyword.value = ''
+  activeFilters.value = null
   loadStores()
 }
+
+const onApplyFilter = (filters) => {
+  activeFilters.value = filters
+  applyFilters()
+  showFilter.value = false
+}
+
+const applyFilters = () => {
+  let result = [...stores.value]
+
+  if (activeFilters.value) {
+    const { services, membership, sort } = activeFilters.value
+
+    if (services.length > 0 && !services.includes('전체')) {
+      result = result.filter(store =>
+          services.every(s => store.serviceNames?.includes(s))
+      )
+    }
+
+    if (membership === 'available') {
+      result = result.filter(store => store.membershipAvailable)
+    }
+    if (membership === 'unavailable') {
+      result = result.filter(store => !store.membershipAvailable)
+    }
+
+    if (sort === 'name') {
+      result.sort((a, b) => a.name.localeCompare(b.name))
+    }
+  }
+
+  filteredStores.value = result
+  totalCount.value = result.length
+}
+
+
 </script>
 
 <template>
   <CommonHeader/>
   <section class="store-page">
-    <h1>매장 찾기</h1>
+    <h1 class="page-title">매장 찾기</h1>
 
     <StoreSearchBar
         v-model="keyword"
@@ -57,12 +99,23 @@ const onClear = () => {
 
     <p v-if="isLoading">매장을 불러오는 중입니다...</p>
 
-    <p v-else>
-      {{ totalCount }}개의 매장이 있습니다.
-    </p>
+    <div class="count-row">
+      <p class="count">
+        <strong>{{ totalCount }}개</strong>의 매장이 있습니다.
+      </p>
 
+      <button class="filter-btn" @click="showFilter = true">
+        필터
+      </button>
+    </div>
+
+    <StoreFilterModal
+        v-if="showFilter"
+        @close="showFilter = false"
+        @apply="onApplyFilter"
+    />
     <div
-        v-if="!isLoading && stores.length === 0"
+        v-if="!isLoading && filteredStores.length === 0"
         class="empty-result"
     >
       <img
@@ -81,10 +134,9 @@ const onClear = () => {
       </button>
     </div>
 
-
     <div class="store-list">
       <StoreCard
-          v-for="store in stores"
+          v-for="store in filteredStores"
           :key="store.storeCode"
           :store="store"
           @click="selectedStoreCode = store.storeCode"
@@ -96,10 +148,24 @@ const onClear = () => {
         :storeCode="selectedStoreCode"
         @close="selectedStoreCode = null"
     />
+
+
   </section>
 </template>
 
 <style scoped>
+.store-page {
+  margin-top: 64px;
+  padding: 0 50px;
+}
+.page-title {
+  text-align: center;
+  font-size: 40px;
+  font-weight: 900;
+  color: #5a2d0c;
+  letter-spacing: -0.02em;
+  margin-bottom: 32px;
+}
 .empty-result {
   display: flex;
   flex-direction: column;
@@ -109,11 +175,27 @@ const onClear = () => {
   padding: 80px 0;
   text-align: center;
 }
+.count-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.filter-btn {
+  padding: 2px 8px;
+  border-radius: 5px;
+  background: #5a2d0c;
+  color:  #faf4ed;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
 
 .count {
-  font-size: 14px;
+  font-size: 16px;
   color: #6b4e3d;
-  margin-bottom: 40px;
+  padding-bottom: 10px;
 }
 
 .empty-icon {
