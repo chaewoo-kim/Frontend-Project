@@ -258,14 +258,11 @@ const mainData = ref({
   links: {}
 });
 const eventImages = ref([]);
-const storyAdVideos = ref([]);
-
-// Mapping titles for Story Ad Videos (as they might only return filename/fileUrl from API)
-const adVideoTitles = {
-  'c446fd95-c6c0-4b92-a82f-c6aa8df5a161.jpg': '할라피뇨 파퍼 - 1편',
-  'fd342a2c-6723-4bb9-88ac-f177b1e5d413.jpg': '할라피뇨 파퍼 - 2편',
-  'adb22742-6314-49a8-b250-ebabb2bf6864.png': '25년 6월 오리지널스 출시'
-};
+const storyAdVideos = ref([
+  { title: '할라피뇨 파퍼 - 1편', filename: 'popper1.jpg', fileUrl: '' },
+  { title: '할라피뇨 파퍼 - 2편', filename: 'popper2.jpg', fileUrl: '' },
+  { title: '25년 6월 오리지널스 출시', filename: 'originals.png', fileUrl: '' }
+]);
 
 const fetchMainData = async () => {
   try {
@@ -293,14 +290,12 @@ const fetchStoryAdVideos = async () => {
   try {
     const res = await storyApi.getImagesByType('AD_VIDEO');
     if (res.data.success) {
-      // Slicing to recent 3 and mapping titles if possible
-      storyAdVideos.value = res.data.data.slice(0, 3).map(video => {
-        // Extract filename from URL or object to match title
-        const filename = video.fileUrl.split('/').pop();
-        return {
-          ...video,
-          title: adVideoTitles[filename] || video.originalFileName || '광고 영상'
-        };
+      const apiImages = res.data.data;
+      storyAdVideos.value.forEach(video => {
+        const matchingImage = apiImages.find(img => img.originalFileName === video.filename);
+        if (matchingImage) {
+          video.fileUrl = matchingImage.fileUrl;
+        }
       });
     }
   } catch (error) {
@@ -699,13 +694,19 @@ onMounted(() => {
 }
 
 .media_swiper {
-  padding: 0 20px;
+  padding: 0;
 }
 
 .video_list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
+  gap: 24px;
+}
+
+@media screen and (max-width: 1024px) {
+  .video_list {
+    gap: 12px;
+  }
 }
 
 .video_item {
@@ -716,9 +717,10 @@ onMounted(() => {
   position: relative;
   width: 100%;
   aspect-ratio: 16 / 9;
-  border-radius: 15px;
+  border-radius: 12px;
   overflow: hidden;
-  background: #000;
+  background-color: #000;
+  margin-bottom: 12px;
 }
 
 .image_area.image_size01 img {
@@ -738,30 +740,37 @@ onMounted(() => {
 
 .btn_play {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 60px;
-  height: 60px;
-  background: rgba(226,34,31, 0.9);
-  border-radius: 50%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
   justify-content: center;
+  border: none;
+  cursor: pointer;
+}
+
+.btn_play span {
+  text-indent: -999em;
+  display: block;
 }
 
 .btn_play::after {
   content: '';
-  border-style: solid;
-  border-width: 10px 0 10px 15px;
-  border-color: transparent transparent transparent white;
-  margin-left: 5px;
+  width: 60px;
+  height: 60px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Ccircle cx='30' cy='30' r='30' fill='rgba(0,0,0,0.5)'/%3E%3Cpath d='M25 20l15 10-15 10V20z' fill='white'/%3E%3C/svg%3E") no-repeat center;
+  display: block;
 }
 
 .video_item .tit {
-  margin-top: 15px;
-  font-weight: bold;
   font-size: 1.1rem;
+  font-weight: 900;
+  color: #502314;
+  line-height: 1.4;
+  margin-top: 0;
 }
 
 /* Intro Section */
