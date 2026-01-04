@@ -5,6 +5,7 @@
       <div class="cont_min_area">
         <div class="web_container">
           <!-- 상단 이벤트 스와이퍼 -->
+          <!-- 상단 이벤트 스와이퍼 -->
           <div class="home_notice">
             <div class="top_banner">
               <swiper
@@ -35,20 +36,31 @@
                 <h2 class="tit">앱 다운로드 받고 <br>할인쿠폰 활용하기!</h2>
                 <div class="down_store">
                   <div class="QR WEB">
-                    <img src="data:image/png;base64,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" alt="QR Code">
+                    <img src="@/assets/img/img_QR.svg" alt="App download">
                   </div>
-                  <button type="button" class="btn_down" @click="handleExternalLink(mainData.links?.playStore)">
-                    <img src="@/assets/img/btn_down_aos.svg" alt="Google Play">
+                  <button type="button" class="btn_down" @click="handleExternalLink('https://play.google.com/store/apps/details?id=kr.co.burgerking')">
+                    <img src="@/assets/img/btn_google_down.svg" alt="Google Play에서 다운로드">
                   </button>
-                  <button type="button" class="btn_down" @click="handleExternalLink(mainData.links?.appStore)">
-                    <img src="@/assets/img/btn_down_ios.svg" alt="App Store">
+                  <button type="button" class="btn_down" @click="handleExternalLink('https://apps.apple.com/kr/app/id1095254627')">
+                    <img src="@/assets/img/btn_apple_down.svg" alt="App Store에서 다운로드">
                   </button>
                 </div>
               </div>
               <!-- 매장 찾기 카드 -->
               <div class="card01 home_search">
                 <h2 class="tit">내 주변 버거킹 매장 찾기</h2>
-                <button type="button" class="btn_detail" @click="handleLink(mainData.links?.store)">
+                <div class="store_icon">
+                  <img src="@/assets/img/ico_tit_store_w.svg" alt="Store Icon">
+                </div>
+                <div class="search_bar_mock">
+                   <span>지역, 매장명을 입력해 주세요.</span>
+                   <svg class="ico_search" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="#3d2117" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                     <path d="M21 21L16.65 16.65" stroke="#3d2117" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                   </svg>
+                </div>
+                <!-- Overlay Button -->
+                <button type="button" class="btn_detail" @click="handleLink('/store/search')">
                   <span>매장 찾기 화면으로 이동</span>
                 </button>
               </div>
@@ -61,19 +73,24 @@
               <div class="title optWrap">
                 <h2 class="tit_home">광고영상</h2>
                 <div class="option">
-                  <button type="button" class="btn_more" @click="handleLink(mainData.links?.moreVideos)">
+                  <button type="button" class="btn_more" @click="handleLink('/story/ad')">
                     <span>더보기</span>
                   </button>
                 </div>
               </div>
               <div class="media_swiper">
-                <div class="video_grid">
-                  <div v-for="video in mainData.adVideos" :key="video.id" class="video_item" @click="handleExternalLink(video.fileUrl)">
-                    <div class="image_area">
-                      <img :src="video.fileUrl" :alt="video.originalFilename">
+                <div class="video_list">
+                  <div 
+                    v-for="video in storyAdVideos" 
+                    :key="video.id" 
+                    class="video_item"
+                    @click="handleExternalLink(video.fileUrl)"
+                  >
+                    <div class="image_area image_size01">
+                      <img :src="video.fileUrl" :alt="video.title">
                       <button type="button" class="btn_play"><span>video play</span></button>
                     </div>
-                    <div class="tit"><span>{{ video.originalFilename }}</span></div>
+                    <div class="tit"><span>{{ video.title }}</span></div>
                   </div>
                 </div>
               </div>
@@ -204,7 +221,7 @@
                   <h2 class="tit"><strong><em>오직 버거킹 앱에서</em>만 가능한 <em>혜택</em> <br>지금 앱 다운로드 받으시고 혜택을 누리세요!</strong></h2>
                   <div class="benefit_list"><strong>픽업오더</strong><strong>딜리버리 오더</strong><strong>멤버십 적립</strong><strong>할인쿠폰</strong></div>
                   <div class="app_down">
-                    <div class="QR"><img src="@/assets/img/img_QR.svg" alt="QR Code"></div>
+                    <div class="QR"></div>
                     <div class="btn_area">
                       <button type="button" class="btn_app aos" @click="handleExternalLink(mainData.links?.playStore)"><span>Google Play에서 다운로드</span></button>
                       <button type="button" class="btn_app ios" @click="handleExternalLink(mainData.links?.appStore)"><span>App Store에서 다운로드</span></button>
@@ -231,6 +248,7 @@ import { Autoplay, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import mainApi from '@/api/main';
+import storyApi from '@/api/story';
 
 const router = useRouter();
 const mainData = ref({
@@ -240,6 +258,14 @@ const mainData = ref({
   links: {}
 });
 const eventImages = ref([]);
+const storyAdVideos = ref([]);
+
+// Mapping titles for Story Ad Videos (as they might only return filename/fileUrl from API)
+const adVideoTitles = {
+  'c446fd95-c6c0-4b92-a82f-c6aa8df5a161.jpg': '할라피뇨 파퍼 - 1편',
+  'fd342a2c-6723-4bb9-88ac-f177b1e5d413.jpg': '할라피뇨 파퍼 - 2편',
+  'adb22742-6314-49a8-b250-ebabb2bf6864.png': '25년 6월 오리지널스 출시'
+};
 
 const fetchMainData = async () => {
   try {
@@ -263,6 +289,25 @@ const fetchEventImages = async () => {
   }
 };
 
+const fetchStoryAdVideos = async () => {
+  try {
+    const res = await storyApi.getImagesByType('AD_VIDEO');
+    if (res.data.success) {
+      // Slicing to recent 3 and mapping titles if possible
+      storyAdVideos.value = res.data.data.slice(0, 3).map(video => {
+        // Extract filename from URL or object to match title
+        const filename = video.fileUrl.split('/').pop();
+        return {
+          ...video,
+          title: adVideoTitles[filename] || video.originalFileName || '광고 영상'
+        };
+      });
+    }
+  } catch (error) {
+    console.error('Failed to fetch story ad videos:', error);
+  }
+};
+
 const handleLink = (path) => {
   if (path) router.push(path);
 };
@@ -280,6 +325,7 @@ const handleExternalLink = (url) => {
 onMounted(() => {
   fetchMainData();
   fetchEventImages();
+  fetchStoryAdVideos();
 });
 </script>
 
@@ -299,16 +345,28 @@ onMounted(() => {
 }
 
 .web_container {
-  max-width: 1140px;
+  max-width: 1500px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
 /* Home Notice Section */
 .home_notice {
-  display: flex;
-  gap: 20px;
-  padding: 40px 0;
+  margin-bottom: 30px;
+}
+
+@media screen and (min-width: 640px) {
+    .home_notice {
+        margin-bottom: 40px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .home_notice {
+        display: flex;
+        margin-bottom: 50px;
+        gap: 20px;
+    }
 }
 
 .top_banner {
@@ -332,14 +390,24 @@ onMounted(() => {
 
 .mainSwiper .image_area {
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 
 .mainSwiper .image_area img {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
   object-fit: cover;
+}
+
+/* Swiper Pagination Customization */
+.mainSwiper :deep(.swiper-pagination-bullet) {
+  background: #ccc;
+  opacity: 1;
+}
+
+.mainSwiper :deep(.swiper-pagination-bullet-active) {
+  background: white;
 }
 
 .top_cont {
@@ -350,18 +418,29 @@ onMounted(() => {
 }
 
 .card01 {
-  background: white;
-  border-radius: 20px;
-  padding: 30px;
+  margin: 10px 0;
+  padding: 20px;
+  background: var(--bg-light);
+  border-radius: 10px;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* Keeping shadow as it looks nice, though not explicitly in snippet it was there before */
   transition: transform 0.3s;
   cursor: pointer;
 }
 
-.card01:hover {
-  transform: translateY(-5px);
+@media screen and (min-width: 640px) {
+  .card01 {
+    padding: 30px;
+    border-radius: 20px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .card01 {
+    padding: 40px;
+    border-radius: 20px;
+  }
 }
 
 .tit {
@@ -371,29 +450,147 @@ onMounted(() => {
   line-height: 1.3;
 }
 
+@media screen and (min-width: 640px) {
+  .top_cont .card01 .tit {
+    display: flex;
+    align-items: center;
+    min-height: 2.5em;
+    justify-content: center;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .top_cont .card01 .tit {
+    min-height: auto;
+  }
+}
+
 .down_store {
-  margin-top: 20px;
   display: flex;
-  gap: 10px;
+  margin-top: auto;
+}
+
+.home_app_down_card {
+  padding: 20px;
+  background-color: var(--bg-light);
+  border-radius: 20px;
+  /* background-image url missing in local assets, keeping color */
+}
+
+.btn_down {
+  flex: 1;
+  height: 38px;
+  padding: 2px 5px 1px;
+  background: #f1e7db;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  display: flex;
   align-items: center;
+  justify-content: center;
 }
 
-.QR img {
-  width: 80px;
-  height: 80px;
+.menu_tit {
+    margin-bottom: 20px;
 }
 
-.btn_down img {
-  height: 40px;
+@media screen and (min-width: 640px) {
+  .home_app_down_card {
+    padding: 30px;
+  }
+  
+  .down_store {
+    display: block;
+  }
+
+  .btn_down {
+    width: 150px;
+    height: 42px;
+    margin: 17px 5px 0;
+    display: inline-flex;
+  }
 }
 
-.home_search {
-  background-color: #E2221F;
-  color: white;
+@media screen and (min-width: 1024px) {
+  .home_app_down_card {
+    background-position: right 18px bottom 51px;
+  }
+
+  .down_store {
+    position: relative;
+    width: 260px;
+    display: block;
+    margin: 20px auto 0;
+    padding-left: 110px;
+  }
+
+  .QR {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  .QR img {
+      width: 100%;
+      height: 100%;
+  }
+
+  .down_store .btn_down:first-of-type {
+    margin-top: 0;
+  }
 }
 
-.home_search .tit {
-  color: white;
+.top_cont .card01 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 180px;
+  font-family: var(--font-BKR);
+  font-size: 1.1875rem;
+  text-align: center;
+  line-height: 1.23;
+}
+
+@media screen and (min-width: 640px) {
+  .top_cont .card01 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 220px;
+    margin-top: 0;
+    padding: 20px;
+    font-size: 1.1875rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .top_cont .card01 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 220px;
+    margin: 12px 0 0;
+    padding: 20px;
+    font-size: 1.375rem;
+    overflow: hidden;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .top_cont .card01:not(:first-child) {
+    margin: 20px 0 0;
+  }
+  
+  .top_cont .card01 {
+    font-size: 1.875rem;
+    padding: 30px;
+  }
 }
 
 .btn_detail {
@@ -403,6 +600,76 @@ onMounted(() => {
   padding: 10px 20px;
   border-radius: 30px;
   font-weight: bold;
+}
+
+.home_search .btn_detail {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  text-indent: -999em;
+  font-weight: 500;
+  font-size: 1.0625rem;
+  color: #2e2e2e; /* var(--sub) replacement */
+  text-align: left;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.home_search {
+  background-color: #3d2117; /* Dark Brown */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.home_search .tit {
+  color: white;
+  margin-bottom: 0 !important; /* Reset margin */
+  text-shadow: 2px 2px 0px #000; /* Simple shadow for contrast */
+}
+
+.store_icon {
+  margin: 15px 0;
+  width: 80px; /* Adjust size based on visual */
+  height: auto;
+}
+
+.store_icon img {
+  width: 100%;
+  height: auto;
+}
+
+.search_bar_mock {
+  background: white;
+  border-radius: 50px;
+  padding: 12px 20px;
+  width: 90%;
+  max-width: 400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #999;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.ico_search {
+  width: 24px;
+  height: 24px;
+}
+
+@media screen and (min-width: 1500px) {
+  .home_search {
+    /* Resetting background image logic if simpler style preferred, or keeping it if compatible */
+    background-image: none; 
+  }
 }
 
 /* Ads Section */
@@ -431,11 +698,37 @@ onMounted(() => {
   font-weight: bold;
 }
 
-.video_grid {
+.media_swiper {
+  padding: 0 20px;
+}
+
+.video_list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 12px;
 }
+
+.video_item {
+  cursor: pointer;
+}
+
+.image_area.image_size01 {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 15px;
+  overflow: hidden;
+  background: #000;
+}
+
+.image_area.image_size01 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Remove old grid styles */
+/* .video_grid { ... } removed/replaced */
 
 .video_item .image_area {
   position: relative;
