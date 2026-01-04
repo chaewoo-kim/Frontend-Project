@@ -16,6 +16,10 @@ const totalCount = ref(0)
 const keyword = ref('')
 const selectedStoreCode = ref(null)
 const isLoading = ref(false)
+const PAGE_SIZE = 40
+const page = ref(1)
+const visibleStores = ref([])
+
 
 const loadStores = async () => {
   try {
@@ -55,6 +59,13 @@ const onApplyFilter = (filters) => {
   showFilter.value = false
 }
 
+const updateVisibleStores = () => {
+  visibleStores.value = filteredStores.value.slice(
+      0,
+      page.value * PAGE_SIZE
+  )
+}
+
 const applyFilters = () => {
   let result = [...stores.value]
 
@@ -81,8 +92,15 @@ const applyFilters = () => {
 
   filteredStores.value = result
   totalCount.value = result.length
+
+  page.value = 1 // 필터 바뀌면 페이지 초기화
+  updateVisibleStores()
 }
 
+const loadMore = () => {
+  page.value++
+  updateVisibleStores()
+}
 
 </script>
 
@@ -136,7 +154,7 @@ const applyFilters = () => {
 
     <div class="store-list">
       <StoreCard
-          v-for="store in filteredStores"
+          v-for="store in visibleStores"
           :key="store.storeCode"
           :store="store"
           @click="selectedStoreCode = store.storeCode"
@@ -149,6 +167,12 @@ const applyFilters = () => {
         @close="selectedStoreCode = null"
     />
 
+    <div v-if="visibleStores.length < totalCount" class="load-more">
+      <button class="load-more-btn" @click="loadMore">
+        더보기
+      </button>
+    </div>
+    <article class="fabWrap"></article>
 
   </section>
 </template>
@@ -225,4 +249,25 @@ const applyFilters = () => {
   grid-template-columns: repeat(2, 1fr); /* 한 줄에 2개 */
   gap: 24px;
 }
+
+.load-more {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0;
+}
+
+.load-more-btn {
+  padding: 12px 32px;
+  border-radius: 24px;
+  background: #faf4ed;
+  border: 1px solid #d6c1b0;
+  color: #5a2d0c;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.fabWrap {
+  margin-top: 90px;
+}
+
 </style>
