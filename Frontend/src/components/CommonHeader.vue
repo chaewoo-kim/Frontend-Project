@@ -102,7 +102,7 @@ ul {
     display: flex;
     width: 100%;
     max-width: 1400px;
-    height: 98px;
+    height: 80px; /* Reduced from 98px */
     margin: 0 auto;
     align-items: center;
     position: relative; /* For absolute nav positioning */
