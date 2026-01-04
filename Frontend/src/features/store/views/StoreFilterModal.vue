@@ -3,13 +3,13 @@ import { reactive } from 'vue'
 
 const emit = defineEmits(['close', 'apply'])
 
-const DEFAULT_FILTERS = {
+const createDefaultFilters = () => ({
   services: [],
-  membership: 'all',   // all | available | unavailable
-  sort: 'distance'     // distance | name
-}
+  membership: 'all',
+  sort: 'name'
+})
 
-const filters = reactive({ ...DEFAULT_FILTERS })
+const filters = reactive(createDefaultFilters())
 
 const SERVICES = ['킹오더','딜리버리','24시','킹모닝','주차','드라이브스루']
 
@@ -26,7 +26,7 @@ const toggleService = (service) => {
 const isAllService = () => filters.services.length === 0
 
 const resetFilter = () => {
-  Object.assign(filters, DEFAULT_FILTERS)
+  Object.assign(filters, createDefaultFilters())
 }
 
 
@@ -87,8 +87,8 @@ const applyFilter = () => {
         <section class="section">
           <h3>정렬</h3>
           <div class="radio-group">
-            <button :class="{ active: filters.sort==='distance' }"
-                    @click="filters.sort='distance'">가까운 순</button>
+<!--            <button :class="{ active: filters.sort==='distance' }"-->
+<!--                    @click="filters.sort='distance'">가까운 순</button>-->
             <button :class="{ active: filters.sort==='name' }"
                     @click="filters.sort='name'">가나다 순</button>
           </div>
