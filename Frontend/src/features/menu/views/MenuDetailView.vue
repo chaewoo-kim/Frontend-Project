@@ -9,11 +9,20 @@
     <div v-else class="contentsWrap">
       <div class="cont_min_area">
 
-
         <!-- 메뉴 상세 래퍼 -->
         <div class="prd_detailWrap">
-          <!-- 이미지 영역 -->
+          <!-- 이미지 영역 (뱃지 포함) -->
           <div class="prd_image">
+            <div class="card_flag">
+              <template v-for="badge in detail?.badges" :key="badge">
+                <!-- 일반 이미지 배지 -->
+                <em v-if="badge !== 'HOT' && badge !== 'SPICY'" :class="['flag_menu', getBadgeDetailClass(badge)]">{{ badge }}</em>
+              </template>
+            </div>
+            <!-- HOT/SPICY 배지 (prd_image의 직계 자식으로 이동) -->
+            <template v-for="badge in detail?.badges" :key="'hot-' + badge">
+              <em v-if="badge === 'HOT' || badge === 'SPICY'" class="flag_text hot">HOT</em>
+            </template>
             <span>
               <img :src="detail?.imageUrl || 'https://via.placeholder.com/500'" :alt="detail?.name" />
             </span>
@@ -21,8 +30,6 @@
 
           <!-- 상세 정보 영역 -->
           <div class="cont">
-
-            
             <!-- 메뉴명 (Kcal 포함) -->
             <p class="tit">
               {{ detail?.name }}
@@ -39,16 +46,12 @@
               </div>
             </div>
 
-            <div class="h-px bg-gray-200 my-6"></div>
-
             <!-- 키워드 모음 (tag_list) -->
             <div class="tag_list" v-if="detail?.keywords && detail.keywords.length > 0">
               <span v-for="k in detail.keywords" :key="k.id">
                 #{{ k.name }}
               </span>
             </div>
-
-
           </div>
         </div>
       </div>
@@ -73,7 +76,7 @@ onMounted(async () => {
         detail.value = res.data.data;
     } catch (e) {
         console.error("Detail load failed", e);
-        // Fallback for demo when backend is down
+        // Fallback
         detail.value = {
             id: id,
             name: "통새우와퍼",
@@ -81,28 +84,29 @@ onMounted(async () => {
             description: "불맛 가득한 그릴드 갈릭 슈림프가 더해진 프리미엄 버거!",
             imageUrl: "https://d1wo1nmpb9h17l.cloudfront.net/bk/resource/menu/202302/1677565538356942.png",
             kcal: 809,
-            badges: ["SPICY", "POPULAR"],
-            keywords: [{id:1, name:"새우"}, {id:2, name:"매콤"}, {id:3, name:"와퍼"}, {id:4, name:"불맛"}]
+            badges: ["NEW", "HOT"],
+            keywords: [{id:1, name:"새우"}, {id:2, name:"매콤"}]
         }
     } finally {
         loading.value = false;
     }
 });
 
-const getBadgeColor = (badge) => {
-  switch(badge) {
-    case 'NEW': return 'bg-[#E2221F]';
-    case 'POPULAR': return 'bg-[#F58F00]';
-    case 'LIMITED': return 'bg-black';
-    case 'SPICY': return 'bg-[#ce2029]';
-    case 'ALL_DAY_KING': return 'bg-[#00962c]';
-    default: return 'bg-gray-600';
-  }
+const getBadgeDetailClass = (badge) => {
+  const mapping = {
+    'NEW': 'new_menu',
+    'BEST': 'best_menu',
+    'POPULAR': 'best_menu',
+    'LIMITED': 'limited_menu',
+    'ALL_DAY_KING': 'king_menu',
+    'ALL_DAY_SNACK': 'snack_menu'
+  };
+  return mapping[badge] || '';
 };
 </script>
 
 <style scoped>
-/* User Burger King Detail Wrapper Styles */
+/* User 가 제공한 원래의 스타일 적용 */
 .prd_detailWrap {
     display: flex;
     flex-direction: column;
@@ -119,10 +123,13 @@ const getBadgeColor = (badge) => {
     }
 }
 
-/* Image Section */
+/* Image Section & Badges */
 .prd_image {
+    position: relative;
     min-width: 140px;
-    height: 105px;
+    height: auto;
+    min-height: 210px;
+    margin: 0 0 5px;
     text-align: center;
 }
 
@@ -131,18 +138,156 @@ const getBadgeColor = (badge) => {
     height: 100%;
 }
 
-.prd_detailWrap .prd_image {
-    position: relative;
-    height: auto;
-    min-height: 210px;
-    margin: 0 0 5px;
-}
-
-.prd_detailWrap .prd_image img {
+.prd_image img {
     display: block;
     width: 100%;
     height: auto;
-    vertical-align: top;
+}
+
+/* 사용자 제공 Badge CSS */
+.prd_detailWrap .prd_image .card_flag {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+.card_flag {
+    display: flex;
+    z-index: 10;
+}
+
+@media screen and (min-width: 1024px) {
+    .prd_detailWrap .card_flag {
+        align-items: center;
+    }
+}
+
+/* flag_menu 기본 스타일 */
+.flag_menu {
+    display: inline-block;
+    width: 36px;
+    height: 24px;
+    text-indent: -999em;
+    background-size: contain;
+}
+
+@media screen and (min-width: 1024px) {
+    .flag_menu {
+        width: 48px;
+        height: 32px;
+        background-size: 100% auto !important;
+    }
+}
+
+/* 각 뱃지별 배경 이미지 (로컬 파일 사용) */
+.flag_menu.new_menu {
+    width: 48px;
+    background: url(../img/menu_badge_new.svg) no-repeat 50%;
+}
+
+@media screen and (min-width: 1024px) {
+    .flag_menu.new_menu {
+        width: 64px;
+    }
+}
+
+.prd_detailWrap .prd_image .flag_menu.new_menu {
+    width: 56px;
+}
+
+@media screen and (min-width: 1024px) {
+    .prd_detailWrap .prd_image .flag_menu.new_menu {
+        width: 92px;
+    }
+}
+
+.flag_menu.best_menu { background: url(../img/menu_badge_best.svg) no-repeat 50%; }
+.flag_menu.limited_menu { background: url(../img/menu_badge_limited.svg) no-repeat 50%; }
+.flag_menu.king_menu { background: url(../img/menu_badge_alldayking.svg) no-repeat 50%; }
+.flag_menu.snack_menu { background: url(../img/menu_badge_alldaysnack.svg) no-repeat 50%; }
+
+@media screen and (min-width: 1024px) {
+    .prd_detailWrap .prd_image .flag_menu {
+        width: 69px;
+        height: 46px;
+        margin-right: 10px;
+    }
+}
+
+.prd_detailWrap .prd_image .flag_menu {
+    width: 42px;
+    height: 28px;
+    background-size: contain;
+}
+
+.card_flag>:last-child {
+    margin-right: 0;
+}
+
+/* 사용자 제공 HOT Badge Styles (수정본) */
+.flag_text {
+    position: static;
+    display: inline-block;
+    min-width: 34px;
+    height: 18px;
+    margin: 0 5px 0 0;
+    padding: 1px 5px 0;
+    font-size: .625rem;
+    color: var(--normal);
+    line-height: 18px;
+    text-align: center;
+    text-indent: 0;
+    background-color: var(--bg-base);
+    border-radius: 5px;
+}
+
+.flag_text.hot {
+    min-width: 12px;
+    margin: 3px 0 0 auto;
+    text-indent: -999em;
+    background: url(../img/menu_badge_hot.svg) no-repeat 100%;
+}
+
+.prd_detailWrap .flag_text.hot {
+    position: absolute !important;
+    right: 0;
+    top: 0;
+    width: 18px;
+    height: 100%;
+    background-size: contain;
+    z-index: 11;
+}
+
+@media screen and (min-width: 640px) {
+    .prd_detailWrap .flag_text.hot {
+        width: 30px;
+        background-size: contain;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .prd_detailWrap .flag_text.hot {
+        width: 30px;
+        height: 40px;
+        background-size: contain;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .prd_detailWrap .flag_text {
+        min-width: fit-content;
+        height: 22px;
+        padding: 0 10px;
+        font-size: .8125rem !important;
+        line-height: 22px;
+    }
+    .flag_text.hot {
+        width: 20px;
+        height: 26px;
+        margin-top: 11px;
+        background-size: 100% auto;
+    }
 }
 
 @media screen and (min-width: 640px) {

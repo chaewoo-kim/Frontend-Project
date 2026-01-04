@@ -9,6 +9,15 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class SwaggerConfig {
 
+    // store 관련 API
+    @Bean
+    public GroupedOpenApi storeGroup() {
+        return GroupedOpenApi.builder()
+                .group("Store API")
+                .pathsToMatch("/api/v1/stores/**")
+                .build();
+    }
+
     // story 관련 API
     @Bean
     public GroupedOpenApi storyGroup() {

@@ -39,3 +39,16 @@ out/
 ### MAC OS ###
 .DS_Store
 **/.DS_Store
+
+### Node ###
+node_modules/
+Frontend/node_modules/
+dist/
+Frontend/dist/
+.env
+.env.local
+.env.*.local
+dist/
+.env
+dist/
+.env

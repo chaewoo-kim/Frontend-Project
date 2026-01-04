@@ -6,5 +6,9 @@ export const mainRoutes = [
         path: '/',
         name: 'main',
         component: MainView
+    },
+    {
+        path: '/main',
+        redirect: '/'
     }
 ];
