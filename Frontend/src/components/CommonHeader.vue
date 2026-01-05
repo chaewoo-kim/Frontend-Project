@@ -7,33 +7,41 @@
                 <img src="@/assets/img/bg_logo.svg" alt="Burger King">
             </router-link>
         </h1>
-    
+
         <!-- 데스크탑 네비게이션: GNBWrap 구조 -->
     <nav class="GNBWrap hidden lg:flex">
         <ul>
-            <li 
-                class="gnb_btnWrap" 
-                v-for="item in navItems" 
-                :key="item.name"
-                @mouseenter="item.name === 'STORY' ? (showStorySub = true) : null"
-                @mouseleave="item.name === 'STORY' ? (showStorySub = false) : null"
-            >
-                <router-link :to="item.path">
-                    <span>{{ item.name }}</span>
-                </router-link>
-                
-                <!-- STORY 서브 네비게이션 (브라운 필 디자인) -->
-                <div v-if="item.name === 'STORY' && showStorySub" class="sub_gnb">
-                    <div class="sub_gnb_inner">
-                        <router-link to="/story/brand">브랜드</router-link>
-                        <router-link to="/story/why">Why 버거킹</router-link>
-                        <router-link to="/story/esg">ESG 경영</router-link>
-                        <router-link to="/story/qsr">Smart QSR</router-link>
-                        <router-link to="/story/awards">수상실적</router-link>
-                        <router-link to="/story/ad">광고영상</router-link>
-                    </div>
-                </div>
-            </li>
+          <li
+              class="gnb_btnWrap"
+              v-for="item in navItems"
+              :key="item.name"
+              @mouseenter="handleMouseEnter(item.name)"
+              @mouseleave="handleMouseLeave(item.name)"
+          >
+            <router-link :to="item.path">
+              <span>{{ item.name }}</span>
+            </router-link>
+
+            <!-- STORY 서브 네비게이션 (브라운 필 디자인) -->
+            <div v-if="item.name === 'STORY' && showStorySub" class="sub_gnb">
+              <div class="sub_gnb_inner">
+                <router-link to="/story/brand">브랜드</router-link>
+                <router-link to="/story/why">Why 버거킹</router-link>
+                <router-link to="/story/esg">ESG 경영</router-link>
+                <router-link to="/story/qsr">Smart QSR</router-link>
+                <router-link to="/story/awards">수상실적</router-link>
+                <router-link to="/story/ad">광고영상</router-link>
+              </div>
+            </div>
+
+            <!-- NEWS 서브 네비게이션 -->
+            <div v-if="item.name === 'NEWS' && showNewsSub" class="sub_gnb">
+              <div class="sub_gnb_inner">
+                <router-link to="/notice/event/ongoing">이벤트</router-link>
+                <router-link to="/notice/notice">공지사항</router-link>
+              </div>
+            </div>
+          </li>
         </ul>
     </nav>
 
@@ -55,10 +63,20 @@ const showNewsSub = ref(false);
 const navItems = [
     { name: 'MENU', path: '/menu' },
     { name: 'STORY', path: '/story/brand' },
-    { name: 'NEWS', path: '/event' },
+    { name: 'NEWS', path: '/notice' },
     { name: 'STORE', path: '/store' },
     { name: 'CUSTOMER', path: '/customer/main' }
 ];
+
+const handleMouseEnter = (name) => {
+  if (name === 'STORY') showStorySub.value = true;
+  if (name === 'NEWS') showNewsSub.value = true;
+};
+
+const handleMouseLeave = (name) => {
+  if (name === 'STORY') showStorySub.value = false;
+  if (name === 'NEWS') showNewsSub.value = false;
+};
 </script>
 
 <style scoped>
@@ -75,11 +93,10 @@ ul {
     margin: 0;
 }
 
-/* Header Wrapper - Responsive Padding */
 .headerWrap {
     position: relative;
     padding: 0 20px;
-    z-index: 500; /* Increased z-index to stay above content */
+    z-index: 500;
     background-color: var(--bg-base);
 }
 

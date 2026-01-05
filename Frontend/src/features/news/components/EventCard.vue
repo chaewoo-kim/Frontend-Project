@@ -74,19 +74,18 @@ li {
 .image {
   position: relative;
   width: 100%;
-  padding-bottom: 50%; /* Approx 2:1 ratio */
   overflow: hidden;
-  background-color: #f2f2f2;
+  display: flex;
+  align-items: flex-start;
 }
 
 .image img {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  object-fit: contain;
+  object-position: top left;
   transition: transform 0.3s ease;
+  display: block;
 }
 
 .cont:hover .image img {

@@ -37,6 +37,7 @@ export default {
   background: #f2ebe6; /* BK Beige */
   z-index: 99;
   padding-bottom: 0;
+  margin-bottom: 60px;
 }
 
 .tab01 {
@@ -60,7 +61,7 @@ export default {
 .tab01 button {
   display: block;
   width: 100%;
-  padding: 19px 0 17px;
+  padding: 19px 0;
   background: none;
   border: none;
   font-size: 20px; /* Larger font */
