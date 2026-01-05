@@ -65,6 +65,7 @@
       </div>
     </div>
   </div>
+  <common-footer/>
 </template>
 <script setup>
 import CommonHeader from '@/components/CommonHeader.vue';
@@ -72,7 +73,7 @@ import { getQADetail } from '@/api/customer';
 import { useRoute } from 'vue-router';
 import { ref, onMounted } from 'vue';
 
-// Import images from assets
+// 이미지
 import qrImage from '@/assets/img/img_QR.svg';
 import btnAos from '@/assets/img/btn_down_aos.svg';
 import btnIos from '@/assets/img/btn_down_ios.svg';
@@ -173,11 +174,6 @@ onMounted(async () => {
     font-size: 2.5rem;
 }
 
-/* Detail Content */
-.detail_content {
-    /* No background, transparent */
-}
-
 /* Question Section */
 .question_section {
     margin-bottom: 30px;
@@ -193,8 +189,8 @@ onMounted(async () => {
 .flag_status .notice {
     display: inline-block;
     padding: 4px 12px;
-    background-color: #e4d7c8; /* Light brown background */
-    color: #502314; /* Dark brown text */
+    background-color: #e4d7c8;
+    color: #502314;
     border-radius: 4px;
     font-size: 12px;
     font-weight: 600;
@@ -202,8 +198,8 @@ onMounted(async () => {
 }
 
 .title_question {
-    font-size: 1.03125rem; /* Increased by 10% (0.9375rem -> 1.03125rem) */
-    font-weight: 700; /* Bold */
+    font-size: 1.03125rem;
+    font-weight: 700;
     line-height: 21px;
     color: #502314;
     margin: 0;
@@ -212,28 +208,27 @@ onMounted(async () => {
 
 @media screen and (min-width: 1024px) {
     .title_question {
-        font-size: 1.16875rem; /* Increased by 10% (1.0625rem -> 1.16875rem) */
+        font-size: 1.16875rem;
     }
 }
 
 .title_question strong {
     font-weight: 700;
     margin-right: 5px;
-    color: #d62300; /* Red color */
-    font-size: 1.13rem; /* 10% larger than base */
+    color: #d62300;
+    font-size: 1.13rem;
 }
 
 @media screen and (min-width: 1024px) {
     .title_question strong {
-        font-size: 1.28rem; /* 10% larger than 1024px base */
+        font-size: 1.28rem;
     }
 }
 
-/* Answer Body */
 .answer_body {
-    padding: 20px 0 0 0; /* Removed bottom padding */
+    padding: 20px 0 0 0;
     background-color: transparent;
-    min-height: 50px; /* Reduced min-height to allow content to be closer to button */
+    min-height: 50px;
     margin-top: 10px;
 }
 
@@ -244,46 +239,44 @@ onMounted(async () => {
 }
 
 .content {
-    font-size: 1.03125rem; /* Increased by 10% (0.9375rem -> 1.03125rem) */
-    font-weight: 700; /* Bold */
+    font-size: 1.03125rem;
+    font-weight: 700;
     line-height: 22px;
     color: #502314;
 }
 
 @media screen and (min-width: 1024px) {
     .content {
-        font-size: 1.16875rem; /* Increased by 10% (1.0625rem -> 1.16875rem) */
+        font-size: 1.16875rem;
     }
 }
 
-/* Buttons */
 .btn_wrap {
     display: flex;
     justify-content: center;
-    margin-top: 30px; /* Adjusted to 30px as requested */
+    margin-top: 30px;
 }
 
 .btn02 {
-    min-width: 84px; /* Increased by 100% (42px -> 84px) */
-    height: 36px; /* Slightly taller to accommodate larger font */
+    min-width: 84px;
+    height: 36px;
     padding: 2px 10px 1px;
     font-weight: 700;
-    font-size: 1.21875rem; /* Increased by 50% (0.8125rem -> 1.21875rem) */
-    color: #000000; /* Black color */
-    border: 2px solid #000000; /* Black border */
+    font-size: 1.21875rem;
+    color: #000000;
+    border: 2px solid #000000;
     border-radius: 50px;
     background: transparent;
     cursor: pointer;
     transition: all 0.3s;
-    font-family: var(--font);
 }
 
 @media screen and (min-width: 1024px) {
     .btn02 {
-        min-width: 324px; /* Increased by 100% (162px -> 324px) */
-        height: 54px; /* Slightly taller */
+        min-width: 324px;
+        height: 54px;
         padding: 5px 16px 3px;
-        font-size: 1.40625rem; /* Increased by 50% (0.9375rem -> 1.40625rem) */
+        font-size: 1.40625rem;
     }
 }
 
@@ -293,7 +286,6 @@ onMounted(async () => {
     border-color: #502314;
 }
 
-/* App Download Banner */
 .app_downWrap {
     position: relative;
     display: flex;
@@ -326,7 +318,7 @@ onMounted(async () => {
     order: 2;
     position: relative;
     height: 233px;
-    background: url('@/assets/img/bg_appdown_phone.png') no-repeat bottom; /* Fallback to standard if MOB missing */
+    background: url('@/assets/img/bg_appdown_phone.png') no-repeat bottom;
     background-size: 320px auto;
     overflow: hidden;
 }
@@ -434,7 +426,7 @@ onMounted(async () => {
 }
 
 .btn_app_link img {
-    height: 50px; /* Increased size */
+    height: 50px;
     width: auto;
     display: block;
 }
