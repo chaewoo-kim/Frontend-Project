@@ -39,8 +39,8 @@
 
     <!-- 우측 버튼 (side_menu) -->
     <div class="side_menu">
-        <a href="https://bkr.recruiter.co.kr/career/home" class="btn_link" target="_blank" rel="noopener noreferrer">채용 사이트</a>
-        <a href="https://www.burgerking.co.kr/" class="btn_franchise" target="_blank" rel="noopener noreferrer">가맹점 모집</a>
+        <a href="https://bkr.recruiter.co.kr/career/home" class="btn_link" target="_blank" rel="noopener noreferrer">채용사이트</a>
+        <a href="https://www.burgerking.co.kr/" class="btn_franchise" target="_blank" rel="noopener noreferrer">가맹점모집</a>
     </div>
     </div>
   </header>
@@ -216,9 +216,24 @@ a {
 }
 
 .btn_franchise {
-  /* Manual addition to maintain red button */
-  background-color: #E2221F;
+  background-color: #502314;
   border-radius: 30px;
+  position: relative;
+}
+
+.btn_franchise::before {
+  content: '';
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 14px;
+  height: 14px;
+  background-color: #f5ebdc; /* var(--bg-base) usually, using hex for certainty or sticking to requested 'skin color' */
+  -webkit-mask: url(@/assets/img/store.png) no-repeat center;
+  mask: url(@/assets/img/store.png) no-repeat center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
 }
 
 .btn_franchise, .btn_link {
