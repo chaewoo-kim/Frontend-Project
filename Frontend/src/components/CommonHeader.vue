@@ -48,6 +48,7 @@
 import { ref } from 'vue';
 
 const showStorySub = ref(false);
+const showNewsSub = ref(false);
 
 const navItems = [
   { name: 'MENU', path: '/menu' },
