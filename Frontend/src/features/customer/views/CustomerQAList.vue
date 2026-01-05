@@ -45,6 +45,7 @@
       </div>
     </div>
   </div>
+  <common-footer/>
 </template>
 
 <script setup>
@@ -52,6 +53,7 @@ import CommonHeader from '@/components/CommonHeader.vue';
 import { ref, onMounted, nextTick } from 'vue';
 import { useRoute } from 'vue-router';
 import { getCategories, getAllQAList } from '@/api/customer';
+import CommonFooter from "@/components/CommonFooter.vue";
 
 const route = useRoute();
 const categories = ref([]);
@@ -122,7 +124,6 @@ onMounted(async () => {
 </script>
 
 <style scoped>
-/* Fonts & Colors Variables re-declared or assume global if configured */
 :root {
     --font: "Sandoll GothicNeoRound", "Pretendard", sans-serif;
     --bg-base: #f5ebdc;
@@ -134,12 +135,10 @@ onMounted(async () => {
 .subWrap {
     width: 100%;
     min-height: 100vh;
-    background-color: #f5ebdc; /* Updated to BK BG */
-    font-family: var(--font, sans-serif);
-    color: #502314; /* Updated to BK Normal */
+    background-color: #f5ebdc;
+    color: #502314;
 }
 
-/* Contents */
 .contentsWrap {
     padding-top: 50px;
     padding-bottom: 100px;
@@ -151,7 +150,6 @@ onMounted(async () => {
     padding: 0 16px;
 }
 
-/* Page Title */
 .page_title {
     margin-bottom: 50px;
     text-align: center;
@@ -162,10 +160,9 @@ onMounted(async () => {
     color: #2e2e2e;
 }
 
-/* Tab Styles from Burger King */
 .tab01 {
     width: 100%;
-    height: 70px; /* Increased size */
+    height: 70px;
     border-bottom: 1px solid #E4D7C8;
     background-color: transparent;
     margin-bottom: 40px;
@@ -178,7 +175,7 @@ onMounted(async () => {
 .tab01 ul {
     display: flex;
     padding: 0 20px;
-    height: 100%; /* Match container */
+    height: 100%;
     margin: 0;
     list-style: none;
     min-width: 100%;
@@ -187,7 +184,7 @@ onMounted(async () => {
 .tab01 li {
     position: relative;
     display: list-item;
-    height: 100%; /* Match container */
+    height: 100%;
     flex: 1;
     text-align: center;
     min-width: fit-content;
@@ -199,7 +196,7 @@ onMounted(async () => {
     width: 100%;
     height: 100%;
     padding: 0 20px;
-    font-size: 25px; /* Increased by 40% (18px -> 25px) */
+    font-size: 25px;
     font-weight: 500;
     color: #502314;
     background: transparent;
@@ -209,24 +206,22 @@ onMounted(async () => {
     transition: color 0.3s;
 }
 .tab01 li.on button {
-    color: #d62300; /* BK Red */
+    color: #d62300;
 }
 .tab01 li.on button::after {
     content: '';
     position: absolute;
-    bottom: 0; /* Overlap border */
+    bottom: 0;
     left: 0;
     width: 100%;
-    height: 3px; /* Thick active line */
+    height: 3px;
     background-color: #d62300;
 }
 
-/* Category Sections */
 .category_section {
     position: relative;
-    padding-bottom: 46px; /* Reduced by ~5% (48px -> 46px) */
-    margin-bottom: 46px; /* Reduced by ~5% (48px -> 46px) */
-    /* Border replaced by pseudo-element for length adjustment */
+    padding-bottom: 46px;
+    margin-bottom: 46px;
     border-bottom: none;
     scroll-margin-top: 140px;
 }
@@ -237,8 +232,8 @@ onMounted(async () => {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 100%; /* Reduced by 10% (110% -> 100%) */
-    height: 4px; /* Reduced by 30% (6px -> 4.2px, rounded to 4px) */
+    width: 100%;
+    height: 4px;
     background-color: rgba(80, 35, 20, 0.35);
 }
 
@@ -254,12 +249,11 @@ onMounted(async () => {
     font-size: 28px;
     font-weight: 800;
     color: #502314;
-    margin-bottom: 14px; /* Reduced by 30% (20px -> 14px) */
+    margin-bottom: 14px;
     padding-bottom: 0;
     border-bottom: none;
 }
 
-/* List */
 .faq_list {
   list-style: none;
   padding: 0;
@@ -273,7 +267,7 @@ onMounted(async () => {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 23px 10px; /* Reduced vertical padding by ~5% (24px -> 23px) */
+    padding: 23px 10px;
     color: #2e2e2e;
     transition: background-color 0.2s;
     cursor: pointer;
@@ -286,11 +280,10 @@ onMounted(async () => {
     display: flex;
     align-items: center;
 }
-/* Removed .icon_q style as it is removed from template */
 
 .txt {
     font-size: 20px;
-    font-weight: 700; /* Bold */
+    font-weight: 700;
     color: #2e2e2e;
 }
 

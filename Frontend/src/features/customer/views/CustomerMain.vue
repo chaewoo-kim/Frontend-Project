@@ -71,30 +71,10 @@
           </ul>
         </div>
       </div>
-      
-      <article class="fabWrap">
-        <button type="button" class="btn_top none"><span>Go scroll top</span></button>
-      </article>
-
-      <footer class="footer">
-        <div class="container">
-            <div class="terms_menu">
-                <a href="#"><span class="mouse_over">이용약관</span></a>
-                <a href="#" class="txt_line"><span class="mouse_over">개인정보처리방침</span></a>
-                <a href="#"><span class="mouse_over">위치정보</span></a>
-            </div>
-            <div class="cont">
-                <div class="info">
-                    <p>서울 특별시 종로구 삼봉로 71 G타워 4F,5F</p>
-                    <p>사업자등록번호 : 101-86-76277 <a class="txt_line">사업자정보확인</a></p>
-                    <p>㈜ 비케이알 대표이사 : 이동형</p>
-                    <p>ⓒBKR Co., Ltd. All right Reserved</p>
-                </div>
-            </div>
-        </div>
-      </footer>
     </section>
   </div>
+
+  <common-footer/>
 </template>
 
 <script setup>
@@ -102,6 +82,7 @@ import CommonHeader from '@/components/CommonHeader.vue';
 import { useRouter } from 'vue-router';
 import { ref, onMounted } from 'vue';
 import { getCategories, getTopFaqs } from '@/api/customer';
+import CommonFooter from "@/components/CommonFooter.vue";
 
 const router = useRouter();
 
@@ -288,7 +269,7 @@ onMounted(async () => {
     font-family: var(--font);
 }
 .inp_box.active input {
-    border-color: #dcdcdc; /* Light gray border */
+    border-color: #dcdcdc;
     border-width: 2px;
 }
 .btn_search {
@@ -333,7 +314,7 @@ onMounted(async () => {
 
 .faq_category li {
     flex: 1;
-    min-width: 0; /* Allow shrinking below content size if needed */
+    min-width: 0;
 }
 
 /* Category Button Style */
@@ -342,8 +323,8 @@ onMounted(async () => {
     font-size: .8125rem;
     font-weight: 400;
     width: 100%;
-    height: 135px; /* Reduced by 10% from 150px */
-    border-radius: 20px; /* Increased radius by ~10-20% */
+    height: 135px;
+    border-radius: 20px;
     border: 1px solid #e4d7c8;
     border-top-width: 1px;
     border-right-width: 1px;
@@ -368,7 +349,6 @@ onMounted(async () => {
     vertical-align: middle;
 }
 
-/* Update the span to align with the new button size */
 .faq_category span[class^="ico_faq"] {
     display: flex;
     flex-direction: column;
@@ -388,27 +368,24 @@ onMounted(async () => {
     text-align: center;
 }
 
-/* Icon (Pseudo-element) adjustment */
 .faq_category span[class^="ico_faq"]::before {
     content: '';
     display: block;
     position: static;
     transform: none;
-    margin: 0 auto 8px auto; /* Reduced distance */
-    width: 65px; /* Reduced by 10% */
+    margin: 0 auto 8px auto;
+    width: 65px;
     height: 65px;
     background-color: transparent;
     border-radius: 0;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 49px; /* Reduced by 10% */
+    background-size: 49px;
     transition: none;
     box-shadow: none;
 }
 
-/* Removed Hover Effect Block */
 
-/* Icon Images */
 .ico_faq_delivery::before { background-image: url('https://www.burgerking.co.kr/img/ico_faq_delivery.svg'); }
 .ico_faq_order::before { background-image: url('https://www.burgerking.co.kr/img/ico_faq_order.svg'); }
 .ico_faq_coupon::before { background-image: url('https://www.burgerking.co.kr/img/ico_faq_coupon.svg'); }
@@ -416,12 +393,6 @@ onMounted(async () => {
 .ico_faq_product::before { background-image: url('https://www.burgerking.co.kr/img/ico_faq_product.svg'); }
 .ico_faq_other::before { background-image: url('https://www.burgerking.co.kr/img/ico_faq_other.svg'); }
 
-
-
-
-
-/* FAQ List */
-/* FAQ List */
 .faq_list {
     border-top: 5px solid rgba(80, 35, 20, .1);
     margin: 21px -20px 0;
@@ -451,7 +422,6 @@ onMounted(async () => {
     font-weight: 800;
     color: #2e2e2e;
     margin-bottom: 20px;
-    /* Removed border-bottom */
     padding-bottom: 10px;
 }
 
@@ -475,12 +445,10 @@ onMounted(async () => {
     height: 24px;
     background: url(https://www.burgerking.co.kr/img/ico_more_arrow.svg) no-repeat center/contain;
     font-size: 0;
-    transform: rotate(0deg); /* Right arrow? The icon is likely right arrow */
+    transform: rotate(0deg);
     opacity: 0.5;
 }
 
-
-/* Guide Contact */
 .guide_contact {
     display: flex;
     justify-content: center;
@@ -504,17 +472,6 @@ onMounted(async () => {
     font-size: 12px;
 }
 
-/* Footer (Simplified) */
-.footer {
-    background-color: #2e2e2e;
-    padding: 40px 0;
-    color: #999;
-}
-.footer .container {
-    max-width: 1144px;
-    margin: 0 auto;
-    padding: 0 16px;
-}
 .terms_menu {
     border-bottom: 1px solid #444;
     padding-bottom: 20px;
