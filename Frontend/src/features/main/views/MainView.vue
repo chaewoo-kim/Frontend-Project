@@ -50,8 +50,9 @@
               <div class="card01 home_search">
                 <h2 class="tit">내 주변 버거킹 매장 찾기</h2>
                 <div class="store_icon">
-                  <img src="@/assets/img/ico_tit_store_w.svg" alt="Store Icon">
+                  <img src="@/assets/img/img_store_finding.png" alt="Store Icon">
                 </div>
+
                 <div class="search_bar_mock">
                    <span>지역, 매장명을 입력해 주세요.</span>
                    <svg class="ico_search" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -60,7 +61,7 @@
                    </svg>
                 </div>
                 <!-- Overlay Button -->
-                <button type="button" class="btn_detail" @click="handleLink('/store/search')">
+                <button type="button" class="btn_detail" @click="handleLink('/store')">
                   <span>매장 찾기 화면으로 이동</span>
                 </button>
               </div>
@@ -84,7 +85,7 @@
                     v-for="video in storyAdVideos"
                     :key="video.id"
                     class="video_item"
-                    @click="handleExternalLink(video.fileUrl)"
+                    @click="handleLink('/story/ad')"
                   >
                     <div class="image_area image_size01">
                       <img :src="video.fileUrl" :alt="video.title">
@@ -129,7 +130,7 @@
                     <h3 class="tit_card"><span>가장 맛있는 버거를 제공하는 프리미엄 QSR 브랜드 매장</span></h3>
                     <div class="card_cont">
                       <div class="r_btn">
-                        <button type="button" class="btn_move" @click="handleLink('/store/search')">
+                        <button type="button" class="btn_move" @click="handleLink('/store')">
                           <span>가까운 매장 찾아보기</span>
                           <img src="@/assets/img/ico_bt_link.svg" alt="" class="ico_link">
                         </button>
@@ -626,7 +627,7 @@ onMounted(() => {
 }
 
 .home_search {
-  background-color: #3d2117; /* Dark Brown */
+  background-color: #502314; /* Image Background Match */
   color: white;
   display: flex;
   flex-direction: column;
@@ -643,7 +644,7 @@ onMounted(() => {
 
 .store_icon {
   margin: 15px 0;
-  width: 80px; /* Adjust size based on visual */
+  width: 140px; /* Adjust size based on visual */
   height: auto;
 }
 
