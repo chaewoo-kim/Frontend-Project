@@ -1,7 +1,7 @@
 <script setup>
 import CommonHeader from "@/components/CommonHeader.vue";
 
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 import { fetchStoreList } from '@/api/store'
 import StoreCard from '@/components/StoreCard.vue'
 import StoreSearchBar from './StoreSearchBar.vue'
@@ -40,6 +40,14 @@ const loadStores = async () => {
 
 // 최초 전체 매장 조회
 onMounted(loadStores)
+
+onMounted(() => {
+  window.addEventListener('scroll', onScroll)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', onScroll)
+})
 
 //엔터 눌렀을 때만 실행
 const onSearch = () => {
@@ -107,6 +115,22 @@ const onShowAllStores = () => {
   activeFilters.value = null
   page.value = 1
   loadStores()
+}
+
+// 스크롤 탑 FAB 상태
+const showScrollTop = ref(false)
+
+// 스크롤 감지
+const onScroll = () => {
+  showScrollTop.value = window.scrollY > 300
+}
+
+// 맨 위로 이동
+const scrollToTop = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  })
 }
 
 </script>
@@ -179,6 +203,14 @@ const onShowAllStores = () => {
         더보기
       </button>
     </div>
+    <!-- 맨 위로 가는 FAB 버튼 -->
+    <button
+        v-if="showScrollTop"
+        class="scroll-top-btn"
+        @click="scrollToTop"
+    >
+      ↑
+    </button>
     <article class="fabWrap"></article>
 
   </section>
@@ -193,7 +225,7 @@ const onShowAllStores = () => {
 }
 .page-title {
   text-align: center;
-  font-size: 40px;
+  font-size: 34px;
   font-weight: 900;
   color: #5a2d0c;
   letter-spacing: -0.02em;
@@ -277,6 +309,30 @@ const onShowAllStores = () => {
 }
 .fabWrap {
   margin-top: 90px;
+}
+.scroll-top-btn {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+
+  background: #faf4ed;
+  color: #5a2d0c;
+  font-size: 30px;
+  font-weight: 800;
+
+  border: none;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+  z-index: 1000;
 }
 
 </style>
