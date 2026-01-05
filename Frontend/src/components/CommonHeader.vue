@@ -13,8 +13,8 @@
               class="gnb_btnWrap"
               v-for="item in navItems"
               :key="item.name"
-              @mouseenter="item.name === 'STORY' ? (showStorySub = true) : null"
-              @mouseleave="item.name === 'STORY' ? (showStorySub = false) : null"
+              @mouseenter="handleMouseEnter(item.name)"
+              @mouseleave="handleMouseLeave(item.name)"
           >
             <router-link :to="item.path">
               <span>{{ item.name }}</span>
@@ -29,6 +29,14 @@
                 <router-link to="/story/qsr">Smart QSR</router-link>
                 <router-link to="/story/awards">수상실적</router-link>
                 <router-link to="/story/ad">광고영상</router-link>
+              </div>
+            </div>
+
+            <!-- NEWS 서브 네비게이션 -->
+            <div v-if="item.name === 'NEWS' && showNewsSub" class="sub_gnb">
+              <div class="sub_gnb_inner">
+                <router-link to="/notice/event/ongoing">이벤트</router-link>
+                <router-link to="/notice/notice">공지사항</router-link>
               </div>
             </div>
           </li>
@@ -53,10 +61,20 @@ const showNewsSub = ref(false);
 const navItems = [
   { name: 'MENU', path: '/menu' },
   { name: 'STORY', path: '/story/brand' },
-  { name: 'NEWS', path: '#' },
+  { name: 'NEWS', path: '/notice' },
   { name: 'STORE', path: '#' },
   { name: 'CUSTOMER', path: '#' }
 ];
+
+const handleMouseEnter = (name) => {
+  if (name === 'STORY') showStorySub.value = true;
+  if (name === 'NEWS') showNewsSub.value = true;
+};
+
+const handleMouseLeave = (name) => {
+  if (name === 'STORY') showStorySub.value = false;
+  if (name === 'NEWS') showNewsSub.value = false;
+};
 </script>
 
 <style scoped>
