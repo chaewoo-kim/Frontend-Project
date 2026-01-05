@@ -19,8 +19,16 @@ defineEmits(['update:modelValue', 'search', 'clear'])
           @keyup.enter="$emit('search')"
           placeholder="지역, 매장명을 입력해주세요."
       />
-      </div>
 
+    <button
+        v-if="modelValue"
+        class="clear-btn"
+        type="button"
+        @click="$emit('update:modelValue', '')"
+    >
+      ×
+    </button>
+  </div>
       <button class="cancel-btn" @click="$emit('clear')">
         취소
       </button>
@@ -66,6 +74,18 @@ defineEmits(['update:modelValue', 'search', 'clear'])
 .search-bar input::placeholder {
   color: #b19982;
   font-weight: 600;
+}
+
+.clear-btn {
+  background: none;
+  border: none;
+  font-size: 18px;
+  font-weight: 600;
+  color: #5a2d0c;
+  cursor: pointer;
+  margin-left: 8px;
+  padding: 0;
+  line-height: 1;
 }
 
 /* 취소 버튼 */
