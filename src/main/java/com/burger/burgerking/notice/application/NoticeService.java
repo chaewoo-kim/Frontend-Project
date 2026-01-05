@@ -59,19 +59,15 @@ public class NoticeService {
     }
 
     /* 공지사항 상세 조회 */
-    public NoticeDetailResponse getNoticeDetail(Long noticeId) {
+    public List<FileMetaDataResponse> getNoticeDetail() {
 
-        Notice notice = noticeRepository.findById(noticeId)
-                .orElseThrow(() ->
-                        new IllegalArgumentException("공지사항이 존재하지 않습니다.")
-                );
 
-        //저장되는 이미지 이름 규칙: 140.png
-        String targetFilename = noticeId + ".png";
+
+
 
         // NOTICE 타입 이미지 전체 조회
         List<FileMetaData> files =
-                fileMetaDataRepository.findAllByFileTypeAndOriginalFilename(FileType.NOTICE, targetFilename);
+                fileMetaDataRepository.findAllByFileType(FileType.NOTICE);
 
 
 
@@ -81,16 +77,9 @@ public class NoticeService {
                         .map(FileMetaData::from)
                         .toList();
 
-        log.info("noticeId={}", noticeId);
-        log.info("targetFilename={}", targetFilename);
+
         log.info("matched images size={}", images.size());
 
-        return NoticeDetailResponse.builder()
-                .noticeId(notice.getNoticeId())
-                .title(notice.getTitle())
-                .content(notice.getContent())
-                .createdAt(notice.getCreatedAt().toString())
-                .images(images)
-                .build();
+        return images;
     }
 }
