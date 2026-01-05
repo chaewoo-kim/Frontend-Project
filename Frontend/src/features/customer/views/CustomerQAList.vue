@@ -9,8 +9,21 @@
                 <h2 class="tit">고객지원</h2>
             </div>
 
-            <!-- Tabs -->
-            <div class="tab01">
+            <!-- FAQ Title -->
+            <div class="tit_faq">
+                <span><b>버거킹에 궁금한 점이 있나요?</b></span>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="search_row">
+                <div class="inp_box active">
+                    <input type="text" v-model="searchKeyword" @keyup.enter="handleSearch" placeholder="궁금한 내용을 검색해주세요.">
+                    <button type="button" class="btn_search type02" @click="handleSearch">search</button>
+                </div>
+            </div>
+
+            <!-- Tabs (Hide in Search Mode) -->
+            <div class="tab01" v-if="!isSearchMode">
                 <ul>
                     <li v-for="cat in categories" :key="cat.id" :class="{ 'on': activeTab === cat.id }">
                         <button type="button" class="cat" @click="scrollToCategory(cat.id)">
@@ -20,8 +33,35 @@
                 </ul>
             </div>
 
-            <!-- Category Sections -->
-            <div class="faq_list_wrap">
+            <!-- Search Results Mode -->
+            <div class="faq_list_wrap" v-if="isSearchMode">
+                 <div class="search_summary" v-if="allQAs.length > 0" style="margin-bottom: 30px; font-weight: bold; font-size: 20px;">
+                    '{{ route.query.keyword }}' 검색 결과
+                 </div>
+                 
+                 <template v-if="allQAs.length > 0">
+                     <div v-for="cat in categories" :key="cat.id" class="category_section" v-show="getSearchResultsByCategory(cat.id).length > 0">
+                        <h3 class="category_tit">{{ cat.label }}</h3>
+                        <ul class="faq_list">
+                            <li v-for="qa in getSearchResultsByCategory(cat.id)" :key="qa.qaId">
+                                <router-link :to="`/customer/detail?id=${qa.qaId}`">
+                                    <div class="subject">
+                                        <span class="txt">{{ qa.title }}</span>
+                                    </div>
+                                    <span class="arrow"></span>
+                                </router-link>
+                            </li>
+                        </ul>
+                    </div>
+                </template>
+                
+                <div v-else class="no_data">
+                    검색 결과가 없습니다.
+                </div>
+            </div>
+
+            <!-- Category Sections (Hide in Search Mode) -->
+            <div class="faq_list_wrap" v-else>
                 <div v-for="cat in categories" :key="cat.id" :id="`cat_${cat.id}`" class="category_section">
                     <h3 class="category_tit">{{ cat.label }}</h3>
                     <ul class="faq_list">
@@ -50,36 +90,62 @@
 
 <script setup>
 import CommonHeader from '@/components/CommonHeader.vue';
-import { ref, onMounted, nextTick } from 'vue';
-import { useRoute } from 'vue-router';
-import { getCategories, getAllQAList } from '@/api/customer';
+import { ref, onMounted, nextTick, watch } from 'vue';
+import { useRoute, useRouter } from 'vue-router';
+import { getCategories, getAllQAList, searchQA } from '@/api/customer';
 import CommonFooter from "@/components/CommonFooter.vue";
 
 const route = useRoute();
+const router = useRouter();
 const categories = ref([]);
 const allQAs = ref([]);
 const activeTab = ref(null);
+const isSearchMode = ref(false);
+const searchKeyword = ref('');
+
+const handleSearch = () => {
+    if (searchKeyword.value.trim()) {
+        router.push({ path: '/customer/qa_list', query: { keyword: searchKeyword.value } });
+    }
+};
 
 const loadData = async () => {
     try {
-        // Parallel fetch
-        const [catRes, qaRes] = await Promise.all([
-            getCategories(),
-            getAllQAList()
-        ]);
-
-        if (catRes.data && catRes.data.data) {
-            categories.value = catRes.data.data.map(c => ({ id: c.categoryId, label: c.categoryName }));
+        // Always fetch categories if empty (needed for search result grouping)
+        if (categories.value.length === 0) {
+            const catRes = await getCategories();
+            if (catRes.data && catRes.data.data) {
+                categories.value = catRes.data.data.map(c => ({ id: c.categoryId, label: c.categoryName }));
+            }
         }
 
-        if (qaRes.data && qaRes.data.data) {
-            // Sort by qaId ascending (oldest first)
-            allQAs.value = qaRes.data.data.sort((a, b) => a.qaId - b.qaId);
-        }
+        const keyword = route.query.keyword;
 
-        // Set initial active tab
-        if (categories.value.length > 0) {
-            activeTab.value = categories.value[0].id;
+        if (keyword) {
+            // Search Mode
+            isSearchMode.value = true;
+            searchKeyword.value = keyword; // Sync input with query
+            const res = await searchQA(keyword);
+            if (res.data && res.data.data) {
+                allQAs.value = res.data.data;
+            } else {
+                allQAs.value = [];
+            }
+        } else {
+            // Normal Mode
+            isSearchMode.value = false;
+            
+            const qaRes = await getAllQAList();
+
+            if (qaRes.data && qaRes.data.data) {
+                // Sort by qaId ascending (oldest first)
+                allQAs.value = qaRes.data.data.sort((a, b) => a.qaId - b.qaId);
+            }
+
+            // Set initial active tab
+            if (categories.value.length > 0) {
+                activeTab.value = categories.value[0].id;
+            }
         }
 
     } catch (e) {
@@ -88,6 +154,11 @@ const loadData = async () => {
 };
 
 const getQAsByCategory = (catId) => {
+    return allQAs.value.filter(qa => qa.categoryId === catId);
+};
+
+// Same logic as getQAsByCategory, but explicitly for search mode template readability
+const getSearchResultsByCategory = (catId) => {
     return allQAs.value.filter(qa => qa.categoryId === catId);
 };
 
@@ -106,11 +177,16 @@ const scrollToCategory = (catId) => {
     }
 };
 
+// React to route changes (e.g., new search)
+watch(() => route.query.keyword, () => {
+    loadData();
+});
+
 onMounted(async () => {
     await loadData();
 
-    // Check query param for initial scroll
-    if (route.query.category) {
+    // Check query param for initial scroll in normal mode
+    if (!isSearchMode.value && route.query.category) {
         // Wait for DOM
         nextTick(() => {
             const catId = Number(route.query.category);
@@ -298,5 +374,56 @@ onMounted(async () => {
     padding: 50px 0;
     text-align: center;
     color: #999;
+}
+
+/* Search Row Styles */
+.tit_faq {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.search_row {
+    width: 100%;
+    margin: 0 auto 50px;
+    height: 46px; 
+}
+.inp_box {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.inp_box input {
+    width: 100%;
+    height: 100%;
+    background-color: #fffcf8;
+    border: 1px solid #d4c3b4; 
+    border-radius: 10px;
+    padding: 5px 50px 3px 15px;
+    font-size: 15px;
+    font-weight: 400;
+    color: #000000;
+    box-sizing: border-box;
+    outline: none;
+    font-family: var(--font);
+}
+.inp_box.active input {
+    border-color: #dcdcdc;
+    border-width: 2px;
+}
+.btn_search {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50px;
+    height: 100%;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 0;
+}
+.btn_search.type02 {
+    background: url('https://www.burgerking.co.kr/img/btn_form_search.svg') no-repeat center/contain;
+    background-size: 24px;
 }
 </style>

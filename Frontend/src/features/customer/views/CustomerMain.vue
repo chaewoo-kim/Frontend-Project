@@ -27,7 +27,6 @@
           <div class="search_row">
             <div class="inp_box active">
                 <input type="text" v-model="searchKeyword" @keyup.enter="handleSearch" placeholder="궁금한 내용을 검색해주세요.">
-                <button type="button" class="btn_inp_clear type02" v-if="searchKeyword" @click="searchKeyword = ''">clear text</button>
                 <button type="button" class="btn_search type02" @click="handleSearch">search</button>
             </div>
           </div>
@@ -263,7 +262,7 @@ onMounted(async () => {
     padding: 5px 50px 3px 15px; /* Right padding for button */
     font-size: 15px;
     font-weight: 400;
-    color: #ebe5e3ff;
+    color: #000000;
     box-sizing: border-box;
     outline: none;
     font-family: var(--font);
