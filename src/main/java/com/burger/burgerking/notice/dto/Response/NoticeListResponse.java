@@ -18,6 +18,7 @@ public class NoticeListResponse {
     public static class NoticeSummary {
         private Long noticeId;
         private String title;
+        private String createdAt;
     }
 
 }
