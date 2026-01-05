@@ -9,5 +9,6 @@ public enum FileType {
     AWARD,
     AD_VIDEO,
     NOTICE,
-    NEWS
+    NEWS,
+    MAINPAGE_EVENT
 }
