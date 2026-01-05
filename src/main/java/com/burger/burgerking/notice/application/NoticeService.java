@@ -9,6 +9,7 @@ import com.burger.burgerking.story.domain.FileMetaData;
 import com.burger.burgerking.story.dto.response.FileMetaDataResponse;
 import com.burger.burgerking.story.enums.FileType;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.*;
 import org.springframework.stereotype.Service;
 
@@ -16,12 +17,15 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
+@Slf4j
 public class NoticeService {
 
     private final NoticeRepository noticeRepository;
     private final FileMetaDataRepository fileMetaDataRepository;
 
-    // 목록 조회 (변경 없음)
+    /**
+     * 공지사항 목록 조회
+     */
     public NoticeListResponse getNotices(Integer page, Integer size) {
 
         int pageNumber = page != null ? page : 0;
@@ -45,18 +49,16 @@ public class NoticeService {
                                                 .createdAt(
                                                         notice.getCreatedAt()
                                                                 .toLocalDate()
-                                                                .toString()   // 2025-12-08
+                                                                .toString()
                                                 )
                                                 .build()
                                 )
-
-
                                 .toList()
                 )
                 .build();
     }
 
-    // 🔥 상세 조회 (여기만 수정)
+    /* 공지사항 상세 조회 */
     public NoticeDetailResponse getNoticeDetail(Long noticeId) {
 
         Notice notice = noticeRepository.findById(noticeId)
@@ -64,20 +66,24 @@ public class NoticeService {
                         new IllegalArgumentException("공지사항이 존재하지 않습니다.")
                 );
 
-        // 🔴 [기존] NOTICE 이미지 전체 조회
-        List<FileMetaData> files =
-                fileMetaDataRepository.findAllByFileType(FileType.NOTICE);
+        //저장되는 이미지 이름 규칙: 140.png
+        String targetFilename = noticeId + ".png";
 
-        // 🔥 [추가] 파일명 규칙으로 현재 공지 이미지 필터링
-        String prefix = noticeId.toString();
+        // NOTICE 타입 이미지 전체 조회
+        List<FileMetaData> files =
+                fileMetaDataRepository.findAllByFileTypeAndOriginalFilename(FileType.NOTICE, targetFilename);
+
+
+
 
         List<FileMetaDataResponse> images =
                 files.stream()
-                        .filter(file ->
-                                file.getStoredFilename().startsWith(prefix)
-                        )
                         .map(FileMetaData::from)
                         .toList();
+
+        log.info("noticeId={}", noticeId);
+        log.info("targetFilename={}", targetFilename);
+        log.info("matched images size={}", images.size());
 
         return NoticeDetailResponse.builder()
                 .noticeId(notice.getNoticeId())
