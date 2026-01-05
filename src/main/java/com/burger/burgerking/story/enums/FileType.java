@@ -8,6 +8,7 @@ public enum FileType {
     SMART_QSR,
     AWARD,
     AD_VIDEO,
+    NOTICE,
     NEWS,
-    MAINPAGE_EVENT,
+    MAINPAGE_EVENT
 }
