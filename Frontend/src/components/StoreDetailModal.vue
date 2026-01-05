@@ -22,6 +22,20 @@ onMounted(async () => {
     console.error('매장 상세 조회 실패', e)
   }
 })
+const showToast = ref(false)
+
+const copyAddress = async () => {
+  try {
+    await navigator.clipboard.writeText(detail.value.address)
+
+    showToast.value = true
+    setTimeout(() => {
+      showToast.value = false
+    }, 2000)
+  } catch (e) {
+    console.error('주소 복사 실패', e)
+  }
+}
 
 </script>
 
@@ -66,7 +80,19 @@ onMounted(async () => {
             <h3 class="store-name">{{ detail.name }}</h3>
           </div>
 
-          <div class="store-address">{{ detail.address }}</div>
+          <div class="store-address-row">
+  <span class="store-address">
+    {{ detail.address }}
+  </span>
+
+            <button
+                type="button"
+                class="btn-copy"
+                @click.stop="copyAddress"
+            >
+              주소 복사
+            </button>
+          </div>
           <div class="store-phone">{{ detail.phone }}</div>
         </section>
 
@@ -146,7 +172,12 @@ onMounted(async () => {
           확인
         </button>
     </div>
-  </div>
+    </div>
+    <article class="toastWrap" :class="{ show: showToast }">
+      <div class="cont">
+        주소가 복사되었습니다.
+      </div>
+    </article>
   </div>
 </template>
 
@@ -348,4 +379,63 @@ onMounted(async () => {
   padding-top: 16px;
   background: #f7efe2;
 }
+
+/* 주소 + 복사 버튼 */
+.store-address-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.store-address {
+  font-size: 15px;
+  font-weight: 600;
+  color: #7a4a2e;
+}
+
+.btn-copy {
+  padding: 2px 8px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #5a2d0c;
+  background: #fdf7ec;
+  border: 1px solid #d2b79b;
+  border-radius: 6px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn-copy:hover {
+  background: #f1e4d2;
+}
+
+/* 토스트 */
+.toastWrap {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3000;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.toastWrap.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-6px);
+}
+
+.toastWrap .cont {
+  background: #5a2d0c;
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
 </style>
