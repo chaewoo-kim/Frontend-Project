@@ -3,10 +3,7 @@ package com.burger.burgerking.mainpage.api;
 
 import com.burger.burgerking.global.common.ApiResponse;
 import com.burger.burgerking.mainpage.application.MainpageService;
-import com.burger.burgerking.mainpage.dto.request.AdVideoRequest;
-import com.burger.burgerking.mainpage.dto.request.EventRequest;
 import com.burger.burgerking.mainpage.dto.request.MainPageResponse;
-import com.burger.burgerking.mainpage.dto.request.WhyBKSlideResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
@@ -28,31 +25,12 @@ public class MainpageController {
 /*
 *   MainPage API
 * */
-    // 최상단 컨텐츠 ( 이벤트, 앱 다운 쿠폰, 매장찾기 )
-
-    @Operation(summary = "이벤트 링크", description = "이벤트를 리스트로 받아와 스와이프하는 이벤트 도메인. 링크를 클릭하면 Forward 를 통해 해당 이벤트 링크로 이동합니다.")
-    @GetMapping("/event")
-    public ResponseEntity<ApiResponse<List<EventRequest>>> event(){
-            List<EventRequest> response = mainpageService.getEvents();
-        return ResponseEntity.ok(ApiResponse.success(response));
-    }
-
-    // 광고영상 ( 대표(최신) 광고 3개 & '더보기'란 )
-    @Operation(summary = "광고영상-영상 링크", description = "최근 3개의 광고영상을 리스트로 받아와 영상을 조회합니다.")
-    @GetMapping("/advideo")
-    public ResponseEntity<ApiResponse<List<AdVideoRequest>>> advideo(){
-        List<AdVideoRequest> response = mainpageService.getAdVideos();
-        return ResponseEntity.ok(ApiResponse.success(response));
-    }
-
     @Operation(summary = "메인페이지 통합 데이터", description = "이벤트 배너, 광고 영상, Why BurgerKing 자료 등 메인페이지에 필요한 데이터를 한 번에 가져옵니다.")
     @GetMapping("/total")
     public ResponseEntity<ApiResponse<MainPageResponse>> total() {
         MainPageResponse response = mainpageService.getMainPageData();
         return ResponseEntity.ok(ApiResponse.success(response));
     }
-
-
 
 /*
 *   Redirect Links (Now returning URLs for Frontend to handle)
