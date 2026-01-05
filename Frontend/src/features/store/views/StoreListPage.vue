@@ -7,6 +7,7 @@ import StoreCard from '@/components/StoreCard.vue'
 import StoreSearchBar from './StoreSearchBar.vue'
 import StoreDetailModal from '@/components/StoreDetailModal.vue'
 import StoreFilterModal from "@/features/store/views/StoreFilterModal.vue";
+import CommonFooter from "@/components/CommonFooter.vue";
 
 const stores = ref([])
 const filteredStores = ref([])  // 필터 적용된 결과
