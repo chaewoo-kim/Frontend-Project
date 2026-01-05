@@ -3,6 +3,7 @@ import { mainRoutes } from "@/features/main/router.js";
 import { menuRoutes } from "@/features/menu/router.js";
 import { customerRoutes } from "@/features/customer/router.js";
 import { storyRoutes } from "@/features/story/router.js";
+import { noticeRoutes } from "@/features/notice/router.js";
 
 const router = createRouter({
     history: createWebHistory(),
@@ -10,7 +11,8 @@ const router = createRouter({
         ...mainRoutes,
         ...menuRoutes,
         ...storyRoutes,
-        ...customerRoutes
+        ...customerRoutes,
+        ...noticeRoutes
     ],
     scrollBehavior(to, from, savedPosition) {
         if (savedPosition) {

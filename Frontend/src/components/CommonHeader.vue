@@ -13,8 +13,8 @@
                 class="gnb_btnWrap" 
                 v-for="item in navItems" 
                 :key="item.name"
-                @mouseenter="item.name === 'STORY' ? (showStorySub = true) : null"
-                @mouseleave="item.name === 'STORY' ? (showStorySub = false) : null"
+                @mouseenter="item.name === 'STORY' ? (showStorySub = true) : (item.name === 'NEWS' ? (showNewsSub = true) : null)"
+                @mouseleave="item.name === 'STORY' ? (showStorySub = false) : (item.name === 'NEWS' ? (showNewsSub = false) : null)"
             >
                 <router-link :to="item.path">
                     <span>{{ item.name }}</span>
@@ -29,6 +29,14 @@
                         <router-link to="/story/qsr">Smart QSR</router-link>
                         <router-link to="/story/awards">수상실적</router-link>
                         <router-link to="/story/ad">광고영상</router-link>
+                    </div>
+                </div>
+
+                <!-- NEWS 서브 네비게이션 (브라운 필 디자인) -->
+                <div v-if="item.name === 'NEWS' && showNewsSub" class="sub_gnb">
+                    <div class="sub_gnb_inner">
+                        <router-link to="#">이벤트</router-link>
+                        <router-link to="/notice">공지사항</router-link>
                     </div>
                 </div>
             </li>
@@ -48,11 +56,12 @@
 import { ref } from 'vue';
 
 const showStorySub = ref(false);
+const showNewsSub = ref(false);
 
 const navItems = [
     { name: 'MENU', path: '/menu' },
     { name: 'STORY', path: '/story/brand' },
-    { name: 'NEWS', path: '#' },
+    { name: 'NEWS', path: '/notice' },
     { name: 'STORE', path: '#' },
     { name: 'CUSTOMER', path: '#' }
 ];
