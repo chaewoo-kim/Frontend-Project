@@ -102,6 +102,13 @@ const loadMore = () => {
   updateVisibleStores()
 }
 
+const onShowAllStores = () => {
+  keyword.value = ''
+  activeFilters.value = null
+  page.value = 1
+  loadStores()
+}
+
 </script>
 
 <template>
@@ -147,7 +154,7 @@ const loadMore = () => {
         다른 검색어를 입력하거나 필터를 조정해보세요.
       </p>
 
-      <button class="all-store-btn">
+      <button class="all-store-btn" @click="onShowAllStores">
         전체 매장 보기
       </button>
     </div>
@@ -175,6 +182,8 @@ const loadMore = () => {
     <article class="fabWrap"></article>
 
   </section>
+  <common-footer/>
+
 </template>
 
 <style scoped>
