@@ -1,6 +1,85 @@
 # BurgerKing Clone Coding
 
-## 개발규칙
+## 📑 목차
+1. 팀 소개
+
+2. 프로젝트 개요
+
+3. 개발 규칙
+
+4. 개발환경 및 협업 도구
+
+5. 요구사항정의서
+
+6. 스토리보드
+
+7. 테스트케이스
+
+8. 회고
+
+---
+
+## 1. 팀소개 👥
+
+<table align="center">
+  <tr>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/a4a4df1d-217c-4a78-b913-fe9620239bad"
+           width="120" height="120" style="object-fit: cover;"/><br>
+      <strong>김채우</strong><br>
+      chaewookim
+    </td>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/3b2d6ed3-7c1a-4441-98d4-d7e88175705b"
+           width="120" height="120" style="object-fit: cover;"/><br>
+      <strong>김윤경</strong><br>
+      yk5096
+    </td>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/8c15d0e9-8d84-4211-b4bb-732c6055b872"
+           width="120" height="120" style="object-fit: cover;"/><br>
+      <strong>이경민</strong><br>
+      LKM1027
+    </td>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/eac2eb2c-a595-4803-821f-f06f1944853f"
+           width="120" height="120" style="object-fit: cover;"/><br>
+      <strong>이형욱</strong><br>
+      danielhw99
+    </td>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/06b960c5-0b08-47b3-801f-7591a17aa111"
+           width="120" height="120" style="object-fit: cover;"/><br>
+      <strong>조윤호</strong><br>
+      cho-yunho01
+    </td>
+  </tr>
+</table>
+
+
+
+
+---
+
+## 2. 프로젝트 개요 📌
+
+본 프로젝트는 한국 버거킹 공식 홈페이지를 대상으로 한 클론코딩 프로젝트입니다.  
+웹 개발 학습 과정에서 실제 서비스 수준의 웹사이트를 분석하고 구현해보는 것이 가장 효과적이라고 판단하여, 다양한 기능과 구조를 갖춘 한국 버거킹 홈페이지를 선정하게 되었습니다.
+
+한국 버거킹 홈페이지는 프론트엔드 중심의 프로젝트를 진행하기에 적합한 구조를 가지고 있으며, 동시에 메뉴 데이터 관리와 같은 기본적인 백엔드 요소도 함께 포함하고 있습니다.  
+
+단순한 정적 페이지가 아닌 실제 서비스 형태의 화면 구성과 데이터 흐름을 갖추고 있어, 프론트엔드 구현을 중심으로 하면서도 백엔드와의 연동 과정을 함께 경험할 수 있다고 판단하였습니다.
+
+이러한 이유로 프론트엔드 프로젝트로서 적절한 난이도와 범위를 가지고 있는 한국 버거킹 홈페이지를 클론코딩 대상으로 선정하게 되었습니다.
+
+- 대상 사이트: 한국 버거킹 공식 홈페이지  
+- URL: https://www.burgerking.co.kr/
+
+
+---
+
+
+## 3. 개발규칙 🧰
 
 ### ⭐ Code Convention
 
@@ -226,3 +305,79 @@ develop & main branch로 merge할 때에는 pull request가 필요합니다. pul
 
 </div>
 </details>
+
+---
+
+## 4. 협업도구
+
+### 🛠 개발 환경 및 기술 스택
+
+![Java](https://img.shields.io/badge/Java-007396?style=flat-square&logo=java&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+![Vue.js](https://img.shields.io/badge/Vue.js-4FC08D?style=flat-square&logo=vuedotjs&logoColor=white)
+![Spring Boot](https://img.shields.io/badge/SpringBoot-6DB33F?style=flat-square&logo=springboot&logoColor=white)
+![MariaDB](https://img.shields.io/badge/MariaDB-003545?style=flat-square&logo=mariadb&logoColor=white)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
+
+### 💻 IDE & Tools
+
+![IntelliJ IDEA](https://img.shields.io/badge/IntelliJIDEA-000000?style=flat-square&logo=intellijidea&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
+
+### 🤝 협업 도구
+
+![Discord](https://img.shields.io/badge/Discord-5865F2?style=flat-square&logo=discord&logoColor=white)
+![Notion](https://img.shields.io/badge/Notion-000000?style=flat-square&logo=notion&logoColor=white)
+![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)
+![Google Drive](https://img.shields.io/badge/GoogleDrive-4285F4?style=flat-square&logo=googledrive&logoColor=white)
+![Figma](https://img.shields.io/badge/Figma-F24E1E?style=flat-square&logo=figma&logoColor=white)
+
+---
+
+## 5. 요구사항정의서
+
+<img width="1086" height="797" alt="Image" src="https://github.com/user-attachments/assets/ed6eee56-6085-4468-b7fe-ee7264e70b76" />
+
+<img width="1086" height="535" alt="Image" src="https://github.com/user-attachments/assets/ef96dac7-2650-429d-9544-3d0fc9c58e8d" />
+
+<img width="1086" height="715" alt="Image" src="https://github.com/user-attachments/assets/2835ff67-e348-44c2-b691-392f313f75d3" />
+
+<img width="1086" height="545" alt="Image" src="https://github.com/user-attachments/assets/83c8ab43-0259-4910-acb5-5c71591b1f42" />
+
+<img width="1086" height="448" alt="Image" src="https://github.com/user-attachments/assets/ba9c77fb-14ef-42b5-b955-12d75f21a94e" />
+
+---
+
+## 6. 스토리보드 🗺️
+### 메인페이지
+<img width="725" height="612" alt="Image" src="https://github.com/user-attachments/assets/3a93d855-580c-49ba-99c8-544509e1371d" />
+
+### Menu
+<img width="781" height="602" alt="Image" src="https://github.com/user-attachments/assets/49367bff-d715-45b8-a895-2dd6fd8908f4" />
+
+### Story
+<img width="807" height="622" alt="Image" src="https://github.com/user-attachments/assets/f47fd93d-bcde-4119-944b-ba69788e81ad" />
+
+### News
+<img width="990" height="763" alt="Image" src="https://github.com/user-attachments/assets/926d61b2-5aa1-4910-9c46-bb103f087e09" />
+
+### Store
+<img width="1248" height="731" alt="Image" src="https://github.com/user-attachments/assets/c4ba42ab-5aee-4c87-8442-3c2f07a8c796" />
+
+### Customer
+<img width="723" height="341" alt="Image" src="https://github.com/user-attachments/assets/52f85c96-efea-414c-b5a6-0d6904a73a26" />
+
+## 7. 테스트케이스 🧪
+
+
+## 8. 회고 ✍️
+
+| 이름 | 회고 |
+| --- | --- |
+| 김채우 |  |
+| 김윤경 |  |
+| 이경민 |  |
+| 이형욱 |  |
+| 조윤호 | 백엔드 작업은 이전 프로젝트에서 경험이 있었기 때문에 전반적인 구조가 비교적 익숙했고, 그 덕분에 수월하게 진행할 수 있었다. 특히 이번 프로젝트에서는 모르는 부분을 AI에 전적으로 의존하기보다는, 필요한 최소한의 도움만 참고하여 스스로 코드를 작성하려고 노력했다는 점에서 개인적으로 만족스러운 경험이었다. 반면 프론트엔드 구현은 예상보다 많은 시간이 소요되었다. 실제 서비스 화면을 최대한 동일하게 구현하려다 보니 세부적인 UI와 구조에 많은 공을 들이게 되었고, 그 과정에서 시행착오도 많았다. 다만 이러한 과정을 통해 프론트엔드 화면 구성과 구조가 머릿속에 자연스럽게 정리되었고, 결과적으로는 의미 있는 경험이 되었다고 느낀다. |
+
