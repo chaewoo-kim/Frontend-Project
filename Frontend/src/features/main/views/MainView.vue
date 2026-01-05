@@ -168,7 +168,9 @@
                   <p>딜리버리 전화주문 안내 09:00 - 19:00 / 연중무휴<br><span class="txt_sub">(매장별로 상이할 수 있습니다.)</span></p>
                 </div>
                 <div class="tel_area">
-                  <div class="tel"><strong>1599 - 0505</strong></div>
+                  <div class="tel">
+                    <img src="@/assets/img/img_delivery_tel.png" alt="1599-0505">
+                  </div>
                 </div>
               </div>
             </div>
@@ -973,7 +975,8 @@ onMounted(() => {
   border-radius: 20px;
   padding: 40px 60px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 200px;
   align-items: center;
   cursor: pointer;
 }
@@ -999,6 +1002,11 @@ onMounted(() => {
   font-size: 3.5rem;
   font-family: var(--font-flame);
   color: #f2a900; /* Matching BK yellow */
+}
+
+.tel img {
+  height: 56px;
+  width: auto;
 }
 
 /* Brand Section */
