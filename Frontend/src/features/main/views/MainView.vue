@@ -21,7 +21,7 @@
                   v-for="banner in eventImages"
                   :key="banner.fileUrl"
                   style="cursor: pointer"
-                  @click="handleLink('/news-event')"
+                  @click="handleLink('/notice/event/ongoing')"
                 >
                   <div class="image_area">
                     <img :src="banner.fileUrl" :alt="banner.originalFileName">
@@ -38,10 +38,10 @@
                   <div class="QR WEB">
                     <img src="@/assets/img/img_QR.svg" alt="App download">
                   </div>
-                  <button type="button" class="btn_down" @click="handleExternalLink('https://play.google.com/store/apps/details?id=kr.co.burgerking')">
+                  <button type="button" class="btn_down" @click="handleExternalLink('https://play.google.com/store/apps/details?id=kr.co.burgerkinghybrid')">
                     <img src="@/assets/img/btn_google_down.svg" alt="Google Play에서 다운로드">
                   </button>
-                  <button type="button" class="btn_down" @click="handleExternalLink('https://apps.apple.com/kr/app/id1095254627')">
+                  <button type="button" class="btn_down" @click="handleExternalLink('https://apps.apple.com/kr/app/1017567032')">
                     <img src="@/assets/img/btn_apple_down.svg" alt="App Store에서 다운로드">
                   </button>
                 </div>
@@ -232,10 +232,10 @@
                   <div class="app_down">
 
                     <div class="btn_area">
-                      <button type="button" class="btn_app image_btn" @click="handleExternalLink('https://play.google.com/store/apps/details?id=kr.co.burgerking')">
+                      <button type="button" class="btn_app image_btn" @click="handleExternalLink('https://play.google.com/store/apps/details?id=kr.co.burgerkinghybrid')">
                         <img src="@/assets/img/btn_down_aos.svg" alt="Google Play에서 다운로드">
                       </button>
-                      <button type="button" class="btn_app image_btn" @click="handleExternalLink('https://apps.apple.com/kr/app/id1095254627')">
+                      <button type="button" class="btn_app image_btn" @click="handleExternalLink('https://apps.apple.com/kr/app/1017567032')">
                         <img src="@/assets/img/btn_down_ios.svg" alt="App Store에서 다운로드">
                       </button>
                     </div>
@@ -374,6 +374,9 @@ onMounted(() => {
         display: flex;
         margin-bottom: 50px;
         gap: 20px;
+    }
+    .top_cont {
+        margin-top: 13px;
     }
 }
 
@@ -1038,15 +1041,21 @@ onMounted(() => {
 }
 
 .brand_cont .tit_card {
-  font-size: 1.05rem; /* Increased by 20% from 0.875rem */
-  font-weight: 900;
+  font-family: "Sandoll GothicNeoRound", sans-serif;
+  font-size: 1.47rem;
+  font-weight: 700;
   margin-top: 10px;
+  line-height: 1.2;
 }
 
 .brand_cont .card01 {
   display: flex;
   flex-direction: column;
   height: 100%;
+}
+
+.brand01 .card01:last-child {
+  margin-top: 30px;
 }
 
 .brand_cont .card01 .card_cont {
