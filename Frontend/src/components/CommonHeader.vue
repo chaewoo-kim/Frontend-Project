@@ -83,18 +83,18 @@ ul {
 }
 
 @media screen and (min-width: 640px) {
-    .headerWrap {
-        padding: 0 30px;
-    }
+  .headerWrap {
+    padding: 0 30px;
+  }
 }
 
 @media screen and (min-width: 1024px) {
-    .headerWrap {
-        position: sticky;
-        top: 0;
-        padding: 0 60px;
-        background-color: var(--bg-base);
-    }
+  .headerWrap {
+    position: sticky;
+    top: 0;
+    padding: 0 60px;
+    background-color: var(--bg-base);
+  }
 }
 
 /* User TitleBar Layout */
@@ -109,33 +109,33 @@ ul {
 }
 
 a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0;
-    color: #502314; /* var(--normal) replacement */
-    text-decoration: none;
-    outline: none;
-    cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  color: #502314; /* var(--normal) replacement */
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
 }
 
 /* User GNB Styles */
 .GNBWrap, .GNBWrap>ul {
-    display: flex;
-    height: 100%;
+  display: flex;
+  height: 100%;
 }
 
 .GNBWrap {
-    flex: 1;
-    height: 100%;
-    justify-content: center;
-    padding: 0 20px;
+  flex: 1;
+  height: 100%;
+  justify-content: center;
+  padding: 0 20px;
 }
 
 .gnb_btnWrap {
-    position: relative;
-    display: flex;
-    align-items: center;
+  position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .gnb_btnWrap > a {
@@ -151,60 +151,60 @@ a {
 }
 
 .gnb_btnWrap > a:hover {
-    color: #E2221F;
+  color: #E2221F;
 }
 
 /* STORY Sub GNB - Brown Pill Design */
 .sub_gnb {
-    position: absolute;
-    top: 80%; /* Position below the header link */
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 600;
-    white-space: nowrap;
+  position: absolute;
+  top: 80%; /* Position below the header link */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 600;
+  white-space: nowrap;
 }
 
 .sub_gnb_inner {
-    display: flex;
-    background-color: #502314; /* 브라운 배경 */
-    border-radius: 50px; /* 필 디자인 */
-    padding: 10px 30px;
-    gap: 30px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  display: flex;
+  background-color: #502314; /* 브라운 배경 */
+  border-radius: 50px; /* 필 디자인 */
+  padding: 10px 30px;
+  gap: 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .sub_gnb_inner a {
-    color: #f5ebdc; /* 라이트 컬러 */
-    font-weight: 700;
-    font-size: 1.125rem;
-    transition: color 0.2s;
-    padding: 5px 0;
+  color: #f5ebdc; /* 라이트 컬러 */
+  font-weight: 700;
+  font-size: 1.125rem;
+  transition: color 0.2s;
+  padding: 5px 0;
 }
 
 .sub_gnb_inner a:hover {
-    color: #E2221F; /* 호버 시 빨간색 */
+  color: #E2221F; /* 호버 시 빨간색 */
 }
 
 @media screen and (min-width: 1024px) and (max-width: 1250px) {
-    .gnb_btnWrap > a {
-        padding: 10px 8px;
-        font-size: 1.125rem;
-    }
-    .sub_gnb_inner {
-        padding: 8px 15px;
-        gap: 15px;
-    }
-    .sub_gnb_inner a {
-        font-size: 0.9rem;
-    }
+  .gnb_btnWrap > a {
+    padding: 10px 8px;
+    font-size: 1.125rem;
+  }
+  .sub_gnb_inner {
+    padding: 8px 15px;
+    gap: 15px;
+  }
+  .sub_gnb_inner a {
+    font-size: 0.9rem;
+  }
 }
 
 /* User Side Menu Styles */
 .side_menu {
-    display: flex;
-    position: relative;
-    margin-left: auto;
-    gap: 10px;
+  display: flex;
+  position: relative;
+  margin-left: auto;
+  gap: 10px;
 }
 
 .btn_link {
@@ -215,9 +215,9 @@ a {
 }
 
 .btn_franchise {
-    /* Manual addition to maintain red button */
-    background-color: #E2221F; 
-    border-radius: 30px;
+  /* Manual addition to maintain red button */
+  background-color: #E2221F;
+  border-radius: 30px;
 }
 
 .btn_franchise, .btn_link {
