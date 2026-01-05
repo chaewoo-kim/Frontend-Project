@@ -71,7 +71,10 @@ onMounted(async () => {
         </section>
 
       <section class="box">
-        <h3>주문가능 시간</h3>
+        <h3 class="section-title">
+          <img src="@/assets/img/ham.png" alt="주문가능시간" />
+          <span>주문가능 시간</span>
+        </h3>
 
         <div class="row1">
           <span>매장</span>
@@ -94,8 +97,11 @@ onMounted(async () => {
         </div>
       </section>
 
-      <section class="box">
-          <h3>운영시간</h3>
+        <section class="box">
+          <h3 class="section-title">
+            <img src="@/assets/img/clock.png" alt="운영시간" />
+            운영시간
+          </h3>
 
           <div class="row">
             <span>평일</span>
@@ -117,7 +123,10 @@ onMounted(async () => {
 
         <!-- 매장 서비스 -->
         <section class="box">
-          <h3>매장서비스</h3>
+          <h3 class="section-title">
+            <img src="@/assets/img/store.png" alt="매장서비스" />
+            매장서비스
+          </h3>
 
           <div class="services">
           <span
@@ -142,6 +151,25 @@ onMounted(async () => {
 </template>
 
 <style scoped>
+
+.section-title {
+  display: inline-flex;          /* 중요 */
+  align-items: center;
+  gap: 6px;                      /* 아이콘-글자 간격 */
+  margin: 0 0 10px 0;            /* 위아래 여백 통제 */
+  padding: 0;
+
+  font-size: 16px;
+  font-weight: 700;
+  color: #5a2d0c;
+}
+
+.section-title img {
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+}
+
 .overlay {
   position: fixed;
   inset: 0;
