@@ -48,6 +48,13 @@ const copyAddress = async () => {
       <div class="modal-body">
       <!-- 이미지 슬라이더 -->
         <div class="image-slider" v-if="detail.imageUrls?.length">
+          <div
+              v-if="detail.membershipAvailable"
+              class="image-badge"
+          >
+            <img src="@/assets/img/crown.png" alt="멤버십" />
+            <span>멤버십 적립매장</span>
+          </div>
         <template v-if="detail.imageUrls.length === 2">
           <button
               class="nav prev"
@@ -436,6 +443,30 @@ const copyAddress = async () => {
   font-size: 14px;
   font-weight: 700;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* 이미지 위 멤버십 적립매장 배지 */
+.image-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(250, 244, 237, 0.95);
+  color: #5a2d0c;
+
+  font-size: 13px;
+  font-weight: 700;
+  z-index: 5;
+}
+
+.image-badge img {
+  width: 18px;
+  height: 18px;
 }
 
 </style>
