@@ -8,13 +8,14 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Profile;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
-// @Profile("dev")  // 지금은 확인용으로 꺼둬도 됨
+@Profile("dev")
 public class StoreDataLoader implements CommandLineRunner {
 
     private final StoreRepository storeRepository;
@@ -54,10 +55,14 @@ public class StoreDataLoader implements CommandLineRunner {
                         node.path("storCoordY").asDouble(),
                         node.path("storCoordX").asDouble(),
                         "Y".equals(node.path("storMembershipYn").asText()),
-                        node.path("salesHourNote").asText(null),
-                        node.path("todayBusinessTime").asText(null),
-                        node.path("todayDeliveryTime").asText(null),
-                        node.path("pickupTime").asText(null)
+                        node.path("storTimeDays").asText(null),           // 평일 운영시간
+                        node.path("storTimeWeekend").asText(null),        // 주말
+                        node.path("storTimeHoliday").asText(null),        // 공휴일
+                        node.path("salesHourNote").asText(null),          // 하단 설명
+                        node.path("todayBusinessTime").asText(null),      // 매장
+                        node.path("todayDeliveryTime").asText(null),      // 딜리버리
+                        node.path("todayKordTime").asText(null),          // 킹오더
+                        node.path("todayKmomTime").asText(null)           // 킹모닝
                 );
 
                 storeRepository.save(store);
