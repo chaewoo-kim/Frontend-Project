@@ -12,9 +12,16 @@ public record StoreDetailResponseDTO(
         List<String> serviceNames,
         List<String> imageUrls,
 
-        String salesHourNote,
-        String todayBusinessTime,
-        String deliveryTime,
-        String pickupTime
+        /* 운영 시간 */
+        String storTimeDays,        // 평일 운영시간
+        String storTimeWeekend,     // 주말·공휴일 운영시간
+        String storTimeHoliday,
+        String salesHourNote,       // 연중무휴 / Cleaning Day 안내
+
+        /* 주문 가능 시간 */
+        String todayBusinessTime,   // 매장
+        String todayDeliveryTime,   // 딜리버리
+        String todayKordTime,       // 킹오더
+        String todayKmomTime           // 픽업
 ) {
 }
