@@ -65,6 +65,7 @@
         @apply="handleKeywordApply" 
     />
   </div>
+  <common-footer/>
 </template>
 
 <script setup>
@@ -74,6 +75,7 @@ import menuApi from '@/api/menu';
 import CommonHeader from '@/components/CommonHeader.vue';
 import MenuCard from '../components/MenuCard.vue';
 import KeywordModal from '../components/KeywordModal.vue';
+import CommonFooter from "@/components/CommonFooter.vue";
 
 const router = useRouter(); // 라우터 사용
 const menuResponse = ref(null);

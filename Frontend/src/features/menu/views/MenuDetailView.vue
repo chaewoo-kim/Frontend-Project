@@ -57,6 +57,7 @@
       </div>
     </div>
   </div>
+  <common-footer/>
 </template>
 
 <script setup>
@@ -64,6 +65,7 @@ import { ref, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
 import CommonHeader from '@/components/CommonHeader.vue';
 import menuApi from '@/api/menu';
+import CommonFooter from "@/components/CommonFooter.vue";
 
 const route = useRoute();
 const detail = ref(null);
