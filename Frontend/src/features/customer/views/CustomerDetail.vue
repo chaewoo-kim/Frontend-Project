@@ -76,6 +76,7 @@ import { ref, onMounted } from 'vue';
 import qrImage from '@/assets/img/img_QR.svg';
 import btnAos from '@/assets/img/btn_down_aos.svg';
 import btnIos from '@/assets/img/btn_down_ios.svg';
+import CommonFooter from "@/components/CommonFooter.vue";
 
 const route = useRoute();
 const detail = ref(null);

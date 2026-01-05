@@ -71,30 +71,11 @@
           </ul>
         </div>
       </div>
-      
-      <article class="fabWrap">
-        <button type="button" class="btn_top none"><span>Go scroll top</span></button>
-      </article>
 
-      <footer class="footer">
-        <div class="container">
-            <div class="terms_menu">
-                <a href="#"><span class="mouse_over">이용약관</span></a>
-                <a href="#" class="txt_line"><span class="mouse_over">개인정보처리방침</span></a>
-                <a href="#"><span class="mouse_over">위치정보</span></a>
-            </div>
-            <div class="cont">
-                <div class="info">
-                    <p>서울 특별시 종로구 삼봉로 71 G타워 4F,5F</p>
-                    <p>사업자등록번호 : 101-86-76277 <a class="txt_line">사업자정보확인</a></p>
-                    <p>㈜ 비케이알 대표이사 : 이동형</p>
-                    <p>ⓒBKR Co., Ltd. All right Reserved</p>
-                </div>
-            </div>
-        </div>
-      </footer>
     </section>
   </div>
+
+  <common-footer/>
 </template>
 
 <script setup>
@@ -102,6 +83,7 @@ import CommonHeader from '@/components/CommonHeader.vue';
 import { useRouter } from 'vue-router';
 import { ref, onMounted } from 'vue';
 import { getCategories, getTopFaqs } from '@/api/customer';
+import CommonFooter from "@/components/CommonFooter.vue";
 
 const router = useRouter();
 
