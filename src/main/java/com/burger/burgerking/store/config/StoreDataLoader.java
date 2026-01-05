@@ -8,13 +8,14 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Profile;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
-// @Profile("dev")  // 지금은 확인용으로 꺼둬도 됨
+@Profile("dev")
 public class StoreDataLoader implements CommandLineRunner {
 
     private final StoreRepository storeRepository;
